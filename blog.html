@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBEM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+
+
+    <script>
+      MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<style>
+  
+  .blue {
+    background: #3c31dd;
+  }
+
+  .red {
+    background: #dd3f31;
+  }
+
+  .pink {
+    background: #ff0066;
+    overflow: hidden;
+  }
+
+  .black {
+    background: #0f0f10;
+  }
+  .grey {
+    background: #44515c;
+  }
+  /* Curved bg with plain CSS */
+
+  .curve {
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+  }
+
+  .curve::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    transform: translate(85%, 60%);
+    background-color: hsl(216, 21%, 16%);
+  }
+
+  .curve::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: #44515c;
+    transform: translate(-4%, 40%);
+    z-index: -1;
+  }
+
+  /* Bubble bg with plain CSS */
+
+  .bubble::after {
+    content: '';
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    background-color: #0f0f10;
+    height: 85%;
+  }
+
+  /* Curved bg with SVG via https://www.shapedivider.app/ */
+
+  .wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .wave svg {
+    position: relative;
+    display: block;
+    width: calc(103% + 1.3px);
+    height: 262px;
+  }
+
+  .wave .shape-fill {
+    fill: hsl(240, 3%, 6%);
+  }
+
+  /* SVG background image via https://haikei.app/ */
+
+  .spacer {
+    aspect-ratio: 960/150;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .layer1 {
+    background-image: url('images/layer3.svg');
+  }
+  .layer2 {
+    background-image: url('images/layer3.svg');
+  }
+
+  .flip {
+    transform: rotate(180deg);
+  }
+
+  /* Blobs SVG background image via https://haikei.app/ */
+
+  .blob-motion {
+    position: absolute;
+    transform: translateY(-20%);
+    z-index: 0;
+  }
+
+  .blob-content {
+    z-index: 1;
+  }
+
+  .blobs {
+    width: 100%;
+    background: url('./blobs.svg') no-repeat bottom / cover;
+  }
+
+</style>
+
+  </head>
+  <body>
+     <!-- <script id="replace_with_navbar" src="nav.js"></script>  -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#"><h2>ervinmacic.</h2></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item px-3 ">
+              <a class="nav-link active text-white hvr-underline-reveal" aria-current="page" href="#" id="GoHome"><h4>Home</h4></a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" href="#" id="blog"><h4>Blog</h4></a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" href="#">
+                <h4>Contact</h4>
+              </a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link text-white" href="#" ><h4>CV</h4></a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" id="project" href="#"><h4>Projects</h4></a>
+            </li>
+            
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav> 
+    <div class="spacer layer1"></div>
+<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+ 
+</button>
+
+<div class="container col-xxl-8 px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="images/fun/blogview.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-2"><em>Ervin's Blog</em></h1>
+      <p class="lead">I post something interesting that is math related, monthly. Something that I encounter or consider worth sharing with the world.</p>
+      <button class="btn btn-outline-dark p-2 hvr-forward" type="button" id="tofacts">Weekly facts</button>
+      <p class="lead">A series in which I post something interesting weekly, but not worth making a whole blog post. </p>
+    </div>
+  </div>
+</div>
+
+<main class="container p-4">
+
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">Ervin's blog </h1>
+      <p class="lead my-3"> I post something interesting that is math related, monthly. Something that I encounter or consider worth sharing with the world. 
+      </p>
+      <button class="btn btn-outline-light p-2 hvr-forward" type="button" id="tofacts">Weekly facts</button>
+      <p class="lead my-3"> A series in which I post something interesting weekly, but not worth making a whole blog post. </p>
+    </div>
+  </div>
+
+
+  <div class="row mb-2">
+    <div class="col-md-6 hvr-float ">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">IMO 2021</strong>
+          <h3 class="mb-0">Reflection on the IMO</h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto">My experience before, during and after IMO 2021.</p>
+          <a type="Submit" onClick="document.getElementById('imo_2021').scrollIntoView();" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="images/squirrels.jpg" height="333">
+          
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-6 hvr-float">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">A cute game</strong>
+          <h3 class="mb-0">Chip firing</h3>
+          <div class="mb-1 text-muted">Nov 11</div>
+          <p class="mb-auto">A game on graphs that is severely underrated. You can see many key concepts
+            in combinatorics.
+          </p>
+          <a type="Submit" onClick="document.getElementById('imo_2021').scrollIntoView();" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto p-1 d-none d-lg-block">
+          
+          <img src="images/chipfiring.jpg">
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        Recent
+      </h3>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title"> A life lesson & cool problems</h2>
+        <p class="blog-post-meta">October 25, 2021 by <a href="#">Ervin</a></p>
+
+        <p> While going through the olympiad system in my country we used to learn almost no theory and that was especially a thing in combinatorics. I don't think that we had a specific lesson in combinatorial theory at all. 
+          I think it's a good thing to know "names" of some techniques of solving problems, even though they can't be labbeled as nicely as in geometry. For example, I wanted to dedicate this section to a specific problem. Not so long ago
+          this problem appeared on our <b>TST</b> (here in Bosnia):
+
+        </p>
+
+        <div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="h-100 p-4 text-white bg-dark rounded-3">
+                <h2>BIHMO 2020 D1 P1</h2>
+                <hr class="thick">
+                <p>Integers are written in the vertices of a regular $n$-gon, so that the differences between any two numbers in adjacent vertices is $0$ or $1$. These vertices split the circumcircle of the $n$-gon into $n$ equal arcs. In the midpoints of each arc, the arithmetic mean of the numbers that form that arc is written. Determine all n such that with certainty one can conclude that there are two diametrically opposite points on this circle which have equal value.  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="p-4 d-flex justify-content-center">
+          <h3> <img src = "images/bihmo2020p1.jpg"></h3>
+        </div> -->
+
+        <div class="px-5 pt-2 my-2 text-center border-bottom">
+          <img src="images/bihmo2020p1.jpg">
+        <h1 class="display-4 fw-bold"></h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">This here is the case for $n=5$. Notice the diametrically opposite points with value $3$.</p>
+        </div>
+        </div>
+
+        <p>After the contest had ended: </p>
+        <blockquote class="blockquote">
+          <p>How was this problem 1? I don't know a single person who solved it in less than 2 hours. </p>
+        </blockquote>
+        <p>Before I start explaining the solution of the above problem, let me show you some other problems.</p>
+        <ol>
+          <li>Prove that <b>all</b> the <b>roots</b> of the polynomial $P(x)=x(x-2)(x-4)(x-6)+(x-1)(x-3)(x-5)(x-7)$ are real.</li>
+          <li><a href="https://artofproblemsolving.com/community/c6h1092597p4870423" target="_blank" rel="noopener noreferrer">(Serbia MO 2014)</a> Call a positive integer $n$ <em> crazy </em> iff there exist positive integers $a,b>1$ such that $n=a^b+b$. Prove that there exist $2014$ consecutive positive integers such that there are <b>exactly</b> $2012$ <em>crazy</em> numbers among them. </li>
+          <li> <a href="https://artofproblemsolving.com/community/c6h34319p213018" target="_blank" rel="noopener noreferrer">(USAMO 2005)</a>  Suppose $2n$ points are given in the plane, no three of which are collinear. Suppose $n$ of them are colored blue and the other $n$ are colored red. A line in the plane is called a balancing line if it passes through one blue and one red point and, for each side of the line, the number of blue points on that side is <b>exactly</b> equal to the number of red points on the same side. Prove that there exist at least two balancing lines.</li>
+        </ol>
+        <p>And their respective "outline" solutions:</p>
+        <dl>
+          <dt>Problem 1</dt>
+          <dd>Look at the polynomials at the inputs $x=0,1,2,3,4,5,6,7$. Pay particular attention to the sign of the value you get. What can you conclude with the information that $P(0) > 0$ and $P(1) < 0 $? </dd>
+          <dt>Problem 2</dt>
+          <dd>Notice that the first $2012$ numbers aren't all crazy and then note that by shifting an interval of $2014$ consecutive numbers we change the number of crazy numbers in the interval by no more than 1 thus we can hit all values.</dd>
+          <dt>Problem 3</dt>
+          <dd>Playing around with the line, it makes sense to move it.</dd>
+        </dl>
+        <h2>The point</h2>
+        <p> All three of these problems share the same vibe. They all rely on some sort of continuity. We rigorously define this later. I present the solution of the introductory problem in two steps: </p>
+        <h3> Solution: </h3>
+        <hr>
+        <ul>
+          <li> The antipode of a vertex in a regular $n$-gon is either a midarc (when $n$ is odd) or a vertex (when $n$ is even). Similar holds for the midarcs (vertex - midarc respectively)</li>
+          <li>Notice that for $n=2k+1$ (odd) we can just place the numbers $0,1,2 \ldots k-1,k,k,k-1, \ldots ,1,0$ as the vertices. Now there can't be any antipodal points with the same value since one of them is a midarc (which is not an integer) and one of them is a vertex (which is an integer). Therefore, $n$ isn't odd.</li>
+          <div class="px-5 pt-2 my-2 text-center border-bottom">
+            <img src="images/nonagon.jpg">
+          <h1 class="display-4 fw-bold"></h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">The only integer value is the one $4$, but it's antipode is $0$ so it's good.</p>
+          </div>
+          </div>
+          <li>For $n=2k$ we prove there always must exist two antipodal points of equal value. Place a pencil in the middle such that it points to the bigger number always. Start rotating it clockwise. At one point the pencil <b>must</b> flip since if it doesn't that would mean it came back to the beginning position but reversed.</li>
+          <div class="px-5 pt-4 my-4 text-center border-bottom">
+            <img src="images/pencils.gif">
+          <h1 class="display-4 fw-bold"></h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4"> When the pencil flips, the midarc between those two points have equal value, hence we're done.</p>
+          </div>
+        </ul>
+        
+
+        
+      </article>
+
+      
+    
+
+      <article class="blog-post">
+        <h2 class="blog-post-title" id="imo_2021">Reflection on the IMO</h2>
+        <p class="blog-post-meta">November 12, 2021 by <a href="#">Ervin</a></p>
+
+        <p> This year's IMO was weird.. Sadly it was online again.</p>
+
+        
+
+        <blockquote>
+          <p>I've learned one lesson through it. To solve any IMO P1/P4 ask yourself two questions: What is <strong>enough</strong> to finish? What would be good if it were true?</p>
+        </blockquote>
+        <p> I will be discussing only P1,P4 and P5 since those are the ones I tried the most on the competition. </p>
+        
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Problem No.</th>
+              <th>Mean P#</th>
+              <th>Num (P# = 7)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Problem 1</td>
+              <td>4.394</td>
+              <td>286</td>
+            </tr>
+            <tr>
+              <td>Problem 4</td>
+              <td>3.817</td>
+              <td>309</td>
+            </tr>
+            <tr>
+              <td>Problem 5</td>
+              <td>2.152</td>
+              <td>175</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Problem 1</h3>
+        <div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="h-100 p-4 text-white bg-dark rounded-3">
+                <h2>IMO 2021 P1</h2>
+                <hr class="thick">
+                <p>Let $n \geqslant 100$ be an integer. Ivan writes the numbers $n, n+1, \ldots, 2 n$ each on different cards. He then shuffles these $n+1$ cards, and divides them into two piles. Prove that at least one of the piles contains two cards such that the sum of their numbers is a perfect square.  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <p class="p-2">This was somehow labelled as number theory?</p>
+      </article>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title">Mini discussion</h2>
+      
+
+        <p>My train of thought about this problem on the IMO was: induction? = quick no, since you can't guarantee anything will hold after moving from $n$ to $n+1$. The next thing I did was phrase it as a game: </p>
+        <div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="h-100 p-4 text-white bg-dark rounded-3">
+                <h2>Cooler IMO 2021 P1</h2>
+                <hr class="thick">
+                <p>Boris and Ivan play a game. Boris chooses a positive integer $n$. Ivan writes the numbers $n, n+1, \ldots, 2 n$ each on different cards. Ivan wins if he can split these $n+1$ cards into two piles such that in each pile there aren't two cards that sum to a perfect square. For which $n$ does Boris have a winning strategy? </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <p class="p-2"> After I phrased it like this, it immediately came to me: When couldn't Ivan achieve his goal? The most logical way of trying to achieve his goal is to start greedy ordering the cards in each pile in such a way that he doesn't end up with two cards summing up to a perfect square. When couldn't he do this? If for example he had to place a card with value $a$ in one of the two piles but there existed already two cards with value $b$ in the first pile and $c$ in the second pile such that $a+b$ and $a+c$ are perfect squares. Then I got the idea immediately. What if I couldn't fix this situation? Since a fix would be to place $c$ with $b$ into the first pile, but this wouldn't work if $b+c$ is also a perfect square. If Ivan had this situation in his $n+1$ numbers, he couldn't win. </p>
+        <h3> ok now what? </h3>
+        <p class="p-2"> Well I need to see how oftenly such a triple occurs. Basically I solved the system $a+b=x^2$, $b+c=y^2$, $c+a=z^2$. What I mean by "solved" is: $b=x^2-a$ and $c=z^2-a$ so $b+c=(x^2-a)+(z^2-a)=y^2$ so $a=\frac{z^2+x^2-y^2}{2}$ and similarily: $(a,b,c)=(\frac{z^2+x^2-y^2}{2},\frac{x^2+y^2-z^2}{2},\frac{y^2+z^2-x^2}{2})$. Now I realised that basically if I pick $(x,y,z)$ I would get a corresponding triple of $(a,b,c)$ so I picked consecutive $x,y,z$ since those would lead to the "closest" $a,b,c$.</p>
+        <p> Now I got $(a,b,c)=(\frac{x^2-4x}{2},\frac{x^2+2}{2},\frac{x^2+4x}{2})$ which means $x=2k$ (even) and then I got the triple $(a,b,c)=(2k^2-4k,2k^2+1,2k^2+4k)$. So if for some $k$ all three of these numbers belong in my $n+1$ numbers I'm done. Proving such numbers exist for $n\geqslant 100$ is straightforward.</p>
+      
+
+
+        <div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="h-100 p-4 text-white bg-dark rounded-3">
+                <h2>IMO 2021 P4</h2>
+                <hr class="thick">
+                <p>Let $\Gamma$ be a circle with centre $I$, and $A B C D$ a convex quadrilateral such that each of the segments $A B, B C, C D$ and $D A$ is tangent to $\Gamma$. Let $\Omega$ be the circumcircle of the triangle $A I C$. The extension of $B A$ beyond $A$ meets $\Omega$ at $X$, and the extension of $B C$ beyond $C$ meets $\Omega$ at $Z$. The extensions of $A D$ and $C D$ beyond $D$ meet $\Omega$ at $Y$ and $T$, respectively. Prove that\[A D+D T+T X+X A=C D+D Y+Y Z+Z C.\]  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-4 pt-2 my-2 text-center border-bottom">
+          <img src="images/imop4.jpg">
+        <h1 class="display-4 fw-bold"></h1>
+        <div class="col-lg-6 mx-auto">
+  
+        </div>
+        </div>
+        <p>For some reason, this took me over 2 hours. I think I just got scared of the weird thing to prove and the fact that my diagram led me to believe it was harder than it actually was.</p>
+        <p> First I reduced it to a sum of three lines by tangent segments: $AD=AS+SD=AP+DR$ similarily $CD=DS+CQ$ thus it's enough to prove $PX+XT+TR = QZ + ZY+ YS$.  </p>
+        <p> At first I didn't think this was mega useful. After playing with angles for a long while i realised $\angle TIX = \angle YIZ$ which implies $XT = YZ$ and I knew I was done once I got this. </p>
+        <p> Something trivial I didn't notice at first was that since $AI$ is the exterior angle bisector of $\angle XAY$ we must have $I$ is the midarc of $XY$ with $A$ hence $XI=YI$ and similarily $TI=ZI$ so we must have $TZ||XY$ and hence $TX=YZ$ (by symmetry). This was much faster than the angle chase I figured out. </p>
+        <p> Now we're almost done since $\triangle YSI \cong \triangle XPI$ and so $YS=XP$ similarily $ZQ=TR$ and hence the conclusion!</p>
+        
+        <div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="h-100 p-4 text-white bg-dark rounded-3">
+                <h2>IMO 2021 P5</h2>
+                <hr class="thick">
+                <p>Two squirrels, Bushy and Jumpy, have collected 2021 walnuts for the winter. Jumpy numbers the walnuts from 1 through 2021, and digs 2021 little holes in a circular pattern in the ground around their favourite tree. The next morning Jumpy notices that Bushy had placed one walnut into each hole, but had paid no attention to the numbering. Unhappy, Jumpy decides to reorder the walnuts by performing a sequence of 2021 moves. In the $k$-th move, Jumpy swaps the positions of the two walnuts adjacent to walnut $k$.
+
+                  Prove that there exists a value of $k$ such that, on the $k$-th move, Jumpy swaps some walnuts $a$ and $b$ such that $a<k<b$. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+      </article>
+    </div>
+    
+    
+    
+    
+
+    
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-light rounded">
+          <h4 class="fst-italic">About</h4>
+          <p class="mb-0">I plan on covering things that interest me and discuss it with people. Will make a comment section for this.</p>
+        </div>
+        <div class ="p-4">
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">Weekly facts!</a></li>
+            </ol>
+        </div>
+        <div class="p-4">
+          <h4 class="fst-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">March 2021</a></li>
+            <li><a href="#">February 2021</a></li>
+            <li><a href="#">January 2021</a></li>
+            <li><a href="#">December 2020</a></li>
+            <li><a href="#">November 2020</a></li>
+            <li><a href="#">October 2020</a></li>
+            <li><a href="#">September 2020</a></li>
+            <li><a href="#">August 2020</a></li>
+            <li><a href="#">July 2020</a></li>
+            <li><a href="#">June 2020</a></li>
+            <li><a href="#">May 2020</a></li>
+            <li><a href="#">April 2020</a></li>
+          </ol>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Contact</h4>
+          <ol class="list-unstyled">
+            <li><a href="https://github.com/FrequentErvin" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/ervin-macic-2a300a1ab/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/ervin.macic/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.facebook.com/ervin.macic/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="px-4 pt-5 my-5 text-center border-bottom">
+  <img src="images/HIOrelation.jpg" alt="Cutie">
+<h1 class="display-4 fw-bold">Cute geometry thingy</h1>
+<div class="col-lg-6 mx-auto">
+  <p class="lead mb-4">This picture contains multiple "problems" within it. We start out with a triangle $ABC$ and we 
+    label the orthocenter, incenter and circumcenter with $H,I,O$ respectively. If we let these be varying points
+    on the sides, we have that these circles go through these fixed points always. This is just one of many similar things I would love to showcase here in my blog. 
+    This is a relation between similar problems and it is quite perculiar that something like this holds. </p>
+  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+    <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Primary button</button>
+    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+  </div>
+</div>
+<div class="overflow-hidden" style="max-height: 30vh;">
+  <div class="container px-5">
+    <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+  </div>
+</div>
+</div>
+
+
+<div class = "container py-4">
+  <div class="row align-items-md-stretch">
+
+    <div class="col-md-6">
+      <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <h2>Fun math</h2>
+        <p>What to show to someone who is just starting out with math or someone that isn't fond of math? Unusual connections between math knowledge nuggets, tricky 
+          and awesome math. 
+
+        </p>
+        <button class="btn btn-outline-light" type="button">Go to documents</button>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-light border rounded-3">
+        <h2>Competition math</h2>
+        <p> Reflections on my recent competitions and what is happening in my life. The more blog-ish part. New stuff and new perspectives I discovered and wanted to share to people who love and 
+          enjoy similar things. Things that were really hard for me to understand when I was younger and things that I understood incorrectly.
+        </p>
+        <button class="btn btn-outline-secondary" type="button">Press to view</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+    <script src="blog.js"></script>
+    <script src="index.js"></script>
+    <script id="replace_with_footer" src="footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
+</html>  
