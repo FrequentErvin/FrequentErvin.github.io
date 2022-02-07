@@ -51,8 +51,11 @@
     </nav> 
 
     <!-- <div class="spacer layer1"></div> -->
-    <div class="spacer redwave2"></div>
-    <div class='console-container'><span id='text'></span><div class='console-underscore' id='console'>&#95;</div></div>
+
+      <div class="spacer redwave2"></div>
+      <!-- <div class='console-container'><span id='text'></span><div class='console-underscore' id='console'>&#95;</div></div> -->
+
+ 
 
 
 
@@ -73,19 +76,9 @@
             and Herzegovina, an aspiring data scientist and an <span class="font-monospace">IMO</span> bronze medalist.
             I hold lectures in a math club in my school, and work on machine learning projects at <span class="font-monospace">Isaac Code</span>. 
             </p>
-          <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
-          </div> -->
         </div>
       </div>
       </div>
-
-
-      
-
-      
-
 
       <div class="spacer whiterote"></div>
     <div class="bg-rot text-secondary px-4 py-5 text-center">
@@ -102,15 +95,13 @@
       </div>
       <div class="spacer whiterote flip"></div>
 
-
-
-
-        
-
+      <!-- why is this not updating :( -->
         <div class="container d-flex justify-content-center p-3">
           <h2 class="display-5 fw-bold py-5">Affiliations & Friends </h2>
         </div>
         <!-- <div id = "divToShowHide" class = "BeforeScroll text-black-50"><p>Content you want to show hide on scroll</p></div> -->
+        <!--
+        <div class="container-fluid">
         <div class="row">
           <div class="col-lg-4 text-center p-4">
             <div class="d-flex flex-column bd-highlight mb-3">
@@ -134,11 +125,11 @@
             </div>
           </div>
         </div>
-
+      </div>
         <hr>
 
 
-
+        <div class="container-fluid">
         <div class="row">
           <div class="col-lg-4 text-center p-4">
             <div class="d-flex flex-column bd-highlight mb-3">
@@ -162,8 +153,10 @@
             </div>
           </div>
         </div>
+      </div>
 
         <hr>
+        <div class="container-fluid">
         <div class="row">
           <div class="col-lg-6 text-center p-4">
             <div class="d-flex flex-column">
@@ -180,7 +173,8 @@
             </div>
           </div>
         </div>
-
+      </div>
+    -->
         <div class="spacer whitedarke"></div>
     <div class="container-fluid bg-darke">
       <div class="container bg-darke">
@@ -225,10 +219,11 @@ $(document).ready(function(){
  });
 });
 </script> -->
-<script>
-  // function([string1, string2],target id,[color1,color2])    
- consoleText(['Welcome to my Website!', 'Take a look around', 'Made with Love.'], 'text',['#993233','#212429','#993233']);
 
+<!-- <script>
+  // function([string1, string2],target id,[color1,color2])    
+ 
+  consoleText(['Welcome to my Website!', 'Take a look around', 'Made with Love.'], 'text',['#993233','#212429','#993233']);
 function consoleText(words, id, colors) {
   if (colors === undefined) colors = ['#fff'];
   var visible = true;
@@ -277,44 +272,8 @@ function consoleText(words, id, colors) {
     }
   }, 400)
 }
-</script>
+</script> -->
     <script src="index.js"></script>
-    <!-- <footer class="black-abs text-white text-center text-md-start container-fluid">
-      <div class="container p-4">
-        <div class="row">
-          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h4 class="text-uppercase">Ervin Macić</h4>
-            <p>
-               For any questions, comments or you just want to chat, visit the <a>Contact</a> page. I love sharing
-               ideas and talking with smart people, so by all means, please do! Besides that, check in weekly to see the weekly blog post or fact.  
-            </p>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            
-          </div>
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase ">Contact</h5>
-  
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">GitHub</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">LinkedIn</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Instagram</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Facebook</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer> -->
-
-      <!-- Site footer -->
       <footer class="site-footer">
         <div class="container">
           <div class="row">
@@ -371,5 +330,6 @@ function consoleText(words, id, colors) {
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
   </body>
 </html>  
