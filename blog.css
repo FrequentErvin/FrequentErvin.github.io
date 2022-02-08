@@ -123,3 +123,34 @@
     width: 100%;
     background: url('./blobs.svg') no-repeat bottom / cover;
   }
+
+
+
+
+  
+  #blob {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  #blob, #image {
+    transition: all ease 1s;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0);
+  }
+  #blob, #image {
+    transition-property: border-radius, transform;
+    transition-duration: 1s, 1s;
+  }
+  #image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+    background-image: url('https://wallpapercave.com/wp/wp4047726.jpg');
+    background-position: center;
+    background-size: 340px auto;
+  }
