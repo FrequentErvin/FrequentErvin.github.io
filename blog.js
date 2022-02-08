@@ -42,4 +42,23 @@ function create() {
 function remain(n) {
   return 100 - n;
 }
+function create2() {
+  var b = document.querySelector('#blob2');
+  var r1 = 70
+  var r2 = 70
+  var r3 = 50
+  var r4 = 60
+  var r11 = remain(r1);
+  var r22 = remain(r2);
+  var r33 = remain(r3);
+  var r44 = remain(r4);
+  var coordinates = `${r1}% ${r11}% ${r22}% ${r2}% / ${r3}% ${r4}% ${r44}% ${r33}%`;
+  b.style['border-radius'] = coordinates;
+  b.style['transform'] = 'rotate(' + rotation + 'deg)';
+  image.style.setProperty('--r', -rotation + 'deg');
+};
+function remain(n) {
+  return 100 - n;
+}
 create();
+create2();
