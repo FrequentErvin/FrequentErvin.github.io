@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBEM</title>
+    <link href="/index.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/css/hover.css" rel="stylesheet" media="all">
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <link href="/blog.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/blogentries/bloby.css" rel="stylesheet">
+    <script>
+      MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+  </head>
+  <body>
+     <!-- <script id="replace_with_navbar" src="nav.js"></script>  -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#"><h2>Ervin Macic</h2></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item px-3 ">
+              <a class="nav-link active text-white hvr-underline-reveal" aria-current="page" href="#" id="GoHome"><h4>Home</h4></a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" href="#" id="blog"><h4>Blog</h4></a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" href="#">
+                <h4>Contact</h4>
+              </a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link text-white" href="#" ><h4>CV</h4></a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" id="project" href="#"><h4>Projects</h4></a>
+            </li>
+            
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav> 
+    <div class="spacer layer1"></div>
+
+ 
+  <a href="#" id="scroll" style="display: none;"><span></span></a>
+
+
+<div class="container col-xxl-8 px-4 py-5 shadow-lg">
+  <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
+       <div class="col-lg-6">
+        <img src="/images/squirrels.jpg" id="imagey" class="vc-image-1"> 
+      </div> 
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-2"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Unusual continuity..</em></h1>
+      <p class="lead">In this blog post I will discuss a curious technique for thinking about problems. It's unusually common but little accent is given to it. The solutions are elegant and showcase the beauty of math.</p>
+      <p class="lead">The techniques overviewed will be plain and discrete continuity. These are also widely regarded as the Intermediate value theorem <b>(IVT)</b>. I will also show a proof of <b>Rolle's theorem</b>.</p>
+      
+    </div>
+  </div>
+</div>
+
+<main class="container p-4">
+  <div class="row mb-2">
+    <div class="col-md-6 hvr-float ">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">IMO 2021</strong>
+          <h3 class="mb-0">Reflection on the IMO</h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto">My experience before, during and after IMO 2021.</p>
+          <!-- <a type="Submit" onClick="document.getElementById('imo_2021').scrollIntoView();" class="stretched-link">Continue reading</a> -->
+          <a type="Submit" onClick="location.href='blog entries\reflectonimo.html';" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/images/squirrels.jpg" height="333">
+          
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-6 hvr-float">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">A cute game</strong>
+          <h3 class="mb-0">Chip firing</h3>
+          <div class="mb-1 text-muted">Nov 11</div>
+          <p class="mb-auto">A game on graphs that is severely underrated. You can see many key concepts
+            in combinatorics.
+          </p>
+          <a type="Submit" onClick="document.getElementById('imo_2021').scrollIntoView();" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto p-1 d-none d-lg-block">
+          
+          <img src="/images/chipfiring.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        Recent
+      </h3>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title"> A life lesson & cool problems</h2>
+        <p class="blog-post-meta">October 25, 2021 by <a href="#">Ervin</a></p>
+
+        <p> While going through the olympiad system in my country we used to learn almost no theory and that was especially a thing in combinatorics. I don't think that we had a specific lesson in combinatorial theory at all. 
+          I think it's a good thing to know "names" of some techniques of solving problems, even though they can't be labbeled as nicely as in geometry. For example, I wanted to dedicate this section to a specific problem. Not so long ago
+          this problem appeared on our <b>TST</b> (here in Bosnia):
+
+        </p>
+
+        <div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="h-100 p-4 text-white bg-dark rounded-3">
+                <h2>BIHMO 2020 D1 P1</h2>
+                <hr class="thick">
+                <p>Integers are written in the vertices of a regular $n$-gon, so that the differences between any two numbers in adjacent vertices is $0$ or $1$. These vertices split the circumcircle of the $n$-gon into $n$ equal arcs. In the midpoints of each arc, the arithmetic mean of the numbers that form that arc is written. Determine all n such that with certainty one can conclude that there are two diametrically opposite points on this circle which have equal value.  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="p-4 d-flex justify-content-center">
+          <h3> <img src = "images/bihmo2020p1.jpg"></h3>
+        </div> -->
+
+        <div class="px-5 pt-2 my-2 text-center border-bottom">
+          <img src="/images/bihmo2020p1.jpg">
+        <h1 class="display-4 fw-bold"></h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">This here is the case for $n=5$. Notice the diametrically opposite points with value $3$.</p>
+        </div>
+        </div>
+
+        <p>After the contest had ended: </p>
+        <blockquote class="blockquote">
+          <p>How was this problem 1? I don't know a single person who solved it in less than 2 hours. </p>
+        </blockquote>
+        <p>Before I start explaining the solution of the above problem, let me show you some other problems.</p>
+        <ol>
+          <li>Prove that <b>all</b> the <b>roots</b> of the polynomial $P(x)=x(x-2)(x-4)(x-6)+(x-1)(x-3)(x-5)(x-7)$ are real.</li>
+          <li><a href="https://artofproblemsolving.com/community/c6h1092597p4870423" target="_blank" rel="noopener noreferrer">(Serbia MO 2014)</a> Call a positive integer $n$ <em> crazy </em> iff there exist positive integers $a,b>1$ such that $n=a^b+b$. Prove that there exist $2014$ consecutive positive integers such that there are <b>exactly</b> $2012$ <em>crazy</em> numbers among them. </li>
+          <li> <a href="https://artofproblemsolving.com/community/c6h34319p213018" target="_blank" rel="noopener noreferrer">(USAMO 2005)</a>  Suppose $2n$ points are given in the plane, no three of which are collinear. Suppose $n$ of them are colored blue and the other $n$ are colored red. A line in the plane is called a balancing line if it passes through one blue and one red point and, for each side of the line, the number of blue points on that side is <b>exactly</b> equal to the number of red points on the same side. Prove that there exist at least two balancing lines.</li>
+        </ol>
+        <p>And their respective "outline" solutions:</p>
+        <dl>
+          <dt>Problem 1</dt>
+          <dd>Look at the polynomials at the inputs $x=0,1,2,3,4,5,6,7$. Pay particular attention to the sign of the value you get. What can you conclude with the information that $P(0) > 0$ and $P(1) < 0 $? </dd>
+          <dt>Problem 2</dt>
+          <dd>Notice that the first $2012$ numbers aren't all crazy and then note that by shifting an interval of $2014$ consecutive numbers we change the number of crazy numbers in the interval by no more than 1 thus we can hit all values.</dd>
+          <dt>Problem 3</dt>
+          <dd>Playing around with the line, it makes sense to move it.</dd>
+        </dl>
+        <h2>The point</h2>
+        <p> All three of these problems share the same vibe. They all rely on some sort of continuity. We rigorously define this later. I present the solution of the introductory problem in two steps: </p>
+        <h3> Solution: </h3>
+        <hr>
+        <ul>
+          <li> The antipode of a vertex in a regular $n$-gon is either a midarc (when $n$ is odd) or a vertex (when $n$ is even). Similar holds for the midarcs (vertex - midarc respectively)</li>
+          <li>Notice that for $n=2k+1$ (odd) we can just place the numbers $0,1,2 \ldots k-1,k,k,k-1, \ldots ,1,0$ as the vertices. Now there can't be any antipodal points with the same value since one of them is a midarc (which is not an integer) and one of them is a vertex (which is an integer). Therefore, $n$ isn't odd.</li>
+          <div class="px-5 pt-2 my-2 text-center border-bottom">
+            <img src="/images/nonagon.jpg">
+          <h1 class="display-4 fw-bold"></h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">The only integer value is the one $4$, but it's antipode is $0$ so it's good.</p>
+          </div>
+          </div>
+          <li>For $n=2k$ we prove there always must exist two antipodal points of equal value. Place a pencil in the middle such that it points to the bigger number always. Start rotating it clockwise. At one point the pencil <b>must</b> flip since if it doesn't that would mean it came back to the beginning position but reversed.</li>
+          <div class="px-5 pt-4 my-4 text-center border-bottom">
+            <img src="/images/pencils.gif" class="img-fluid">
+          <h1 class="display-4 fw-bold"></h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4"> When the pencil flips, the midarc between those two points have equal value, hence we're done.</p>
+          </div>
+        </ul>
+      </article>
+    </div>
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-light rounded">
+          <h4 class="fst-italic">About</h4>
+          <p class="mb-0">I plan on covering things that interest me and discuss it with people. Will make a comment section for this.</p>
+        </div>
+        <div class ="p-4">
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">Weekly facts!</a></li>
+            </ol>
+        </div>
+        <div class="p-4">
+          <h4 class="fst-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">March 2021</a></li>
+            <li><a href="#">February 2021</a></li>
+            <li><a href="#">January 2021</a></li>
+            <li><a href="#">December 2020</a></li>
+            <li><a href="#">November 2020</a></li>
+            <li><a href="#">October 2020</a></li>
+            <li><a href="#">September 2020</a></li>
+            <li><a href="#">August 2020</a></li>
+            <li><a href="#">July 2020</a></li>
+            <li><a href="#">June 2020</a></li>
+            <li><a href="#">May 2020</a></li>
+            <li><a href="#">April 2020</a></li>
+          </ol>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Contact</h4>
+          <ol class="list-unstyled">
+            <li><a href="https://github.com/FrequentErvin" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/ervin-macic-2a300a1ab/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/ervin.macic/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.facebook.com/ervin.macic/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+    <script src="/blogentries/bloby.js"></script>
+    <script src="/blog.js"></script>
+    <script src="/index.js"></script>
+    <div class="spacer whiteblack"></div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">For any questions, comments or you just want to chat, visit the <a>Contact</a> page. I love sharing
+              ideas and talking with smart people, so by all means, please do! Besides that, check in weekly to see the weekly blog post or fact.  </p>
+          </div>
+  
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+              <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+              <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+              <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+              <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+              <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/about/">About Us</a></li>
+              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
+         <a href="#">Ervin Macić</a>.
+            </p>
+          </div>
+  
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="https://www.facebook.com/ervin.macic/"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="https://twitter.com/Ervin83228183"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="https://www.instagram.com/ervin.macic/" ><i class="fa fa-instagram"></i></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/in/ervin-macic-2a300a1ab/"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
+</html>  
