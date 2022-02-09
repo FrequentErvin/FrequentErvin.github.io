@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WEBEM</title>
-    <link href="index.css" rel="stylesheet" type="text/css">
+    <link href="/index.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="css/hover.css" rel="stylesheet" media="all">
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <link href="blog.css" rel="stylesheet">
+    <link href="/css/hover.css" rel="stylesheet" media="all">
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <link href="/blog.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/blogentries/bloby.css" rel="stylesheet">
     <script>
       MathJax = {
   tex: {
@@ -25,6 +26,7 @@
 </script>
   </head>
   <body>
+     <!-- <script id="replace_with_navbar" src="nav.js"></script>  -->
      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="#"><h2>Ervin Macic</h2></a>
@@ -61,12 +63,62 @@
     </nav> 
     <div class="spacer layer1"></div>
 
-<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-</button>
+ 
+  <a href="#" id="scroll" style="display: none;"><span></span></a>
 
+
+<div class="container col-xxl-8 px-4 py-5 ">
+  <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
+       <div class="col-lg-6">
+        <img src="/images/squirrels.jpg" id="imagey" class="vc-image-1"> 
+      </div> 
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-2"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>A reflection on the IMO 2021.</em></h1>
+      <p class="lead">Here I've laid out my experiences during the competition and displayed my train-of-thought while solving the problems. This was the 62. jubilee <b>IMO</b> held online in Saint Petersburg.</p>
+      <button class="btn btn-outline-dark p-2" type="button" id="tofacts">IMO 2021 - Problems</button>
+      
+    </div>
+  </div>
+</div>
 
 <main class="container p-4">
-  
+  <div class="row mb-2">
+    <div class="col-md-6 hvr-float ">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">IMO 2021</strong>
+          <h3 class="mb-0">Reflection on the IMO</h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto">My experience before, during and after IMO 2021.</p>
+          <!-- <a type="Submit" onClick="document.getElementById('imo_2021').scrollIntoView();" class="stretched-link">Continue reading</a> -->
+          <a type="Submit" onClick="location.href='blog entries\reflectonimo.html';" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/images/squirrels.jpg" height="333">
+          
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-6 hvr-float">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">A cute game</strong>
+          <h3 class="mb-0">Chip firing</h3>
+          <div class="mb-1 text-muted">Nov 11</div>
+          <p class="mb-auto">A game on graphs that is severely underrated. You can see many key concepts
+            in combinatorics.
+          </p>
+          <a type="Submit" onClick="document.getElementById('imo_2021').scrollIntoView();" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto p-1 d-none d-lg-block">
+          
+          <img src="/images/chipfiring.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="row g-5">
     <div class="col-md-8">
@@ -101,7 +153,7 @@
         </div> -->
 
         <div class="px-5 pt-2 my-2 text-center border-bottom">
-          <img src="images/bihmo2020p1.jpg">
+          <img src="/images/bihmo2020p1.jpg">
         <h1 class="display-4 fw-bold"></h1>
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-4">This here is the case for $n=5$. Notice the diametrically opposite points with value $3$.</p>
@@ -135,7 +187,7 @@
           <li> The antipode of a vertex in a regular $n$-gon is either a midarc (when $n$ is odd) or a vertex (when $n$ is even). Similar holds for the midarcs (vertex - midarc respectively)</li>
           <li>Notice that for $n=2k+1$ (odd) we can just place the numbers $0,1,2 \ldots k-1,k,k,k-1, \ldots ,1,0$ as the vertices. Now there can't be any antipodal points with the same value since one of them is a midarc (which is not an integer) and one of them is a vertex (which is an integer). Therefore, $n$ isn't odd.</li>
           <div class="px-5 pt-2 my-2 text-center border-bottom">
-            <img src="images/nonagon.jpg">
+            <img src="/images/nonagon.jpg">
           <h1 class="display-4 fw-bold"></h1>
           <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">The only integer value is the one $4$, but it's antipode is $0$ so it's good.</p>
@@ -143,7 +195,7 @@
           </div>
           <li>For $n=2k$ we prove there always must exist two antipodal points of equal value. Place a pencil in the middle such that it points to the bigger number always. Start rotating it clockwise. At one point the pencil <b>must</b> flip since if it doesn't that would mean it came back to the beginning position but reversed.</li>
           <div class="px-5 pt-4 my-4 text-center border-bottom">
-            <img src="images/pencils.gif" class="img-fluid">
+            <img src="/images/pencils.gif" class="img-fluid">
           <h1 class="display-4 fw-bold"></h1>
           <div class="col-lg-6 mx-auto">
             <p class="lead mb-4"> When the pencil flips, the midarc between those two points have equal value, hence we're done.</p>
@@ -340,63 +392,65 @@
 </div>
 </div>
 -->
-    <script src="blog.js"></script>
-    <script src="index.js"></script>
+    <script src="/blogentries/bloby.js"></script>
+    <script src="/blog.js"></script>
+    <script src="/index.js"></script>
     <div class="spacer whiteblack"></div>
 
-   <footer class="site-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-6">
-          <h6>About</h6>
-          <p class="text-justify">For any questions, comments or you just want to chat, visit the <a>Contact</a> page. I love sharing
-            ideas and talking with smart people, so by all means, please do! Besides that, check in weekly to see the weekly blog post or fact.  </p>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">For any questions, comments or you just want to chat, visit the <a>Contact</a> page. I love sharing
+              ideas and talking with smart people, so by all means, please do! Besides that, check in weekly to see the weekly blog post or fact.  </p>
+          </div>
+  
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+              <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+              <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+              <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+              <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+              <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/about/">About Us</a></li>
+              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+            </ul>
+          </div>
         </div>
-
-        <div class="col-xs-6 col-md-3">
-          <h6>Categories</h6>
-          <ul class="footer-links">
-            <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
-            <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-            <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-            <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-            <li><a href="http://scanfcode.com/category/android/">Android</a></li>
-            <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
-          </ul>
-        </div>
-
-        <div class="col-xs-6 col-md-3">
-          <h6>Quick Links</h6>
-          <ul class="footer-links">
-            <li><a href="http://scanfcode.com/about/">About Us</a></li>
-            <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-            <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-            <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-            <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
-          </ul>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
+         <a href="#">Ervin Macić</a>.
+            </p>
+          </div>
+  
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="https://www.facebook.com/ervin.macic/"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="https://twitter.com/Ervin83228183"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="https://www.instagram.com/ervin.macic/" ><i class="fa fa-instagram"></i></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/in/ervin-macic-2a300a1ab/"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
         </div>
       </div>
-      <hr>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
-       <a href="#">Ervin Macić</a>.
-          </p>
-        </div>
+  </footer>
 
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <ul class="social-icons">
-            <li><a class="facebook" href="https://www.facebook.com/ervin.macic/"><i class="fa fa-facebook"></i></a></li>
-            <li><a class="twitter" href="https://twitter.com/Ervin83228183"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="dribbble" href="https://www.instagram.com/ervin.macic/" ><i class="fa fa-instagram"></i></a></li>
-            <li><a class="linkedin" href="https://www.linkedin.com/in/ervin-macic-2a300a1ab/"><i class="fa fa-linkedin"></i></a></li>   
-          </ul>
-        </div>
-      </div>
-    </div>
-</footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   </body>

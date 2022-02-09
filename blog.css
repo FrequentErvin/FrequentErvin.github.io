@@ -154,14 +154,3 @@
     background-position: center;
     background-size: 340px auto;
   }
-  #image2 {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 400px;
-    height: 400px;
-    transform: translate(-50%, -50%) rotate(var(--r, 0deg));
-    background-image: url('https://wallpapercave.com/wp/wp4047726.jpg');
-    background-position: center;
-    background-size: 340px auto;
-  }

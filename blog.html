@@ -62,18 +62,18 @@
     </nav> 
     <div class="spacer layer1"></div>
 
-<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-</button>
 
+</button>
+<a href="#" id="scroll" style="display: none;"><span></span></a>
 <div class="container col-xxl-8 px-4 py-5">
   <div class="row flex-lg-row-reverse  g-3 py-5">
     <div class="col-lg-6">
-       <div id="blob" class="blob">
-        <div id="image" class="image"></div>
+       <div id="blob" class="row-cols-lg-6 justify-content-center blob">
+        <div id="image" class="image mx-auto d-block"></div>
       </div> 
     </div> 
     <div class="col-lg-6">
-      <h1 class="display-5 fw-bold lh-1 mb-2"><em>Ervin's Blog</em></h1>
+      <h1 class="display-5 fw-bold lh-1 mb-2" style="text-shadow: 1.5px 1.5px #7c7e7b "><em>Ervin's Blog</em></h1>
       <p class="lead">I post something interesting that is math related, monthly. Something that I encounter or consider worth sharing. </p>
       <button class="btn btn-outline-dark p-2 hvr-forward" type="button" id="tofacts">Weekly facts</button>
       <p class="lead">A series in which I post something interesting weekly, but not worth making a whole blog post. </p>
@@ -81,23 +81,6 @@
   </div>
 </div>
 
-
-
-<!-- <div class="container col-xxl-8 px-4 py-5">
-  <div class="row flex-lg-row  g-3 py-5">
-    <div class="col-10 col-sm-8 col-lg-6">
-      <div id="blob2" class="blob align-items-center">
-        <div id="image2"></div>
-      </div>
-    </div> 
-    <div class="col-lg-6">
-      <h1 class="display-5 fw-bold lh-1 mb-2 text-right"><em>Ervin's Blog</em></h1>
-      <p class="lead">I post something interesting that is math related, monthly. Something that I encounter or consider worth sharing. </p>
-      <button class="btn btn-outline-dark p-2 hvr-forward" type="button" id="tofacts">Weekly facts</button>
-      <p class="lead">A series in which I post something interesting weekly, but not worth making a whole blog post. </p>
-    </div>
-  </div>
-</div> -->
 
 <main class="container p-4">
   <div class="row mb-2">
@@ -109,7 +92,7 @@
           <div class="mb-1 text-muted">Nov 12</div>
           <p class="card-text mb-auto">My experience before, during and after IMO 2021.</p>
           <!-- <a type="Submit" onClick="document.getElementById('imo_2021').scrollIntoView();" class="stretched-link">Continue reading</a> -->
-          <a type="Submit" onClick="location.href='blog entries\reflectonimo.html';" class="stretched-link">Continue reading</a>
+          <a type="Submit" id="reflectimo" class="stretched-link">Continue reading</a>
         </div>
         <div class="col-auto d-none d-lg-block">
           <img src="images/squirrels.jpg" height="333">
