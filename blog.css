@@ -124,7 +124,9 @@
     background: url('./blobs.svg') no-repeat bottom / cover;
   }
 
-
+  .vc-image-1{
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
 
 
   
@@ -144,7 +146,7 @@
     transition-duration: 1s, 1s;
   }
   #image {
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 50%;
     width: 300px;
