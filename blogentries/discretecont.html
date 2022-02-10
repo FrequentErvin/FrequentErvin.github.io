@@ -121,7 +121,7 @@
         </p>
         <div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 mt-3">
               <div class="h-100 p-4 text-white bg-dark rounded-3">
                 <h2>BIHMO 2020 D1 P1</h2>
                 <hr class="thick">
@@ -157,7 +157,27 @@
           <dd>Playing around with the line, it makes sense to move it.</dd>
         </dl>
         <h2>The point</h2>
-        <p> All three of these problems share the same vibe. They all rely on some sort of continuity. We rigorously define this later. I present the solution of the introductory problem in two steps: </p>
+        <p> All three of these problems share the same vibe. They all rely on some sort of continuity. But what does it mean to be continuous? A function is said to be continuous at the point $a$ if the following conditions hold: </p>
+        <dl>
+          <dt>First condition</dt>
+          <dd> The function at $a$ is defined, i.e. $f(a)$ is defined.</dd>
+          <dt>Second condition</dt>
+          <dd>The limit at that point exists, i.e. $\lim_{x\to a} f(x)$ exists</dd>
+          <dt>Third condition</dt>
+          <dd>Finally, the "most important" condition: $\lim_{x\to a} f(x) = f(a)$. </dd>
+        </dl>
+        <p> Examples of continuous functions are all the "normal" functions we deal with in olympiad problems. So when is a function not continuous, i.e. discontinuous? Here is an image of the types of discontinuity: </p>
+        <div class="container">
+          <img src="/images/blog/discontinuity.jpg" class="img-fluid">
+        </div>
+        <p>An intuitive way of thinking about it is that the function does not "skip" any points. A formal theorem exists: </p>
+          <h4>The Intermediate Value Theorem (IVT)</h4>
+          <div class="container center-block m-4">
+            <img src="/images/blog/IVT.svg" class="img-fluid mx-auto d-block">
+          </div>
+          <p><b>The Intermediate Value Theorem: </b> For two real numbers $a,b$ with $a < b$, let $f$ be a continuous function on the closed interval $[a,b]$. Then for every $s$ between $f(a)$ and $f(b)$ there exists a number $x$ such that $f(x)=s$.</p>
+         
+          <p> I present the solution of the introductory problem in two steps: </p>
         <h3> Solution: </h3>
         <hr>
         <ul>

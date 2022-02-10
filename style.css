@@ -67,7 +67,7 @@ hr.thick {
     background-size: cover;
   }
   .whitedarke{
-    background-image: url('images/whitedarke.svg')
+    background-image: url('/images/whitedarke.svg')
   }
   .centered {
     position: absolute;

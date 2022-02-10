@@ -151,7 +151,7 @@
         <h3>Problem 1</h3>
         <div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 mt-4">
               <div class="h-100 p-4 text-white bg-dark rounded-3">
                 <h2>IMO 2021 P1</h2>
                 <hr class="thick">
@@ -160,14 +160,14 @@
             </div>
           </div>
         </div>
-        <p class="p-2">This was somehow labelled as number theory?</p>
+        <p class="mt-3">This was somehow labelled as number theory?</p>
       </article>
       <article class="blog-post">
         <h2 class="blog-post-title">Mini discussion</h2>
         <p>My train of thought about this problem on the IMO was: induction? = quick no, since you can't guarantee anything will hold after moving from $n$ to $n+1$. The next thing I did was phrase it as a game: </p>
         <div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 mt-3">
               <div class="h-100 p-4 text-white bg-dark rounded-3">
                 <h2>Cooler IMO 2021 P1</h2>
                 <hr class="thick">
@@ -176,14 +176,16 @@
             </div>
           </div>
         </div>
-        <hr>
+        
         <p class="p-2"> After I phrased it like this, it immediately came to me: When couldn't Ivan achieve his goal? The most logical way of trying to achieve his goal is to start greedy ordering the cards in each pile in such a way that he doesn't end up with two cards summing up to a perfect square. When couldn't he do this? If for example he had to place a card with value $a$ in one of the two piles but there existed already two cards with value $b$ in the first pile and $c$ in the second pile such that $a+b$ and $a+c$ are perfect squares. Then I got the idea immediately. What if I couldn't fix this situation? Since a fix would be to place $c$ with $b$ into the first pile, but this wouldn't work if $b+c$ is also a perfect square. If Ivan had this situation in his $n+1$ numbers, he couldn't win. </p>
         <h3> ok now what? </h3>
         <p class="p-2"> Well I need to see how oftenly such a triple occurs. Basically I solved the system $a+b=x^2$, $b+c=y^2$, $c+a=z^2$. What I mean by "solved" is: $b=x^2-a$ and $c=z^2-a$ so $b+c=(x^2-a)+(z^2-a)=y^2$ so $a=\frac{z^2+x^2-y^2}{2}$ and similarily: $(a,b,c)=(\frac{z^2+x^2-y^2}{2},\frac{x^2+y^2-z^2}{2},\frac{y^2+z^2-x^2}{2})$. Now I realised that basically if I pick $(x,y,z)$ I would get a corresponding triple of $(a,b,c)$ so I picked consecutive $x,y,z$ since those would lead to the "closest" $a,b,c$.</p>
         <p> Now I got $(a,b,c)=(\frac{x^2-4x}{2},\frac{x^2+2}{2},\frac{x^2+4x}{2})$ which means $x=2k$ (even) and then I got the triple $(a,b,c)=(2k^2-4k,2k^2+1,2k^2+4k)$. So if for some $k$ all three of these numbers belong in my $n+1$ numbers I'm done. Proving such numbers exist for $n\geqslant 100$ is straightforward.</p>
+        <hr>
+        <h3>Problem 4</h3>
         <div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 mt-4">
               <div class="h-100 p-4 text-white bg-dark rounded-3">
                 <h2>IMO 2021 P4</h2>
                 <hr class="thick">
@@ -203,9 +205,11 @@
         <p> At first I didn't think this was mega useful. After playing with angles for a long while i realised $\angle TIX = \angle YIZ$ which implies $XT = YZ$ and I knew I was done once I got this. </p>
         <p> Something trivial I didn't notice at first was that since $AI$ is the exterior angle bisector of $\angle XAY$ we must have $I$ is the midarc of $XY$ with $A$ hence $XI=YI$ and similarily $TI=ZI$ so we must have $TZ||XY$ and hence $TX=YZ$ (by symmetry). This was much faster than the angle chase I figured out. </p>
         <p> Now we're almost done since $\triangle YSI \cong \triangle XPI$ and so $YS=XP$ similarily $ZQ=TR$ and hence the conclusion!</p>
+        <hr>
+        <h3>Problem 5</h3>
         <div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 mt-4">
               <div class="h-100 p-4 text-white bg-dark rounded-3">
                 <h2>IMO 2021 P5</h2>
                 <hr class="thick">
