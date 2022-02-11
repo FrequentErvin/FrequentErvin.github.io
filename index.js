@@ -13,6 +13,9 @@ document.getElementById("GoHome").onclick=function(){
   document.getElementById("reflectimo").onclick=function(){
     location.href="/blogentries/reflectonimo.html";
   };
+    document.getElementById("homeblog").onclick=function(){
+    location.href="/blog.html";
+  };
 
 
   $(document).ready(function(){
