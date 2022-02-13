@@ -11,48 +11,16 @@
       <link rel="stylesheet" href="/static/css/font-awesome.min.a2f9e04d0bb2.css">
       <link rel="stylesheet" href="/static/css/base.17b5f7d425bc.css">
       <link rel="icon" href="/static/img/favicon.17d856e260ea.svg">
-
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand text-white" href="#"><h2>ervinmacic.</h2></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item px-3 ">
-              <a class="nav-link active text-white hvr-underline-reveal" aria-current="page" href="#" id="GoHome"><h4>Home</h4></a>
-            </li>
-            <li class="nav-item px-3">
-              <a class="nav-link text-white hvr-underline-reveal" href="#" id="blog"><h4>Blog</h4></a>
-            </li>
-            <li class="nav-item px-3">
-              <a class="nav-link text-white hvr-underline-reveal" href="#">
-                <h4>Contact</h4>
-              </a>
-            </li>
-            <li class="nav-item px-3">
-              <a class="nav-link text-white" href="#" ><h4>CV</h4></a>
-            </li>
-            <li class="nav-item px-3">
-              <a class="nav-link text-white hvr-underline-reveal" id="checklist" href="#"><h4>MO Checklist</h4></a>
-            </li>
-            <li class="nav-item px-3">
-              <a class="nav-link text-white hvr-underline-reveal" id="generator" href="#"><h4>Problem Generator</h4></a>
-            </li>
-            <li class="nav-item px-3">
-              <a class="nav-link text-white hvr-underline-reveal" id="projectt" href="#"><h4>Projects</h4></a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-    </nav>
+    <div id="nav-placeholder">
+    </div>
+    <script>
+    $(function(){
+      $("#nav-placeholder").load("nav.html");
+    });
+    </script>
     <div class="px-4 pt-2 my-2 border-bottom">
         <img src="images/factattack.jpg">
       <h1 class="display-4 fw-bold"></h1>

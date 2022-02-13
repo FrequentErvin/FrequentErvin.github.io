@@ -26,7 +26,6 @@
 </script>
   </head>
   <body>
-     <!-- <script id="replace_with_navbar" src="nav.js"></script>  -->
      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="#"><h2>Ervin Macic</h2></a>
@@ -65,48 +64,16 @@
 <div class="container col-xxl-8 px-4 py-5 shadow-lg">
   <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
        <div class="col-lg-6">
-        <img src="/images/squirrels.jpg" id="imagey" class="vc-image-1 shadow"> 
+        <img src="/images/thumbnail/borsuk.jpg" id="imagey" class="vc-image-1 shadow"> 
       </div> 
     <div class="col-lg-6">
       <h1 class="display-5 fw-bold lh-1 mb-2"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Unusual continuity..</em></h1>
       <p class="lead">In this blog post I will discuss a curious technique for thinking about problems. It's unusually common but little accent is given to it. The solutions are elegant and showcase the beauty of math.</p>
-      <p class="lead">The techniques overviewed will be plain and discrete continuity. These are also widely regarded as the Intermediate value theorem <b>(IVT)</b>. At the bottom there is a list of interesting applications. </p>
+      <p class="lead">The techniques overviewed will be plain and discrete continuity. These are also widely regarded as the Intermediate value theorem <b>(IVT)</b>. </p>
     </div>
   </div>
 </div>
 <main class="container p-4">
-  <div class="row mb-2">
-    <div class="col-md-6 hvr-float ">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">IMO 2021</strong>
-          <h3 class="mb-0">Reflection on the IMO</h3>
-          <div class="mb-1 text-muted">Nov 12</div>
-          <p class="card-text mb-auto">My experience before, during and after IMO 2021.</p>
-          <a type="Submit" onClick="location.href='blog entries\reflectonimo.html';" class="stretched-link">Continue reading</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img src="/images/squirrels.jpg" height="333">
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 hvr-float">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success">A cute game</strong>
-          <h3 class="mb-0">Chip firing</h3>
-          <div class="mb-1 text-muted">Nov 11</div>
-          <p class="mb-auto">A game on graphs that is severely underrated. You can see many key concepts
-            in combinatorics.
-          </p>
-          <a type="Submit" onClick="document.getElementById('imo_2021').scrollIntoView();" class="stretched-link">Continue reading</a>
-        </div>
-        <div class="col-auto p-1 d-none d-lg-block">
-          <img src="/images/chipfiring.jpg">
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="row g-5">
     <div class="col-md-8">
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
@@ -180,8 +147,8 @@
           <p><b>The Intermediate Value Theorem: </b> For two real numbers $a,b$ with $a < b$, let $f$ be a continuous function on the closed interval $[a,b]$. Then for every $s$ between $f(a)$ and $f(b)$ there exists a number $x$ such that $f(x)=s$.</p>
          <h5> Proof </h5>
          <hr>
-         <p> The proof is a taste of analysis proofs and it goes as follows: </p>
-          <p> I present the solution of the introductory problem in two steps: </p>
+         <p> The proof is a taste of analysis proofs and you can find it for example <a href="https://en.wikipedia.org/wiki/Intermediate_value_theorem" target="_blank">here</a>. Essentially you abuse the continuity fact with the <b>completeness</b> axiom: every bounded set, <strong>finite or infinite</strong>, has a supremum/infimum (the smallest/greatest element greater/smaller than all of the elements in that set). </p>
+         <p> Most commonly you will use continuity for discrete sets, i.e. for integers. Now I present the solution of the introductory problem in two steps: </p>
         <h3> Solution: </h3>
         <hr>
         <ul>
@@ -199,12 +166,18 @@
             <img src="/images/pencils.gif" class="img-fluid">
           <h1 class="display-4 fw-bold"></h1>
           <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4"> When the pencil flips, the midarc between those two points have equal value, hence we're done.</p>
+            <p class="lead mb-4"> When the pencil flips, the midarc between those two points have equal value, hence we're done. $\blacksquare$</p>
           </div>
         </ul>
+        <p>Ok the problem is done now. But this isn't the end of the story. Actually, a more general version of the problem holds. <b>The Borsuk-Ulam theorem</b> states that every continuous function from an $n$-sphere into <i>Euclidean</i> $n$-space maps some pair of antipodal points to the same point. Here, two points on a sphere are called antipodal if they are in exactly opposite directions from the sphere's center.</p>
+        <h5>Formal definition</h5>
+        <p> If $f:S^{n}\to \mathbb {R} ^{n}$ is continuous then there exists an $x\in S^{n}$ such that: $f(-x)=f(x)$.
+          <dt>
+            <dd> The case $n=1$ can be illustrated by saying that there always exist a pair of opposite points on the Earth's equator with the same temperature. The same is true for any circle. This assumes the temperature varies continuously in space.</dd>
+            <dd>              The case $n=2$ is often illustrated by saying that at any moment, there is always a pair of antipodal points on the Earth's surface with equal temperatures and equal barometric pressures, assuming that both parameters vary continuously in space.</dd>
+          </dt>
+         </p>
         <hr>
-        <h3>More fun applications</h3>
-        <p>Obviously there are many more mathematical gems that rely on these ideas. I've shown some of them here for the people curious enough to explore on their own: </p>
         <h3>Problems</h3>
         <h4 class="text-primary">Introductory</h4>
         <dl>
@@ -239,7 +212,7 @@
       <div class="position-sticky" style="top: 2rem;">
         <div class="p-4 mb-3 bg-light rounded">
           <h4 class="fst-italic">About</h4>
-          <p class="mb-0">I plan on covering things that interest me and discuss it with people. Will make a comment section for this.</p>
+          <p class="mb-0">This is a weekly blog in which I cover mathy topics, with a focus on olympiad mathematics. </p>
         </div>
         <div class ="p-4">
           <ol class="list-unstyled mb-0">
