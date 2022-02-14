@@ -101,7 +101,7 @@ h1 {
   /* SVG background image via https://haikei.app/ */
 
   .spacer {
-    aspect-ratio: 960/150;
+    aspect-ratio: 960/80;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
