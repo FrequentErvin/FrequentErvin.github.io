@@ -16,6 +16,9 @@ document.getElementById("GoHome").onclick=function(){
     document.getElementById("homeblog").onclick=function(){
     location.href="/blog.html";
   };
+  document.getElementById("cv").onclick=function(){
+    location.href="/ErvinMacicCV.pdf";
+  };
 
 
   $(document).ready(function(){
