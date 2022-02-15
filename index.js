@@ -24,7 +24,8 @@ document.getElementById("GoHome").onclick=function(){
   document.getElementById("disc").onclick=function(){
     location.href="https://discordapp.com/users/210412821643526144/";
   };
-  
+
+
 
   $(document).ready(function(){
     //Take your div into one js variable

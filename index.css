@@ -281,3 +281,6 @@
     font-weight:600
   }
 }
+.cruvycurv{
+  border-radius: 70% 50% 50% 70% / 70% 50% 50% 70%;
+}
