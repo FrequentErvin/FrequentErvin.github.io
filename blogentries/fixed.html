@@ -141,12 +141,13 @@
         <p> Another interesting way to look at this is that the circumcenter of triangle $AEF$ always lies on a fixed line. This is evident since all these circles should be coaxial with axis $AS$. </p>
         <p> The points $E,F$ are said to be moving "Uniformly" on lines $AB,AC$ respectively, which means that they move at the same velocity.</p>
         <p> Let $P$ be a point varying on segment $AB$. The point $P$ is moving <b>uniformly</b> on $AB$ if at time $t$; $\overrightarrow{AP} = t \cdot \overrightarrow{AB}$.</p>
-          <h4>The Intermediate Value Theorem (IVT)</h4>
+          <h4>The big picture</h4>
           <div class="container center-block m-4">
-            <img src="/images/blog/IVT.svg" class="img-fluid mx-auto d-block">
+            <img src="/images/blog/e1e2.jpg" class="img-fluid mx-auto d-block" width="900">
           </div>
-          <p><b>The Intermediate Value Theorem: </b> For two real numbers $a,b$ with $a < b$, let $f$ be a continuous function on the closed interval $[a,b]$. Then for every $s$ between $f(a)$ and $f(b)$ there exists a number $x$ such that $f(x)=s$.</p>
-         <h5> Proof </h5>
+          <p><b>First approach - Spiral similarity</b> Take two sample values $P_1,P_2$ and the corresponding $E_1,F_1,E_2,F_2$. Let $K$ be the point in the plane such that $\triangle KE_1E_2 \sim \triangle KF_1F_2$ in that order (the spiral center). Obviously $\triangle KEE_2 \sim \triangle KFF_2$ (by Gliding principle or by simpley ratios) and now we're done by the black angles. Our $AEF$ circle passes through $K$ without regard of $P$. In this case, it might be more natural to look at the spiral similarity centered at $K$ sending $E_1 \rightarrow E_2$ and $F_1 \rightarrow F_2$ which is obvious by Gliding principle. </p>
+          <p><b>Second approach - Trigonometric Ptolomey's theorem</b> Trig Ptolomey states that points $A,B,C,D$ are cyclic iff $AB \cdot \sin{\angle CAD} + AD \cdot \sin{\angle BAC} = AC \cdot \sin{\angle BAD}$ (this is not the full general case). So if we want our circle $AEF$ to pass through some fixed point $S$, this relation must hold: $AE \cdot \sin{\angle SAF} + AF \cdot \sin{\angle EAS} = AS \cdot \sin{\angle EAF}$.  </p>
+          <h5> Proof </h5>
          <hr>
          <p> The proof is a taste of analysis proofs and you can find it for example <a href="https://en.wikipedia.org/wiki/Intermediate_value_theorem" target="_blank">here</a>. Essentially you abuse the continuity fact with the <b>completeness</b> axiom: every bounded set, <strong>finite or infinite</strong>, has a supremum/infimum (the smallest/greatest element greater/smaller than all of the elements in that set). </p>
          <p> Most commonly you will use continuity for discrete sets, i.e. for integers. Now I present the solution of the introductory problem in two steps: </p>
