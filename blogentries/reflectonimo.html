@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEBEM</title>
+    <title>Ervin Macic</title>
     <link href="/index.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="/images/mojaglavusina.jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -70,9 +70,9 @@
         <img src="/images/squirrels.jpg" id="imagey" class="vc-image-1"> 
       </div> 
     <div class="col-lg-6">
-      <h1 class="display-5 fw-bold lh-1 mb-2"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>A reflection on the IMO 2021.</em></h1>
-      <p class="lead">Here I've laid out my experiences during the competition and displayed my train-of-thought while solving the problems. This was the 62. jubilee <b>IMO</b> held online in Saint Petersburg.</p>
-      <button class="btn btn-outline-dark p-2" type="button" id="tofacts">IMO 2021 - Problems</button>
+      <h1 class="display-5 fw-bold lh-1 mb-2 m-3""  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>A reflection on the IMO 2021.</em></h1>
+      <p class="lead mb-2 m-3">Here I've laid out my experiences during the competition and displayed my train-of-thought while solving the problems. This was the 62. jubilee <b>IMO</b> held online in Saint Petersburg.</p>
+      <button class="btn btn-outline-dark p-2 mb-2 m-3" type="button" id="tofacts">IMO 2021 - Problems</button>
     </div>
   </div>
 </div>
@@ -150,28 +150,27 @@
             </tr>
           </tbody>
         </table>
-        <h3>Problem 1</h3>
+        <h3 class="mt-4">Problem 1</h3>
         <div>
           <div class="row">
             <div class="col-md-12 mt-4">
               <div class="h-100 p-4 text-white bg-dark rounded-3">
-                <h2>IMO 2021 P1</h2>
+                <h4>IMO 2021 P1</h4>
                 <hr class="thick">
                 <p>Let $n \geqslant 100$ be an integer. Ivan writes the numbers $n, n+1, \ldots, 2 n$ each on different cards. He then shuffles these $n+1$ cards, and divides them into two piles. Prove that at least one of the piles contains two cards such that the sum of their numbers is a perfect square.  </p>
               </div>
             </div>
           </div>
         </div>
-        <p class="mt-3">This was somehow labelled as number theory?</p>
       </article>
       <article class="blog-post">
-        <h2 class="blog-post-title">Mini discussion</h2>
+        <h2 class="blog-post-title mt-4">Mini discussion</h2>
         <p>My train of thought about this problem on the IMO was: induction? = quick no, since you can't guarantee anything will hold after moving from $n$ to $n+1$. The next thing I did was phrase it as a game: </p>
         <div>
           <div class="row">
             <div class="col-md-12 mt-3">
               <div class="h-100 p-4 text-white bg-dark rounded-3">
-                <h2>Cooler IMO 2021 P1</h2>
+                <h4>Cooler IMO 2021 P1</h4>
                 <hr class="thick">
                 <p>Boris and Ivan play a game. Boris chooses a positive integer $n$. Ivan writes the numbers $n, n+1, \ldots, 2 n$ each on different cards. Ivan wins if he can split these $n+1$ cards into two piles such that in each pile there aren't two cards that sum to a perfect square. For which $n$ does Boris have a winning strategy? </p>
               </div>
@@ -179,17 +178,19 @@
           </div>
         </div>
         
-        <p class="p-2"> After I phrased it like this, it immediately came to me: When couldn't Ivan achieve his goal? The most logical way of trying to achieve his goal is to start greedy ordering the cards in each pile in such a way that he doesn't end up with two cards summing up to a perfect square. When couldn't he do this? If for example he had to place a card with value $a$ in one of the two piles but there existed already two cards with value $b$ in the first pile and $c$ in the second pile such that $a+b$ and $a+c$ are perfect squares. Then I got the idea immediately. What if I couldn't fix this situation? Since a fix would be to place $c$ with $b$ into the first pile, but this wouldn't work if $b+c$ is also a perfect square. If Ivan had this situation in his $n+1$ numbers, he couldn't win. </p>
-        <h3> ok now what? </h3>
-        <p class="p-2"> Well I need to see how oftenly such a triple occurs. Basically I solved the system $a+b=x^2$, $b+c=y^2$, $c+a=z^2$. What I mean by "solved" is: $b=x^2-a$ and $c=z^2-a$ so $b+c=(x^2-a)+(z^2-a)=y^2$ so $a=\frac{z^2+x^2-y^2}{2}$ and similarily: $(a,b,c)=(\frac{z^2+x^2-y^2}{2},\frac{x^2+y^2-z^2}{2},\frac{y^2+z^2-x^2}{2})$. Now I realised that basically if I pick $(x,y,z)$ I would get a corresponding triple of $(a,b,c)$ so I picked consecutive $x,y,z$ since those would lead to the "closest" $a,b,c$.</p>
+        <p class="mt-4"> After I phrased it like this, it immediately came to me: When couldn't Ivan achieve his goal? The most logical way of trying to achieve his goal is to start greedy ordering the cards in each pile in such a way that he doesn't end up with two cards summing up to a perfect square. </p>
+        <p class="mt-1"> When couldn't he do this? If for example he had to place a card with value $a$ in one of the two piles but there existed already two cards with value $b$ in the first pile and $c$ in the second pile such that $a+b$ and $a+c$ are perfect squares. Then I got the idea immediately. </p>
+        <p class="mt-1"> What if I couldn't fix this situation? Since a fix would be to place $c$ with $b$ into the first pile, but this wouldn't work if $b+c$ is also a perfect square. If Ivan had this situation in his $n+1$ numbers, he couldn't win. </p>
+        <h3 class="mb-4"> <i>ok now what?</i> </h3>
+        <p class=" mb-3"> Well I need to see how oftenly such a triple occurs. Basically I solved the system $a+b=x^2$, $b+c=y^2$, $c+a=z^2$. What I mean by "solved" is: $b=x^2-a$ and $c=z^2-a$ so $b+c=(x^2-a)+(z^2-a)=y^2$ so $a=\frac{z^2+x^2-y^2}{2}$ and similarily: $(a,b,c)=(\frac{z^2+x^2-y^2}{2},\frac{x^2+y^2-z^2}{2},\frac{y^2+z^2-x^2}{2})$. Now I realised that basically if I pick $(x,y,z)$ I would get a corresponding triple of $(a,b,c)$ so I picked consecutive $x,y,z$ since those would lead to the "closest" $a,b,c$.</p>
         <p> Now I got $(a,b,c)=(\frac{x^2-4x}{2},\frac{x^2+2}{2},\frac{x^2+4x}{2})$ which means $x=2k$ (even) and then I got the triple $(a,b,c)=(2k^2-4k,2k^2+1,2k^2+4k)$. So if for some $k$ all three of these numbers belong in my $n+1$ numbers I'm done. Proving such numbers exist for $n\geqslant 100$ is straightforward.</p>
         <hr>
-        <h3>Problem 4</h3>
+        <h3 class="mb-4 mt-4">Problem 4</h3>
         <div>
           <div class="row">
             <div class="col-md-12 mt-4">
               <div class="h-100 p-4 text-white bg-dark rounded-3">
-                <h2>IMO 2021 P4</h2>
+                <h4>IMO 2021 P4</h4>
                 <hr class="thick">
                 <p>Let $\Gamma$ be a circle with centre $I$, and $A B C D$ a convex quadrilateral such that each of the segments $A B, B C, C D$ and $D A$ is tangent to $\Gamma$. Let $\Omega$ be the circumcircle of the triangle $A I C$. The extension of $B A$ beyond $A$ meets $\Omega$ at $X$, and the extension of $B C$ beyond $C$ meets $\Omega$ at $Z$. The extensions of $A D$ and $C D$ beyond $D$ meet $\Omega$ at $Y$ and $T$, respectively. Prove that\[A D+D T+T X+X A=C D+D Y+Y Z+Z C.\]  </p>
               </div>
@@ -202,7 +203,7 @@
         <div class="col-lg-6 mx-auto">
         </div>
         </div>
-        <p>For some reason, this took me over 2 hours. I think I just got scared of the weird thing to prove and the fact that my diagram led me to believe it was harder than it actually was.</p>
+        <p class="mt-3">For some reason, this took me over 2 hours. I think I just got scared of the weird thing to prove and the fact that my diagram led me to believe it was harder than it actually was.</p>
         <p> First I reduced it to a sum of three lines by tangent segments: $AD=AS+SD=AP+DR$ similarily $CD=DS+CQ$ thus it's enough to prove $PX+XT+TR = QZ + ZY+ YS$.  </p>
         <p> At first I didn't think this was mega useful. After playing with angles for a long while i realised $\angle TIX = \angle YIZ$ which implies $XT = YZ$ and I knew I was done once I got this. </p>
         <p> Something trivial I didn't notice at first was that since $AI$ is the exterior angle bisector of $\angle XAY$ we must have $I$ is the midarc of $XY$ with $A$ hence $XI=YI$ and similarily $TI=ZI$ so we must have $TZ||XY$ and hence $TX=YZ$ (by symmetry). This was much faster than the angle chase I figured out. </p>
@@ -213,7 +214,7 @@
           <div class="row mb-3">
             <div class="col-md-12 mt-4">
               <div class="h-100 p-4 text-white bg-dark rounded-3">
-                <h2>IMO 2021 P5</h2>
+                <h4>IMO 2021 P5</h4>
                 <hr class="thick">
                 <p>Two squirrels, Bushy and Jumpy, have collected 2021 walnuts for the winter. Jumpy numbers the walnuts from 1 through 2021, and digs 2021 little holes in a circular pattern in the ground around their favourite tree. The next morning Jumpy notices that Bushy had placed one walnut into each hole, but had paid no attention to the numbering. Unhappy, Jumpy decides to reorder the walnuts by performing a sequence of 2021 moves. In the $k$-th move, Jumpy swaps the positions of the two walnuts adjacent to walnut $k$.
                 </br> </br>
