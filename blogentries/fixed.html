@@ -90,7 +90,7 @@
           <div class="row">
             <div class="col-md-12 mt-3">
               <div class="h-100 p-4 text-white bg-dark rounded-3">
-                <h2>Easy example</h2>
+                <h4>Easy example</h4>
                 <hr class="thick">
                 <p>On the sides of the scalene acute $\Delta ABC$, choose the points $X \in AB$ and $Y \in AC$ so that $BX = CY $. Prove that, regardless of the choice of points $X$ and $Y$, the circle circumscribed around $\Delta AXY$ passes through some fixed point other than $A$.</p>
               </div>
@@ -148,62 +148,26 @@
           </div>
           <p><b>First approach - Spiral similarity</b> Take two sample values $P_1,P_2$ and the corresponding $E_1,F_1,E_2,F_2$. Let $K$ be the point in the plane such that $\triangle KE_1E_2 \sim \triangle KF_1F_2$ in that order (the spiral center). Obviously $\triangle KEE_2 \sim \triangle KFF_2$ (by Gliding principle or by simpley ratios) and now we're done by the black angles. Our $AEF$ circle passes through $K$ without regard of $P$. In this case, it might be more natural to look at the spiral similarity centered at $K$ sending $E_1 \rightarrow E_2$ and $F_1 \rightarrow F_2$ which is obvious by Gliding principle. </p>
           <p><b>Second approach - Trigonometric Ptolomey's theorem</b> Trig Ptolomey states that points $A,B,C,D$ are cyclic iff $AB \cdot \sin{\angle CAD} + AD \cdot \sin{\angle BAC} = AC \cdot \sin{\angle BAD}$ (this is not the full general case). So if we want our circle $AEF$ to pass through some fixed point $S$, this relation must hold: $AE \cdot \sin{\angle SAF} + AF \cdot \sin{\angle EAS} = AS \cdot \sin{\angle EAF}$.  </p>
-          <h5> Proof </h5>
+          <p><b> Third approach - Lemma about fixed point</b> Let $\angle pAq$ be given in the plane. Let $X,Y$ vary on $p,q$ respectively. If $c_1 \cdot AX + c_2 \cdot AY = c_3$ (a fixed linear combination of the line segments $AX,AY$ is constant) for all positions of $X,Y$ then the set of circles $AXY$ which satisfy this property pass through a fixed point. For a proof of this claim one can take two samples of points $X_1,Y_1$, $X_2,Y_2$ and intersect the circles $AX_1Y_1$ and $AX_2Y_2$ and prove that this is the common point for all such circles by spiral similarities.</p>
+          <p>
+          Turns out one can fully characterise this fixed point. Look at Advanced P1.
+          </p>
          <hr>
-         <p> The proof is a taste of analysis proofs and you can find it for example <a href="https://en.wikipedia.org/wiki/Intermediate_value_theorem" target="_blank">here</a>. Essentially you abuse the continuity fact with the <b>completeness</b> axiom: every bounded set, <strong>finite or infinite</strong>, has a supremum/infimum (the smallest/greatest element greater/smaller than all of the elements in that set). </p>
-         <p> Most commonly you will use continuity for discrete sets, i.e. for integers. Now I present the solution of the introductory problem in two steps: </p>
-        <h3> Solution: </h3>
-        <hr>
-        <ul>
-          <li> The antipode of a vertex in a regular $n$-gon is either a midarc (when $n$ is odd) or a vertex (when $n$ is even). Similar holds for the midarcs (vertex - midarc respectively)</li>
-          <li>Notice that for $n=2k+1$ (odd) we can just place the numbers $0,1,2 \ldots k-1,k,k,k-1, \ldots ,1,0$ as the vertices. Now there can't be any antipodal points with the same value since one of them is a midarc (which is not an integer) and one of them is a vertex (which is an integer). Therefore, $n$ isn't odd.</li>
-          <div class="px-5 pt-2 my-2 text-center border-bottom">
-            <img src="/images/nonagon.jpg" class="img-fluid">
-          <h1 class="display-4 fw-bold"></h1>
-          <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">The only integer value is the one $4$, but it's antipode is $0$ so it's good.</p>
-          </div>
-          </div>
-          <li>For $n=2k$ we prove there always must exist two antipodal points of equal value. Place a pencil in the middle such that it points to the bigger number always. Start rotating it clockwise. At one point the pencil <b>must</b> flip since if it doesn't that would mean it came back to the beginning position but reversed.</li>
-          <div class="px-5 pt-4 my-4 text-center border-bottom">
-            <img src="/images/pencils.gif" class="img-fluid">
-          <h1 class="display-4 fw-bold"></h1>
-          <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4"> When the pencil flips, the midarc between those two points have equal value, hence we're done. $\blacksquare$</p>
-          </div>
-        </ul>
-        <p>Ok the problem is done now. But this isn't the end of the story. Actually, a more general version of the problem holds. <b>The Borsuk-Ulam theorem</b> states that every continuous function from an $n$-sphere into <i>Euclidean</i> $n$-space maps some pair of antipodal points to the same point. Here, two points on a sphere are called antipodal if they are in exactly opposite directions from the sphere's center.</p>
-        <h5>Formal definition</h5>
-        <p> If $f:S^{n}\to \mathbb {R} ^{n}$ is continuous then there exists an $x\in S^{n}$ such that: $f(-x)=f(x)$.
-          <dt>
-            <dd> The case $n=1$ can be illustrated by saying that there always exist a pair of opposite points on the Earth's equator with the same temperature. The same is true for any circle. This assumes the temperature varies continuously in space.</dd>
-            <dd>              The case $n=2$ is often illustrated by saying that at any moment, there is always a pair of antipodal points on the Earth's surface with equal temperatures and equal barometric pressures, assuming that both parameters vary continuously in space.</dd>
-          </dt>
-         </p>
-        <hr>
+         
         <h3>Problems</h3>
         <h4 class="text-primary">Introductory</h4>
         <dl>
           <dt>Problem 1</dt>
-          <dd> Do there exist $1000$ consecutive positive integers containing <b>exactly</b> $100$ prime numbers? </dd>
+          <dd> Let ${ABC}$ be an acute angled triangle whose shortest side is ${BC}$. Consider a variable point ${P}$ on the side ${BC}$, and let ${D}$ and ${E}$ be points on ${AB}$ and ${AC}$, respectively, such that ${BD=BP}$ and ${CP=CE}$. Prove that, as ${P}$ traces ${BC}$, the circumcircle of the triangle ${ADE}$ passes through a fixed point.</dd>
           <dt>Problem 2</dt>
           <dd> The polynomial $x^2+13x+5$ is written on a blackboard. Every second Bob changes one of the coefficients of this polynomial by $\pm 1$, such that after some number of seconds the polynomial $x^2+5x+13$ remains. Is it possible that the polynomial on the blackboard was never reducible? (We say that the polynomial $P(x)$ is reducible if it can be expressed as a product of degree $1$ polynomials with integer coefficients)</dd>
           <dt>Problem 3</dt>
           <dd>Define the function $f(n)$ as the sum of the exponents of the canonical represantation of a positive integer $n$. Prove that there exist $2021$ consecutive positive integers, such that <b>exactly</b> $1000$ of them have $f > 11$</dd>
         </dl>
-        <h4 class="text-success">Intermediate</h4>
-        <dl>
-          <dt>Problem 1</dt>
-          <dd> Polynomials $F$ and $G$ satisfy: \[ F(F(x)) > G(F(x)) > G(G(x)) \] for all real $x$. Prove that $F(x) > G(x)$ for all real $x$.</dd>
-          <dt>Problem 2</dt>
-          <dd>Call a positive integer $n$ <em> crazy </em> iff there exist positive integers $a,b>1$ such that $n=a^b+b$. Prove that there exist $2014$ consecutive positive integers such that there are <b>exactly</b> $2012$ <em>crazy</em> numbers among them.</dd>
-          <dt>Problem 3</dt>
-          <dd> Given is a cyclic $50$-gon whose vertices divide the circle in arcs of lengths $1,2,3, \ldots ,50$ in some order. Every two opposite arcs differ by at least $25$. Prove that the $50$-gon contains two parallel sides. </dd>
-        </dl>
         <h4 class="text-danger">Advanced</h4>
         <dl>
           <dt>Problem 1</dt>
-          <dd>Suppose $2n$ points are given in the plane, no three of which are collinear. Suppose $n$ of them are colored blue and the other $n$ are colored red. A line in the plane is called a balancing line if it passes through one blue and one red point and, for each side of the line, the number of blue points on that side is <b>exactly</b> equal to the number of red points on the same side. Prove that there exist at least two balancing lines.</dd>
+          <dd>Let $ABC$ be a triangle and let $P$ be a point not lying on any of the three lines $AB$, $BC$, or $CA$. Distinct points $D$, $E$, and $F$ lie on lines $BC$, $AC$, and $AB$, respectively, such that $\overline{DE}\parallel \overline{CP}$ and $\overline{DF}\parallel \overline{BP}$. Show that there exists a point $Q$ on the circumcircle of $\triangle AEF$ such that $\triangle BAQ$ is similar to $\triangle PAC$.</dd>
           <dt>Problem 2</dt>
           <dd> Given any positive integer $c$, denote $p(c)$ as the largest prime factor of $c$. A sequence ${a_n}$ of positive integers satisfies $a_1>1$ and $a_{n+1} = a_n+p(a_n)$ for all $n\geq 1$. Prove that there must exist at least one perfect square in the sequence ${a_n}$.</dd>
           <dt>Problem 3</dt>
