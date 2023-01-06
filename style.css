@@ -1,5 +1,9 @@
 body{
   font-family: "Sora", sans-serif;
+  
+}
+#home{
+  background-color: #f7f7f7;
 }
 .button {
     display: inline-block;
@@ -63,14 +67,14 @@ hr.thick {
     background-color: #000000;
   }
   .spacer {
-    aspect-ratio: 960/150;
+    aspect-ratio: 960/80;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
   .whitedarke{
-    background-image: url('/images/whitedarke.svg')
+    background-image: url('/images/haikei/darkeblackwhite.svg')
   }
   .centered {
     position: absolute;
@@ -81,4 +85,7 @@ hr.thick {
   .special{
     position: relative;
   text-align: center;
+  }
+  #hero{
+    background-color: white;
   }
