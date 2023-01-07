@@ -1,7 +1,12 @@
 document.getElementById("intermediate").onclick=function(){
   location.href="/blogentries/discretecont.html";
 };
-
+document.getElementById("EV").onclick=function(){
+  location.href="/blogentries/expectedvalue.html";
+};
+document.getElementById("reflectimo").onclick=function(){
+  location.href="/blogentries/reflectonimo.html";
+};
 //Get the button
 let mybutton = document.getElementById("scroll");
 
