@@ -191,9 +191,9 @@
           <br>
           <br>
           Denote the sum up until $k$ terms as $s_k$. I'll find the closed form of $s_k$. <br>
-          \[ s_{k+1} = s_{k} + \frac{k+1}{2^{k+1}} = \frac{1}{2}+(\frac{2}{2^2}+\frac{3}{2^3}+\ldots + \frac{k+1}{2^{k+1}}) \] 
-          \[ = \frac{1}{2} + (\frac{1}{2^2} + \ldots \frac{1}{2^{k+1}}) + \frac{1}{2}(\frac{1}{2} + \frac{2}{2^2} + \ldots + \frac{k}{2^k}) \]
-          \[ = \frac{1}{2} + \frac{1}{4} \cdot (1-\frac{1}{2^k}) \cdot 2 + \frac{1}{2} \cdot s_k\]
+          <div style="overflow-x: auto;"> \[ s_{k+1} = s_{k} + \frac{k+1}{2^{k+1}} = \frac{1}{2}+(\frac{2}{2^2}+\frac{3}{2^3}+\ldots + \frac{k+1}{2^{k+1}}) \]</div> 
+          <div style="overflow-x: auto;"> \[ = \frac{1}{2} + (\frac{1}{2^2} + \ldots \frac{1}{2^{k+1}}) + \frac{1}{2}(\frac{1}{2} + \frac{2}{2^2} + \ldots + \frac{k}{2^k}) \] </div>
+          <div style="overflow-x: auto;"> \[ = \frac{1}{2} + \frac{1}{4} \cdot (1-\frac{1}{2^k}) \cdot 2 + \frac{1}{2} \cdot s_k\] </div>
           \[ \implies s_k = 2 - \frac{k+2}{2^k} \]
           I left out the comparing of the first equation with the last. It's straightforward. <br>
           Hence its limit is $2$ as $k$ goes to infinity since $k+2$ is eaten up by the $2^k$. <br>

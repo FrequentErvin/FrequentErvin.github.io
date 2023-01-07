@@ -134,8 +134,16 @@
   .vc-image-1{
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
-
-
+  .bg-blob-blog{
+    background-image: url('images/haikei/hiblog.svg');
+  }
+  @media screen and (max-width:1000px){
+    .bg-blob-blog{background-image: none;}
+  }
+  .work-in-progress{
+    border-style: solid;
+    border-color: #FFCCCB;
+  }
   
   .blob {
     position: relative;
@@ -162,4 +170,15 @@
     background-image: url('https://wallpapercave.com/wp/wp4047726.jpg');
     background-position: center;
     background-size: 340px auto;
+  }
+  @media screen and (max-width: 1000px) {
+    #image {position: relative;
+      left: 50%;
+      top: 50%;
+      width: 200px;
+      height: 200px;
+      transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+      background-image: url('https://wallpapercave.com/wp/wp4047726.jpg');
+      background-position: center;
+      background-size: 340px auto;}
   }

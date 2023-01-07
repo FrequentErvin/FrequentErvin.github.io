@@ -67,7 +67,15 @@
         transform: rotate(180deg);
       }
       .roundy{
-        border-radius: 50%;
+        border-radius: 40% 70% 80% 30% / 40% 30% 70% 70%;
+      }
+      .bg-blobs{
+        background-image: url('/images/haikei/hiervin.svg');
+      }
+      @media screne and (max-width: 480px){
+        .bg-blobs{
+          background-image:none;
+        }
       }
       .lessroundy{
         border-radius: 5%
