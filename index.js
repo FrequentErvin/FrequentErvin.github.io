@@ -97,3 +97,23 @@ document.getElementById("GoHome").onclick=function(){
       }
     }, 400)
   }
+
+  var resize = function() {
+    var screenWidth = parseInt(document.getElementsByTagName('body').width())
+    var calendly = document.getElementById('calendly')
+    var hero = document.getElementById('hero')
+    if (screenWidth < 1000) {
+      console.log("Amadeus")
+      hero.removeClass('mt-2')
+      calendly.data('url','https://calendly.com/ervin-macic/conversation-meeting?hide_event_type_details=1&hide_gdpr_banner=1');
+    }
+    
+  }
+  
+  $( window ).resize(function() {
+    resize();
+  });
+  
+  $( document ).ready(function() {
+    resize();
+  });

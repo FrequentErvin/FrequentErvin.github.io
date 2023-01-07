@@ -71,8 +71,9 @@
       }
       .bg-blobs{
         background-image: url('/images/haikei/hiervin.svg');
+        background-repeat: no-repeat;
       }
-      @media screne and (max-width: 480px){
+      @media screne and (max-width: 1000px){
         .bg-blobs{
           background-image:none;
         }
@@ -292,4 +293,13 @@
 }
 .cruvycurv{
   border-radius: 40% 60% 55% 70%;
+}
+.delux-centering{
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 1000px){
+  .semi-lead{
+    font-size: 8px;
+  }
 }
