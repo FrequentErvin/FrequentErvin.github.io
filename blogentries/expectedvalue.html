@@ -61,17 +61,17 @@
         </div>
       </div>
     </nav>
-    <!-- <div class="spacer layer1"></div> 
-  <a href="#" id="scroll" style="display: none;"><span></span></a> -->
+    <div class="spacer layer1"></div> 
+  <a href="#" id="scroll" style="display: none;"><span></span></a>
 <div class="container col-md-8 px-4 py-5 shadow-lg my-5">
   <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
        <div class="col-lg-6">
-        <img src="/images/thumbnail/borsuk.jpg" id="imagey" class="vc-image-1 shadow"> 
+        <img id="meowth" class="vc-image-1 shadow"> 
       </div> 
     <div class="col-lg-6">
-      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Unusual continuity..</em></h1>
-      <p class="lead mb-2 m-3">In this blog post I will discuss a curious technique for thinking about problems. It's unusually common but little accent is given to it. The solutions are elegant and showcase the beauty of math.</p>
-      <p class="lead mb-2 m-3">The techniques overviewed will be plain and discrete continuity. These are also widely regarded as the Intermediate value theorem <b>(IVT)</b>. </p>
+      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Unexpected expected values</em></h1>
+      <p class="lead mb-2 m-3">In this blog post I will discuss the diverse applications of expected values through very unique examples. It is imagined to go from the basics and ramp up quickly.</p>
+      <p class="lead mb-2 m-3"> Expected values aren't magical and are very intuitive. It's a concept that we all have programmed in our brains but might not know the formal definition. </p>
     </div>
   </div>
 </div>
@@ -80,38 +80,29 @@
     <!-- <div class="col-md-1"></div> -->
     <div class="">
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        Mathematics
+        Mathematics - Rationalism - Effective Altruism
       </h3>
       <article class="blog-post">
-        <h2 class="blog-post-title"> A life lesson & cool problems</h2>
-        <p class="blog-post-meta">October 25, 2021</p>
-        <p> While going through the olympiad system in my country we used to learn almost no theory and that was especially a thing in combinatorics. I don't think that we had a specific lesson in combinatorial theory at all. 
-          I think it's a good thing to know "names" of some techniques of solving problems, even though they can't be labbeled as nicely as in geometry. For example, I wanted to dedicate this section to a specific problem. Not so long ago
-          this problem appeared on our <b>TST</b> (here in Bosnia):
+        <h2 class="blog-post-title"> Unexpected expected value</h2>
+        <p class="blog-post-meta">January 7, 2023</p>
+        <p> I'll start with the definition of expected values. The expected value of an event is the sum of all expected values of all possible outcomes of that event. Ok, now what's the expected value of an outcome is simple
+        : it's just the value of that particular outcome times its likelihood. Mathematically put: <div style="overflow-x: auto;" class="container my-3">\[ Expected \ value (event) = \sum \limits_{outcome}^{all \ possible \ outcomes} \ Value(outcome) \cdot P(outcome) \]</div>
+        or even with normal notations, $X$ being the name for the event and $x$ being the value of the event.
+        <div style="overflow-x: auto;" class="container my-3">\[ \mathbb{E}[X] = \sum \limits_{X}^{all \ possibilities} \ x \cdot P(X) \]</div>
+        Note the differences in capitalization of $x$ represent different things. To make this clear, here's the standard example: 
         </p>
-        <div>
-          <div class="row">
-            <div class="col-md-12 mt-3">
-              <div class="h-100 p-4 text-white bg-dark rounded-3">
-                <h4>BIHMO 2020 Day 1 Problem 1</h4>
-                <hr class="thick">
-                <p>Integers are written on the vertices of a regular $n$-gon, so that the differences between any two numbers in adjacent vertices is $0$ or $1$. These vertices split the circumcircle of the $n$-gon into $n$ equal arcs. In the midpoints of each arc, the arithmetic mean of the numbers that form that arc is written. Determine all $n$ such that with certainty one can conclude that there are two diametrically opposite points on this circle which have equal value.  </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="px-5 pt-2 my-2 text-center border-bottom">
-          <img src="/images/bihmo2020p1.jpg" class="img-fluid">
+        <div class="px-5 pt-2 my-2 text-center">
+          <img src="https://pngimg.com/uploads/dice/dice_PNG49.png" class="img-fluid">
         <h1 class="display-4 fw-bold"></h1>
         <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">This here is the case for $n=5$. Notice the diametrically opposite points with value $3$.</p>
+          <p class="lead mb-4"> Imagine you throw a six-sided dice $100$ times and add up all the numbers you got. What approximate number do you expect i.e. what's the expected value of this event? </p>
         </div>
         </div>
-        <!-- <p>After the contest had ended: </p>
-        <blockquote class="blockquote">
-          <p>"How was this problem 1? I don't know a single person who solved it in less than 2 hours." </p>
-        </blockquote> -->
-        <p>Before I start explaining the solution of the above problem, let me show you some other problems.</p>
+        Going by the above definition the problem would be partitioned into $6$ events: you roll a $1$, you roll a $2$ ... you roll a $6$. Calculating the expected value of one dice roll you get: $1/6 \cdot 1 + 1/6 \cdot 2 + ... + 1/6 \cdot 6 = 3.5$.
+        It is obvious that the expected values "stack" (you can verify by calculating the $100$ at once) so we can conclude that the expected value of our $100$ rolls is $350$.
+        <hr>
+        
+        <p>Now, I cover a strange application of this idea. Pokemon. </p>
         <ol>
           <li>Prove that <b>all</b> <b>roots</b> of the polynomial $P(x)=x(x-2)(x-4)(x-6)+(x-1)(x-3)(x-5)(x-7)$ are real.</li>
           <li><a href="https://artofproblemsolving.com/community/c6h1092597p4870423" target="_blank" rel="noopener noreferrer">(Serbia MO 2014)</a> Call a positive integer $n$ <em> crazy </em> iff there exist positive integers $a,b>1$ such that $n=a^b+b$. Prove that there exist $2014$ consecutive positive integers such that there are <b>exactly</b> $2012$ <em>crazy</em> numbers among them. </li>

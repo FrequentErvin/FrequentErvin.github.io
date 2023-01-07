@@ -10,6 +10,18 @@
     background-position: center;
     background-size: 340px auto;
   }
-  .vc-image-1{
+.vc-image-1{
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
+#meowth {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8cc5cb9a-9b23-40d3-b36d-a45079a4ce97/degpeq8-459d6ae8-3c96-49ce-b71a-f02ef36e4f26.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhjYzVjYjlhLTliMjMtNDBkMy1iMzZkLWE0NTA3OWE0Y2U5N1wvZGVncGVxOC00NTlkNmFlOC0zYzk2LTQ5Y2UtYjcxYS1mMDJlZjM2ZTRmMjYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.SGHKElPSAiPcHP1XIRcZiiwSDdCkbZReLFsINiAesys');
+  background-position: center;
+  background-size: 480px auto;
+}
+
