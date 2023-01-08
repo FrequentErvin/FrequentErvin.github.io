@@ -63,7 +63,7 @@
     </nav>
     <div class="spacer layer1"></div> 
   <a href="#" id="scroll" style="display: none;"><span></span></a>
-<div class="container col-md-8 px-4 py-5 shadow-lg my-5">
+<div class="container col-md-8 px-4 py-5 shadow-lg mt-1 mb-4 bg-blob-blog">
   <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
        <div class="col-lg-6">
         <img id="meowth" class="vc-image-1 shadow"> 
@@ -86,9 +86,9 @@
         <h2 class="blog-post-title"> Unexpected expected value</h2>
         <p class="blog-post-meta">January 7, 2023</p>
         <p> I'll start with the definition of expected values. The expected value of an event is the sum of all expected values of all possible outcomes of that event. Ok, now what's the expected value of an outcome is simple
-        : it's just the value of that particular outcome times its likelihood. Mathematically put: <div style="overflow-x: auto;" class="container my-3">\[  \textnormal{Expected value} (\textnormal{event}) = \sum \limits_{\textnormal{outcome}}^{\textnormal{all possible outcomes}} \ \textnormal{Value(outcome)} \cdot P(\textnormal{event = outcome}) \]</div>
+        : it's just the value of that particular outcome times its likelihood. Mathematically put: <div style="overflow-x: auto; overflow-y: hidden;" class="container my-3">\[  \textnormal{Expected value} (\textnormal{event}) = \sum \limits_{\textnormal{outcome}}^{\textnormal{all possible outcomes}} \ \textnormal{Value(outcome)} \cdot P(\textnormal{event = outcome}) \]</div>
         or with standard notations, $X$ being the name for the event and $x$ being the value of the event.
-        <div style="overflow-x: auto;" class="container my-3">\[ \mathbb{E}[X] = \sum \limits_{x}^{} \ x \cdot P(X = x) \]</div>
+        <div style="overflow-x: auto; overflow-y: hidden;" class="container my-3">\[ \mathbb{E}[X] = \sum \limits_{x}^{} \ x \cdot P(X = x) \]</div>
         Note the differences in capitalization of $x$ represent different things. To make this clear, here's the standard example: 
         </p>
         <div class="px-5 pt-2 my-2 text-center">
@@ -131,7 +131,7 @@
           Let $T$ be tails, and $H$ be heads. $HTT$ means we got one heads in three throws and it was in the first
           throw. <br> There's a total of $8$ different possible outcomes of these $3$ coin flips:
           <br>
-          \[ TTT, TTH, THT, THH, HTT, HTH, HHT, HHH \]
+          <div style="overflow-x: auto; overflow-y: hidden;">\[ TTT, TTH, THT, THH, HTT, HTH, HHT, HHH \]</div>
           <p>
             (binary strings of length $3$ if you think of the $H$ as a $1$).
           </p>
@@ -139,14 +139,15 @@
           <br>
           The outcome $TTT$ has value $0$ and its probability of happening is $1/8$. since  $$ <br> 
           The outcome $HHH$ has value $10 \times 3$ and probability $1/8$. <br> 
-          The outcomes $HTT, THT, TTH$ have value $30$ and probability $3/8$ that any of them happens. <br> The outcomes $HHT, HTH, THH$ have value $20$ and probability $3/8$ that any of them happens. <br><br> We've covered all cases and can calculate the expected value now: $\mathbb{E}[\textnormal{Fury Swipes}] = \frac{1}{8} \cdot
-          0 + \frac{1}{8} \cdot 30 + \frac{3}{8} \cdot 20 + \frac{3}{8} \cdot 10 = 15$. <br><br> It turns out that it's no accident that this is $3
+          The outcomes $HTT, THT, TTH$ have value $30$ and probability $3/8$ that any of them happens. <br> The outcomes $HHT, HTH, THH$ have value $20$ and probability $3/8$ that any of them happens. <br><br> We've covered all cases and can calculate the expected value now: 
+          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[\textnormal{Fury Swipes}] = \frac{1}{8} \cdot 0 + \frac{1}{8} \cdot 30 + \frac{3}{8} \cdot 20 + \frac{3}{8} \cdot 10 = 15 \]</div> <br><br> 
+          It turns out that it's no accident that this is $3
           \cdot 10 /2$. Generalizing the move to $n$ throws, each dealing $d$ damage we get: $\frac{d\cdot n}{2}$. Here's the proof:
           <br> <br>
           We need to calculate the probability of having exactly $k$ heads $(k \in (0,n) )$. This is the same as calculating the number of binary
           strings of length $n$ with exactly $k$ ones. This is just the number of ways to choose $k$ places to place the ones, so this is ${n \choose k}$. 
           So this contributes to our expected value with $\frac{n \choose k}{2^n} \cdot d \cdot k$. <br>
-          We need to calculate the sum <div style="overflow-x: auto;" class="container my-3"> \[ \sum \limits_{k=0}^{n} {d \cdot k} \cdot \frac{n \choose k}{2^n} = d \cdot \sum \limits_{k=0}^{n} k \cdot \frac{n \choose k}{2^n} = 
+          We need to calculate the sum <div style="overflow-x: auto; overflow-y: hidden;" class="container my-3"> \[ \sum \limits_{k=0}^{n} {d \cdot k} \cdot \frac{n \choose k}{2^n} = d \cdot \sum \limits_{k=0}^{n} k \cdot \frac{n \choose k}{2^n} = 
           d \cdot \sum \limits_{k=0}^{n} n \cdot \frac{n - 1 \choose k - 1}{2^n} = \frac{dn}{2} \] </div>
           I used the following facts: \[ (1+1)^n = \sum \limits_{k=0}^{n} {n \choose k} = 2^n \] 
           \[ k \cdot {n \choose k} = n \cdot {n-1 \choose k-1} \]
@@ -181,8 +182,8 @@
         <p>
           Now let's calculate the expected value: <br>
           Following the tree downwards keeping track of the red letters where we stop we get the following: <br>
-         \[ \mathbb{E}[\textnormal{Iron Tail}] = \frac{1}{2} \cdot 0 + \frac{1}{2^2}\cdot d + \frac{1}{2^3}\cdot 2d + \frac{1}{2^4}\cdot 3d + \ldots \]<br>
-          \[ \mathbb{E}[\textnormal{Iron Tail}] = \frac{d}{2} \cdot (\frac{1}{2}+\frac{2}{2^2}+\frac{3}{2^3}+\ldots) \]
+         <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[\textnormal{Iron Tail}] = \frac{1}{2} \cdot 0 + \frac{1}{2^2}\cdot d + \frac{1}{2^3}\cdot 2d + \frac{1}{2^4}\cdot 3d + \ldots \]</div><br>
+         <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[\textnormal{Iron Tail}] = \frac{d}{2} \cdot (\frac{1}{2}+\frac{2}{2^2}+\frac{3}{2^3}+\ldots) \] </div>
           We find the following sum:
           \[ \sum \limits_{k=1}^{\infty} \frac{k}{2^k} = 2 \]
           hence we get:
@@ -191,9 +192,9 @@
           <br>
           <br>
           Denote the sum up until $k$ terms as $s_k$. I'll find the closed form of $s_k$. <br>
-          <div style="overflow-x: auto;"> \[ s_{k+1} = s_{k} + \frac{k+1}{2^{k+1}} = \frac{1}{2}+(\frac{2}{2^2}+\frac{3}{2^3}+\ldots + \frac{k+1}{2^{k+1}}) \]</div> 
-          <div style="overflow-x: auto;"> \[ = \frac{1}{2} + (\frac{1}{2^2} + \ldots \frac{1}{2^{k+1}}) + \frac{1}{2}(\frac{1}{2} + \frac{2}{2^2} + \ldots + \frac{k}{2^k}) \] </div>
-          <div style="overflow-x: auto;"> \[ = \frac{1}{2} + \frac{1}{4} \cdot (1-\frac{1}{2^k}) \cdot 2 + \frac{1}{2} \cdot s_k\] </div>
+          <div style="overflow-x: auto; overflow-y: hidden;"> \[ s_{k+1} = s_{k} + \frac{k+1}{2^{k+1}} = \frac{1}{2}+(\frac{2}{2^2}+\frac{3}{2^3}+\ldots + \frac{k+1}{2^{k+1}}) \]</div> 
+          <div style="overflow-x: auto; overflow-y: hidden;"> \[ = \frac{1}{2} + (\frac{1}{2^2} + \ldots \frac{1}{2^{k+1}}) + \frac{1}{2}(\frac{1}{2} + \frac{2}{2^2} + \ldots + \frac{k}{2^k}) \] </div>
+          <div style="overflow-x: auto; overflow-y: hidden;"> \[ = \frac{1}{2} + \frac{1}{4} \cdot (1-\frac{1}{2^k}) \cdot 2 + \frac{1}{2} \cdot s_k\] </div>
           \[ \implies s_k = 2 - \frac{k+2}{2^k} \]
           I left out the comparing of the first equation with the last. It's straightforward. <br>
           Hence its limit is $2$ as $k$ goes to infinity since $k+2$ is eaten up by the $2^k$. <br>

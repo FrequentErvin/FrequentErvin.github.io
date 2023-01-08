@@ -25,4 +25,15 @@
   background-position: center;
   background-size: 480px auto;
 }
-
+#hio{
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 400px;
+  transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+  background-image: url('/images/thumbnail/hiorelation.jpg');
+  background-position: center;
+  background-size: 400px auto;
+  background-repeat: no-repeat;
+}

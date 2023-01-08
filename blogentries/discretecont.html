@@ -63,13 +63,13 @@
     </nav>
     <div class="spacer layer1"></div> 
   <a href="#" id="scroll" style="display: none;"><span></span></a>
-<div class="container col-md-8 px-4 py-5 shadow-lg my-5">
+<div class="container col-md-8 px-4 py-5 shadow-lg mt-1 mb-4 bg-blob-blog">
   <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
        <div class="col-lg-6">
         <img src="/images/thumbnail/borsuk.jpg" id="imagey" class="vc-image-1 shadow"> 
       </div> 
     <div class="col-lg-6">
-      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Unusual continuity..</em></h1>
+      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Unusual continuity</em></h1>
       <p class="lead mb-2 m-3">In this blog post I will discuss a curious technique for thinking about problems. It's unusually common but little accent is given to it. The solutions are elegant and showcase the beauty of math.</p>
       <p class="lead mb-2 m-3">The techniques overviewed will be plain and discrete continuity. These are also widely regarded as the Intermediate value theorem <b>(IVT)</b>. </p>
     </div>
@@ -113,7 +113,7 @@
         </blockquote> -->
         <p>Before I start explaining the solution of the above problem, let me show you some other problems.</p>
         <ol>
-          <li>Prove that <b>all</b> <b>roots</b> of the polynomial <div style="overflow-x: auto;">$P(x)=x(x-2)(x-4)(x-6)+(x-1)(x-3)(x-5)(x-7)$</div> are real.</li>
+          <li>Prove that <b>all</b> <b>roots</b> of the polynomial <div style="overflow-x: auto; overflow-y: hidden; overflow-y: hidden;">$P(x)=x(x-2)(x-4)(x-6)+(x-1)(x-3)(x-5)(x-7)$</div> are real.</li>
           <li><a href="https://artofproblemsolving.com/community/c6h1092597p4870423" target="_blank" rel="noopener noreferrer">(Serbia MO 2014)</a> Call a positive integer $n$ <em> crazy </em> iff there exist positive integers $a,b>1$ such that $n=a^b+b$. Prove that there exist $2014$ consecutive positive integers such that there are <b>exactly</b> $2012$ <em>crazy</em> numbers among them. </li>
           <li> <a href="https://artofproblemsolving.com/community/c6h34319p213018" target="_blank" rel="noopener noreferrer">(USAMO 2005)</a>  Suppose $2n$ points are given in the plane, no three of which are collinear. Suppose $n$ of them are colored blue and the other $n$ are colored red. A line in the plane is called a balancing line if it passes through one blue and one red point and, for each side of the line, the number of blue points on that side is <b>exactly</b> equal to the number of red points on the same side. Prove that there exist at least two balancing lines.</li>
         </ol>
@@ -144,7 +144,7 @@
         <p class="m-3"> Let $f$ be a function from a metric space $(X,d_x)$ to $(Y,d_y)$, and $x$ is any point in $X$. We say $f$ is continuous at $x$, if for every sequence $(x_n)$ converging to $x$ the sequence $(f(x_n))$ converges to $f(x)$. </p>
         <p>An intuitive way of thinking about it is that the function does not <b>"skip"</b> any points. A formal theorem exists: </p>
           <h4>The Intermediate Value Theorem (IVT)</h4>
-          <div class="container center-block m-4">
+          <div class="container center-block mt-4 mb-4">
             <img src="/images/blog/IVT.svg" class="img-fluid mx-auto d-block">
           </div>
           <p><b>The Intermediate Value Theorem: </b> For two real numbers $a,b$ with $a < b$, let $f$ be a continuous function on the closed interval $[a,b]$. Then for every $s$ between $f(a)$ and $f(b)$ there exists a number $x$ such that $f(x)=s$.</p>
@@ -181,6 +181,23 @@
           </dt>
          </p>
         <hr>
+        <h3><b>Bonus:</b> Wobbly table</h3>
+        <p>If you're perchance sitting on a four-legged wobbly chair or sitting at a four-legged wobbly table, you're in luck. 
+          Here's mathematically how to steady your table or chair without any propping up with papers or similar.<br> <br> </p>
+          <div class="center-block mt-4 mb-4 section d-flex justify-content-center embed-responsive embed-responsive-16by9" loading="lazy">
+            <video controls loop autoplay muted style="width: 100%; height: auto; max-width: 500px;">
+              <source src="/images/blog/table.mp4" type="video/mp4">
+              <source src="/images/blog/table.mp4" type="video/ogg">
+            Your browser does not support the video tag.
+            </video>
+          </div>
+          <p>Turn the table around a center in such a way that three legs $A,B,C$ stay on the surface. <br>
+          The distance of the fourth leg to the surface is a function $f(x)$ which depends on the angle $x$. <br>
+          If $f(0)$ is positive, then $f(\pi/2)$ is negative and if $f(0)$ is negative then $f(\pi/2)$ is positive. <br> <br>
+          Now, the <b>Intermediate Value Theorem</b> assures that there is an angle, where the fourth leg is also on the surface. <br>
+          You can see the full argument <a href="https://people.math.harvard.edu/~knill/teaching/math1a_2011/exhibits/wobblytable/index.html" target="_blank">here</a>, 
+          <a href="https://www.youtube.com/watch?v=aCj3qfQ68m0" target="_blank">here</a> and <a href="https://www.youtube.com/watch?v=OuF-WB7mD6k" target="_blank">here</a>
+        </p>
         <h3>Problems</h3>
         <h4 class="text-primary">Introductory</h4>
         <dl>

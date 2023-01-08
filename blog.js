@@ -7,6 +7,9 @@ document.getElementById("EV").onclick=function(){
 document.getElementById("reflectimo").onclick=function(){
   location.href="/blogentries/reflectonimo.html";
 };
+document.getElementById("hiooo").onclick=function(){
+  location.href="/blogentries/fixedpoints.html";
+}
 //Get the button
 let mybutton = document.getElementById("scroll");
 
