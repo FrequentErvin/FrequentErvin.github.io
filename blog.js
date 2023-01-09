@@ -10,6 +10,9 @@ document.getElementById("reflectimo").onclick=function(){
 document.getElementById("hiooo").onclick=function(){
   location.href="/blogentries/fixedpoints.html";
 }
+document.getElementById("mario").onclick=function(){
+  location.href="/blogentries/projectilemotion.html";
+}
 //Get the button
 let mybutton = document.getElementById("scroll");
 

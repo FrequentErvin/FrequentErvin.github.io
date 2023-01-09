@@ -25,6 +25,17 @@
   background-position: center;
   background-size: 480px auto;
 }
+#mario{
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+  background-image: url('/images/thumbnail/mario.jpg');
+  background-position: center;
+  background-size: 300px auto;
+}
 #hio{
   position: relative;
   left: 50%;
