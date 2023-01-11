@@ -96,21 +96,124 @@
         <p class="blog-post-meta">Mar 17, 2022</p>
         <p> A brief overview of projectile motion: </p>
         <div class="px-5 pt-2 my-2 text-center">
-            <img src="https://i.pinimg.com/originals/0d/8d/52/0d8d52114c6ee2098a52ff84b57697c8.jpg" style="height: 380px;">
+            <img src="/images/blog/Inclinedthrow.gif" style=" width: 100%; height: auto; max-width: 600px;">
           <h1 class="display-4 fw-bold"></h1>
-          <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4"> "Flip a coin until you get tails. This attack does $30$ damage times the number of heads." </p>
-          </div>
         </div>
           <p>
-            Assumptions I'll make because of clarity: the body is launched inside Earth's gravitational field, there is no air resistance, disregard curvature of the Earth. Up is positive, down is negative (necessary for velocities).
-            <br>
+            <b>Assumptions I'll make for the sake of clarity:</b> the body is launched inside Earth's gravitational field, there is no air resistance, disregard curvature of the Earth. Up is positive, down is negative (necessary for velocities).
+            <br><br>
             Let the object be flung into the air at an angle $\theta$ with initial speed $v$. Gravity acts on our body perpendicularly to the surface of the Earth so our object will be
-            affected in the vertical $y$ direction. Let our vertical velocity at time $t$ be $v_{y}^{(t)}$ and let our horizontal velocity be $v_{x}^{(t)}$. Notice that
-            since nothing exerts force on our body in the $x$ direction our horizontal velocity stays the same so $v_{x}^{(t)} = v_{x}^{(0)}$ for all $t$.
-            Our vertical velocity is trickier since we have to account for the deacceleration $g=9.8 \ldots$ in the vertical direction, thus our vertical velocity
+            affected in the vertical $y$ direction. Let our vertical velocity at time $t$ be $v_{y}^{(t)}$ and let our horizontal velocity be $v_{x}^{(t)}$. <br> <br> Notice that
+            since nothing exerts force on our body in the $x$ direction our horizontal velocity stays the same so $v_{x}^{(t)} = v_{x}^{(0)}$ for all $t$. <br><br>
+            Our vertical velocity is trickier since we have to account for the deacceleration $g=9.81 m/s^2$ in the vertical direction, thus our vertical velocity
             at time $t$ is $v_{y}^{(t)} = v_{y}^{(0)}\cdot t - g\cdot t$. At some point, our $v_y$ will become zero and our object will again fall down to the Earth (assume no escape velocity and $g$ is constant at all distances).
-            Our displacement in the $x$ direction is just equal to $s_{x}^{(t)} = v_{x}^{(t)} * t$. Our $y$ displacement is $s_{y}^{(t)} = v_{y}^{(0)} \cdot t - \frac{g\cdot t^2}{2}$. 
+            <br>Our displacement in the $x$ direction is just equal to $s_{x}^{(t)} = v_{x}^{(t)} \cdot t$ since this is
+            motion without acceleration. Also, we know that $v_{x}^{t} = v_{x}^{0} = v \cos(\theta)$ so $s_x^{(t)} = v \cdot t\cos(\theta)$. Denote $x_t=s_x^{(t)}$ and $y_t=s_y^{(t)}$<br>
+            Our $y$ displacement is $s_{y}^{(t)} = v_{y}^{(0)} \cdot t - \frac{g\cdot t^2}{2}$ or $y_t = v \sin(\theta)t - \frac{g\cdot t^2}{2}$.<br><br>
+            Now to figure out the equation of our trajectory with $x$ input and $y$ output we need to get $y_t$ in terms of $x_t$. After rearranging equations and boring algebra we get the following: <br>
+            <div style="overflow-x:auto; overflow-y: hidden">\[ y = \left (-\frac{g}{2v^2\cos(\theta)} \right )x^2 + (\tan(\theta))x = (\ldots)x^2+(\ldots)x \]</div>
+            The above "$\ldots$" represent constants and I also omitted the $t$ in the index.
+          </p>
+          <hr>
+          <p>
+            Thinking about projectile motion through two different lenses: the $x$-axis and they $y$-axis gives us the following crucial insight:
+          </p>
+          <p class="lead">
+            $\star$ Projectile motion is a combination of a vertical shot and a horizontal uniform straight line movement. $\star$
+          </p>
+          <div class="px-5 pt-2 my-2 text-center">
+            <img src="/images/blog/monkeybranch.png" style=" width: 100%; height: auto; max-width: 400px;">
+              <h1 class="display-4 fw-bold"></h1>
+              <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4"> Problem from physics book that showcases this idea. </p>
+              </div>
+          </div>
+          <p>The chimp will sadly not survive &#128532. In the $y$ direction the bullet is in free-fall essentially, just like the chimp, and they start
+            falling at the same time.
+            <br>
+            <br>
+            A free fall/vertical shot can be thought of as an infinitely narrow parabola or whenever an object is flying through the air it keeps this parabolic shape (without air resistance).
+            <br>In conclusion, in our gravitational field here relatively close to the Earth's surface, every falling object traces a parabola. 
+          </p>
+          <hr>
+          <h3>Back to Mario</h3>
+          <p>
+            Now that we know that every throw traces a parabola, we are ready to tackle the Mario game. Could you make an impossible level in this game?
+            Could you place the coins in such a way that no Mario's jump can catch them all? <br>
+            
+            <b>If you're given some coins, how can you determine the jump without try and fail?</b> <br> <br>
+            Mathematically said, given $n$ points, does there exist a parabola that fits through all of these points? It should be obvious that the answer
+            is yes. Place three collinear points parallel to the ground and you can't fit any parabola. Or even easier, place two vertical points. By definition
+            of a function they can't both lie on the graph.<br> <br>
+            <b>The actual probability of making a possible level with three or more coins is $0$.</b> <br>
+            But it is obviously possible. Just work backwards from the parabola itself and mark however many points you want.<br>
+            The problem of finding a graph to <b>fit</b> a set of points is called an <b>interpolation problem.</b> Interpolating means finding a function that fits
+            the given data points. There are <a target="_blank" href="https://en.wikipedia.org/wiki/Interpolation">many techniques of interpolation</a>, but I'll stick 
+            with <b>Lagrange interpolation</b> because it is one of the most fundamental ones and related to olympiad mathematics.
+          </p>
+          <p class="lead">
+            $\star$ The Lagrange interpolating polynomial is the unique polynomial of lowest degree that interpolates a given set of data. Given a data set of coordinate pairs
+            $(x_i,y_i)$ with $0 \leq i \leq k$, the Lagrange polynomial $L(x)$ has degree $\leq k$ and assumes each value at the corresponding input $L(x_i) = y_i$.  $\star$
+          </p>
+          <p>
+            Note that fitting polynomials ends up just being $n$ equations with $n$ variables. If we have $n$ points to fit to a polynomial of degree $n$ there are
+            infinitely many such polynomials. If we have $n+1$ points, then there exists exactly one polynomial (or none depending if we take the restriction that $x_i$ are sorted).
+            <br>
+            <div class="px-5 pt-2 my-2 text-center">
+              <img src="/images/blog/lagrange.jpg" style=" width: 100%; height: auto; max-width: 600px;">
+                <h1 class="display-4 fw-bold"></h1>
+                <div class="col-lg-6 mx-auto">
+                  <p class="lead mb-4"> Polynomial tracing points of a function.</p>
+                </div>
+            </div>
+            It turns out that this polynomial is relatively easy to find. <br>
+            For simplicity I'll solve it for $n=3$. We want to find the cubic that goes through the points $(x_0,y_0),(x_1,y_1),(x_2,y_2)$.<br>
+            The simplest way to achieve such a cubic is if it looked something like this:
+            <div style="overflow-x: auto; overflow-y: hidden">\[ p(x) = y_0 \cdot A + y_1 \cdot B + y_2 \cdot C \]</div>
+            where we can make the letters turn into zero when needed. Obviously $A,B,C$ shouldn't be constants. Let them be polynomials. We need $A(x_0) = 1$ and 
+            $A(x_1)=A(x_2)=0$. How can we achieve this? Simply take $A(x) = \alpha (x-x_1)(x-x_2)$ but we also need $A(x_0)=1$ so $\alpha = \frac{1}{(x_0-x_1)(x_0-x_2)}$.
+            Hence the first term is $y_0 \cdot \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}$. Repeating for the remaining $B,C$ we find the general cubic to be:
+            <div style="overflow-x: auto; overflow-y: hidden"> \[ p(x) = y_0 \cdot \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}+ y_1 \cdot \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)} + y_2 \cdot \frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_0)}\]</div>
+            The general polynomial for $n$ points is analogous and should really be written with brackets:
+            <div style="overflow-x: auto; overflow-y: hidden"> \[ p(x) = \sum_{i=0}^{n} \left ( y_i \frac{(x-x_0) \cdots (x-x_{i-1}) (x-x_{i+1}) \cdots (x-x_n)}{(x_i-x_0) \cdots (x_i-x_{i-1}) (x_i - x_{i+1}) \cdots (x_i - x_n)} \right )\]</div>
+            Note the missing $x_i$ in the numerator and denominator. Also make sure that this polynomial is of degree $n$ indeed and that we are fitting $n+1$ points starting from index $0$.
+
+            <br>
+            <br>
+            In conclusion, for any given $n+1$ points we can find a polynomial of degree $n$ that passes through all of those points. This kind of polynomial can be very useful but relatively naive 
+            technique in Data Science where predicting outputs given inputs is crucial. <br>
+            It is also very useful for proving algebraic identities. 
+            <br>
+            <hr>
+            <h3>Olympiad problems</h3> <br>
+            <h4 class="text-primary">Introductory</h4>
+            <dl>
+              <dt>Problem 1</dt>
+              <dd> Given a polynomial $P(x)$ with degree $n$. For each $k\in$ { $0,1,2,...,n$ }, $P(k)=2^k$. Find $P(n+1)$. </dd>
+              <dt>Problem 2</dt>
+              <dd> Let \(n \geq 2\) be an integer and take a polynomial \(p(x) = a_0 + a_1x + \dots + a_{n - 1}x^{n - 1}\). Prove that, for any \(x_1, \dots, x_n\) distinct real numbers,
+                \[\sum_{i = 1}^n \frac{p(x_i)}{\prod_{j = 1, j \neq i}^n (x_j - x_i)} = a_{n - 1}.\]</dd>
+            </dl>
+            <h4 class="text-success">Intermediate</h4>
+            <dl>
+              <dt>Problem 1</dt>
+              <dd> Let $ p$ be a prime number and $ f$ an integer polynomial of degree $ d$ such that $ f(0) = 0,f(1) = 1$ and $ f(n)$ is congruent to $ 0$ or $ 1$ modulo $ p$ for every integer $ n$. Prove that $ d\geq p - 1$.</dd>
+              <dt>Problem 2</dt>
+              <dd>You are given $N$ such that $ n \ge 3$. We call a set of $N$ points on a plane acceptable if their abscissae are unique, and each of the points is coloured either red or blue. Let's say that a polynomial $P(x)$ divides a set of acceptable points either if there are no red dots above the graph of $P(x)$, and below, there are no blue dots, or if there are no blue dots above the graph of $P(x)$ and there are no red dots below. Keep in mind, dots of both colors can be present on the graph of $P(x)$ itself. For what least value of k is an arbitrary set of $N$ points divisible by a polynomial of degree $k$?</dd>
+            </dl>
+            <h4 class="text-danger">Advanced</h4>
+            <dl>
+              <dt>Problem 1</dt>
+              <dd>Prove that any monic polynomial (a polynomial with leading coefficient 1) of degree $n$ with real coefficients is the average of two monic polynomials of degree $n$ with $n$ real roots.</dd>
+              <dt>Problem 2</dt>
+              <dd> Given is a monic polynomial $f$ of degree $n$ with real coefficients and integers $x_0 < x_1 < \ldots < x_n$. Prove that there exist some positive integer $k$, such that $|f(x_k)| \geq \frac {n!}{2^n}$</dd>
+              <dt>Problem 3</dt>
+              <dd>Let $x_1, x_2, \dots, x_n$ be different real numbers. Prove that
+                \[\sum_{1 \leqslant i \leqslant n} \prod_{j \neq i} \frac{1-x_{i} x_{j}}{x_{i}-x_{j}}=\left\{\begin{array}{ll}
+                0, & \text { if } n \text { is even; } \\
+                1, & \text { if } n \text { is odd. }
+                \end{array}\right.\]</dd>
+            </dl>
           </p>
       </article>
     </div>
