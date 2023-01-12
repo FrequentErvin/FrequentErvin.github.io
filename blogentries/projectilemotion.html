@@ -100,19 +100,28 @@
           <h1 class="display-4 fw-bold"></h1>
         </div>
           <p>
-            <b>Assumptions I'll make for the sake of clarity:</b> the body is launched inside Earth's gravitational field, there is no air resistance, disregard curvature of the Earth. Up is positive, down is negative (necessary for velocities).
+            <b>Assume:</b> the body is launched inside Earth's gravitational field, there is no air resistance, disregard curvature of the Earth. Up is positive, down is negative (necessary for velocities).
             <br><br>
-            Let the object be flung into the air at an angle $\theta$ with initial speed $v$. Gravity acts on our body perpendicularly to the surface of the Earth so our object will be
+            <b>Start: </b>Let the object be flung into the air at an angle $\theta$ with initial speed $u$. Gravity acts on our body perpendicularly to the surface of the Earth so our object will be
             affected in the vertical $y$ direction. Let our vertical velocity at time $t$ be $v_{y}^{(t)}$ and let our horizontal velocity be $v_{x}^{(t)}$. <br> <br> Notice that
             since nothing exerts force on our body in the $x$ direction our horizontal velocity stays the same so $v_{x}^{(t)} = v_{x}^{(0)}$ for all $t$. <br><br>
             Our vertical velocity is trickier since we have to account for the deacceleration $g=9.81 m/s^2$ in the vertical direction, thus our vertical velocity
-            at time $t$ is $v_{y}^{(t)} = v_{y}^{(0)}\cdot t - g\cdot t$. At some point, our $v_y$ will become zero and our object will again fall down to the Earth (assume no escape velocity and $g$ is constant at all distances).
+            at time $t$ is $v_{y}^{(t)} = v_{y}^{(0)}\cdot t - g\cdot t$.
             <br>Our displacement in the $x$ direction is just equal to $s_{x}^{(t)} = v_{x}^{(t)} \cdot t$ since this is
-            motion without acceleration. Also, we know that $v_{x}^{t} = v_{x}^{0} = v \cos(\theta)$ so $s_x^{(t)} = v \cdot t\cos(\theta)$. Denote $x_t=s_x^{(t)}$ and $y_t=s_y^{(t)}$<br>
-            Our $y$ displacement is $s_{y}^{(t)} = v_{y}^{(0)} \cdot t - \frac{g\cdot t^2}{2}$ or $y_t = v \sin(\theta)t - \frac{g\cdot t^2}{2}$.<br><br>
+            motion without acceleration. We know that $v_{x}^{t} = v_{x}^{0} = u \cos(\theta)$ so $s_x^{(t)} = u \cdot t\cos(\theta)$. Denote $x_t=s_x^{(t)}$ and $y_t=s_y^{(t)}$<br>
+            <br>
+            <div class="px-5 pt-2 my-2 text-center">
+              <img src="/images/blog/projectilemotion.png" style=" width: 100%; height: auto; max-width: 600px;">
+              <br>
+              <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4"> Velocities in the $x$ and $y$ directions </p>
+              </div>
+          </div>
+          <br>
+            Our $y$ displacement is $s_{y}^{(t)} = v_{y}^{(0)} \cdot t - \frac{g\cdot t^2}{2}$ or $y_t = u \sin(\theta)t - \frac{g\cdot t^2}{2}$.<br><br>
             Now to figure out the equation of our trajectory with $x$ input and $y$ output we need to get $y_t$ in terms of $x_t$. After rearranging equations and boring algebra we get the following: <br>
-            <div style="overflow-x:auto; overflow-y: hidden">\[ y = \left (-\frac{g}{2v^2\cos(\theta)} \right )x^2 + (\tan(\theta))x = (\ldots)x^2+(\ldots)x \]</div>
-            The above "$\ldots$" represent constants and I also omitted the $t$ in the index.
+            <div style="overflow-x:auto; overflow-y: hidden">\[ y = \left (-\frac{g}{2u^2\cos(\theta)} \right )x^2 + (\tan(\theta))x = (\ldots)x^2+(\ldots)x \]</div>
+            The above "$\ldots$" represent constants. I also omitted $t$ in the index of $x,y$.
           </p>
           <hr>
           <p>
@@ -167,23 +176,31 @@
                 </div>
             </div>
             It turns out that this polynomial is relatively easy to find. <br>
-            For simplicity I'll solve it for $n=3$. We want to find the cubic that goes through the points $(x_0,y_0),(x_1,y_1),(x_2,y_2)$.<br>
-            The simplest way to achieve such a cubic is if it looked something like this:
+            For simplicity I'll solve it for $n=3$. We want to find the parabola that goes through the points $(x_0,y_0),(x_1,y_1),(x_2,y_2)$.<br>
+            The simplest way to achieve such a quadratic is if it looked something like this:
             <div style="overflow-x: auto; overflow-y: hidden">\[ p(x) = y_0 \cdot A + y_1 \cdot B + y_2 \cdot C \]</div>
-            where we can make the letters turn into zero when needed. Obviously $A,B,C$ shouldn't be constants. Let them be polynomials. We need $A(x_0) = 1$ and 
+            where we can make the letters turn into zero when needed. Obviously $A,B,C$ shouldn't be constants. Let them be polynomials and at leasst one should have 
+            degree $2$. We need $A(x_0) = 1$ and 
             $A(x_1)=A(x_2)=0$. How can we achieve this? Simply take $A(x) = \alpha (x-x_1)(x-x_2)$ but we also need $A(x_0)=1$ so $\alpha = \frac{1}{(x_0-x_1)(x_0-x_2)}$.
             Hence the first term is $y_0 \cdot \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}$. Repeating for the remaining $B,C$ we find the general cubic to be:
-            <div style="overflow-x: auto; overflow-y: hidden"> \[ p(x) = y_0 \cdot \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}+ y_1 \cdot \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)} + y_2 \cdot \frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_0)}\]</div>
+            <div style="overflow-x: auto; overflow-y: hidden"> \[ p(x) = y_0 \cdot \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}+ y_1 \cdot \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)} + y_2 \cdot \frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_0)} \ (\bigstar)\]</div>
             The general polynomial for $n$ points is analogous and should really be written with brackets:
             <div style="overflow-x: auto; overflow-y: hidden"> \[ p(x) = \sum_{i=0}^{n} \left ( y_i \frac{(x-x_0) \cdots (x-x_{i-1}) (x-x_{i+1}) \cdots (x-x_n)}{(x_i-x_0) \cdots (x_i-x_{i-1}) (x_i - x_{i+1}) \cdots (x_i - x_n)} \right )\]</div>
             Note the missing $x_i$ in the numerator and denominator. Also make sure that this polynomial is of degree $n$ indeed and that we are fitting $n+1$ points starting from index $0$.
 
             <br>
             <br>
-            In conclusion, for any given $n+1$ points we can find a polynomial of degree $n$ that passes through all of those points. This kind of polynomial can be very useful but relatively naive 
-            technique in Data Science where predicting outputs given inputs is crucial. <br>
-            It is also very useful for proving algebraic identities. 
+            In conclusion, for any given $n+1$ points we can find a polynomial of degree $n$ that passes through all of those points. This kind of polynomial can be very useful in general and even serve as a relatively naive 
+            technique in Data Science where predicting outputs given inputs is crucial. <br> <br> 
+            For example, it is often better than <b>Linear Interpolation</b> and <b>Nearest Neighbors Interpolation</b>
+             since it avoids any jaggedness by its polynomial nature.
+            <br> <br>
+            Coming back to our Mario game, it's now trivial to solve every level by simply reading off the coordinates
+            of three distinct coins and putting them into $(\bigstar)$. If the level is possible, not more than three coins are needed
+            because they uniquely determine our parabola/jump. The game does get less precise as you go through the levels and just
+            eyeballing works out but where's the fun in that?
             <br>
+            \[ \]
             <hr>
             <h3>Olympiad problems</h3> <br>
             <h4 class="text-primary">Introductory</h4>
