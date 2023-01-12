@@ -184,6 +184,11 @@
             $A(x_1)=A(x_2)=0$. How can we achieve this? Simply take $A(x) = \alpha (x-x_1)(x-x_2)$ but we also need $A(x_0)=1$ so $\alpha = \frac{1}{(x_0-x_1)(x_0-x_2)}$.
             Hence the first term is $y_0 \cdot \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}$. Repeating for the remaining $B,C$ we find the general cubic to be:
             <div style="overflow-x: auto; overflow-y: hidden"> \[ p(x) = y_0 \cdot \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}+ y_1 \cdot \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)} + y_2 \cdot \frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_0)} \ (\bigstar)\]</div>
+            <br> Here's an example of a fitted parabola to three points (thanks to the SciPy library we have an inbuilt function): <br> <br>
+            <script src="https://gist.github.com/FrequentErvin/0e83419db101c81edbf04392f6a11687.js"></script>
+            <div class="px-5 pt-2 my-2 text-center">
+              <img src="/images/blog/lagrangeparabola.png" style=" width: 100%; height: auto; max-width: 600px;">
+            </div>
             The general polynomial for $n$ points is analogous and should really be written with brackets:
             <div style="overflow-x: auto; overflow-y: hidden"> \[ p(x) = \sum_{i=0}^{n} \left ( y_i \frac{(x-x_0) \cdots (x-x_{i-1}) (x-x_{i+1}) \cdots (x-x_n)}{(x_i-x_0) \cdots (x_i-x_{i-1}) (x_i - x_{i+1}) \cdots (x_i - x_n)} \right )\]</div>
             Note the missing $x_i$ in the numerator and denominator. Also make sure that this polynomial is of degree $n$ indeed and that we are fitting $n+1$ points starting from index $0$.
@@ -193,7 +198,7 @@
             In conclusion, for any given $n+1$ points we can find a polynomial of degree $n$ that passes through all of those points. This kind of polynomial can be very useful in general and even serve as a relatively naive 
             technique in Data Science where predicting outputs given inputs is crucial. <br> <br> 
             For example, it is often better than <b>Linear Interpolation</b> and <b>Nearest Neighbors Interpolation</b>
-             since it avoids any jaggedness by its polynomial nature.
+             since it avoids any jaggedness by its polynomial nature. 
             <br> <br>
             Coming back to our Mario game, it's now trivial to solve every level by simply reading off the coordinates
             of three distinct coins and putting them into $(\bigstar)$. If the level is possible, not more than three coins are needed
