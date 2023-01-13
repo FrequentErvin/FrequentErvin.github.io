@@ -215,11 +215,11 @@
             expected number of steps up to the first failure is $\frac 1p$.</p>
         </div> <br> 
         <p>
-          This is very intuitive. Think of a Nintendo that has a $1/7$ probability of crashing each time you run Pokemon, you expect to be able to play
+          This is very intuitive. Think of a Nintendo that has a $1/7$ probability of crashing each time you run Pokémon, you expect to be able to play
           $7$ times with $1$ crash. <br> 
           We've already proved this problem for the subcase $p=1/2$ (with the added $d$ in front for damage) and got the result. Think of the tails as being 
           a crash and the heads adding $1$ to our counter of how many have already been heads/not crashed. <br>
-          Let $\mathbb{E}[X]$ denote the expected number of games until you crash. Examine the first try - the first time you tried turning on Pokemon. We 
+          Let $\mathbb{E}[X]$ denote the expected number of games until you crash. Examine the first try - the first time you tried turning on Pokémon. We 
           divide our examination into two cases: $1)$ It turned on, yay! $2)$ It crashed, nay. Here's the equation we get:
           <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[\textnormal{number of attempts until failure}] = \mathbb{P}(\textnormal{of failure}) \cdot 1 + \mathbb{P}(\textnormal{of success}) \cdot \mathbb{E}[\textnormal{number of attempts until failure in this case}]\]</div>
           <p>In general if we let $X$ be the r.v. number of attempts until failure, $F$ failure and $S$ success we have: </p>
@@ -242,32 +242,32 @@
         </p>
         <h3>Problems</h3>
         <dl>
-          <dt>Problem 1</dt>
-          <dd> Each year, as part of a “Secret Santa” tradition, a group of $n$ friends write their names on slips of papers and place the slips into a hat. Each member of the group draws a name at random from the hat and must by a gift for that person. Of course, it is possible that they draw their own name, in which case they buy a gift for themselves. What is the expected number of people who draw their own name? </dd>
-          <div class="px-5 pt-2 my-2 text-center">
+          <dt>Problem 1 <a target="_blank" href="https://en.wikipedia.org/wiki/Random_permutation_statistics">(Random permutations)</a></dt>
+          <dd> Each year, as part of a <b>“Secret Santa”</b> tradition, a group of $n$ friends write their names on slips of papers and place the slips into a hat. Each member of the group draws a name at random from the hat and must by a gift for that person. Of course, it is possible that they draw their own name, in which case they buy a gift for themselves. What is the expected number of people who draw their own name? </dd>
+          <!-- <div class="px-5 pt-2 my-2 text-center">
             <img src="https://img.freepik.com/free-vector/hand-drawn-secret-santa-illustration_23-2149162315.jpg?w=2000" style=" width: 100%; height: auto; max-width: 200px;">
-          </div>
-          <dt>Problem 2</dt>
-          <dd> McDonald’s decides to give a Pokemon toy with every Happy Meal. Each time you buy a Happy Meal, you are equally likely to get any one of the $n$ Pokemon. What is the expected number of Happy Meals that you have to buy until you “catch ’em all”?</dd>
+          </div> -->
+          <dt>Problem 2 <a target="_blank" href="https://en.wikipedia.org/wiki/Coupon_collector%27s_problem">(Coupon collector)</a></dt>
+          <dd> McDonald’s decides to give a <b>Pokémon</b> toy with every Happy Meal. Each time you buy a Happy Meal, you are equally likely to get any one of the $n$ Pokémon. What is the expected number of Happy Meals that you have to buy until you “catch ’em all”?</dd>
           <div class="px-5 pt-2 my-2 text-center">
             <img src="https://assets.pokemon.com/assets//cms2/img/misc/_tiles/happy-meal/2022/match-battle-169-us.jpg" style=" width: 100%; height: auto; max-width: 200px;">
           </div>
-          <dt>Problem 3</dt>
+          <dt>Problem 3 <a target="_blank" href="https://en.wikipedia.org/wiki/Birthday_problem">(Birthday paradox)</a></dt>
           <dd> A group of $60$ people are comparing their birthdays (as usual, assume that their birthdays are independent, all $365$ days are equally likely, etc.). Find the expected number of days in the year on which at least two of these people were born.
           </dd>
           <div class="px-5 pt-2 my-2 text-center">
             <img src="http://www.edscave.com/images/P_SharedBirthday.png" style=" width: 100%; height: auto; max-width: 400px;">
           </div>
-          <dt>Problem 4</dt>
+          <dt>Problem 4 <a target="_blank" href="https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_4.pdf">(Shoelace problem)</a></dt>
           <dd> There are $100$ shoelaces in a box. At each stage, you pick two random ends
             and tie them together. Either this results in a longer shoelace (if the two ends
             came from different pieces), or it results in a loop (if the two ends came from
             the same piece). What are the expected number of steps until everything is in
             loops, and the expected number of loops after everything is in loops? 
           </dd>
-          <div class="px-5 pt-2 my-2 text-center">
+          <!-- <div class="px-5 pt-2 my-2 text-center">
             <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Shoelaces_20050719_001.jpg" style=" width: 100%; height: auto; max-width: 200px;">
-          </div>
+          </div> -->
         </dl>
         
 
