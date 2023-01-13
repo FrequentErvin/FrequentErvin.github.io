@@ -191,4 +191,16 @@
     margin-right: calc(var(--bs-gutter-x) * -.5);
     margin-left: calc(var(--bs-gutter-x) * -.5);
   }
-  
+  .problem{
+    border-style: solid;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+    border-left-width: 10px;
+    border-color: rgb(255, 28, 28);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: rgb(255, 234, 241);
+  }

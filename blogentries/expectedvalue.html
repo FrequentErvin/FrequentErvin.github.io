@@ -182,7 +182,7 @@
         </div>
         <p>
           Now let's calculate the expected value: <br>
-          Following the tree downwards keeping track of the red letters where we stop we get the following: <br>
+          Following the tree downwards, keeping track of the red letters where we stop, we get the following: <br>
          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[\textnormal{Iron Tail}] = \frac{1}{2} \cdot 0 + \frac{1}{2^2}\cdot d + \frac{1}{2^3}\cdot 2d + \frac{1}{2^4}\cdot 3d + \ldots \]</div><br>
          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[\textnormal{Iron Tail}] = \frac{d}{2} \cdot (\frac{1}{2}+\frac{2}{2^2}+\frac{3}{2^3}+\ldots) \] </div>
           We find the following sum:
@@ -202,12 +202,72 @@
           The idea is to first separate the first term and the last and then compare the two expressions. The goal is to
           manipulate the both sides to reach previous terms, analogous to recursion. It works on a lot of different sums and 
           is very useful to keep in mind.
+        </p> <hr>
+        <p>
+          The Pikachu problem is actually a subcase of the <b>Mean Time to Failure problem</b> which states the following:
+        </p>
+        
+        <div class="problem">
+          <h5><b>Mean Time to Failure</b></h5>
+          <p>If a system independently fails at each time step with probability $p$, then the
+            expected number of steps up to the first failure is $\frac 1p$.</p>
+        </div> <br> 
+        <p>
+          This is very intuitive. Think of a Nintendo that has a $1/7$ probability of crashing each time you run Pokemon, you expect to be able to play
+          $7$ times with $1$ crash. <br> 
+          We've already proved this problem for the subcase $p=1/2$ (with the added $d$ in front for damage) and got the result. Think of the tails as being 
+          a crash and the heads adding $1$ to our counter of how many have already been heads/not crashed. <br>
+          Let $\mathbb{E}[X]$ denote the expected number of games until you crash. Examine the first try - the first time you tried turning on Pokemon. We 
+          divide our examination into two cases: $1)$ It turned on, yay! $2)$ It crashed, nay. Here's the equation we get:
+          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[\textnormal{number of attempts until failure}] = \mathbb{P}(\textnormal{of failure}) \cdot 1 + \mathbb{P}(\textnormal{of success}) \cdot \mathbb{E}[\textnormal{number of attempts until failure in this case}]\]</div>
+          <p>In general if we let $X$ be the r.v. number of attempts until failure, $F$ failure and $S$ success we have: </p>
+          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[X] = \mathbb{P}(F)\cdot \mathbb{E}[X|F] + \mathbb{P}(S) \cdot \mathbb{E}[X|S] \]</div>
+          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[X]= p \cdot 1 + (1-p) \cdot (\mathbb{E}[X] + 1) \]</div>
+          <div style="overflow-x: auto; overflow-y: hidden;">\[ \implies \mathbb{E}[X] = \frac 1p \]</div>
+        </p>
+        <p>
+          Calculating directly instead of the case examination would lead us to the following solution:
+          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[X] = \sum \limits_{1}^{\infty} k \cdot (1-p)^{k-1}\cdot p = \frac 1p \]</div>
         </p>
 
-        <h4 class="text-primary">Links for further reading</h4>
+        <h3>Problems</h3>
+        <dl>
+          <dt>Problem 1</dt>
+          <dd> Each year, as part of a “Secret Santa” tradition, a group of $n$ friends write their names on slips of papers and place the slips into a hat. Each member of the group draws a name at random from the hat and must by a gift for that person. Of course, it is possible that they draw their own name, in which case they buy a gift for themselves. What is the expected number of people who draw their own name? </dd>
+          <div class="px-5 pt-2 my-2 text-center">
+            <img src="https://img.freepik.com/free-vector/hand-drawn-secret-santa-illustration_23-2149162315.jpg?w=2000" style=" width: 100%; height: auto; max-width: 200px;">
+          </div>
+          <dt>Problem 2</dt>
+          <dd> McDonald’s decides to give a Pokemon toy with every Happy Meal. Each time you buy a Happy Meal, you are equally likely to get any one of the $n$ Pokemon. What is the expected number of Happy Meals that you have to buy until you “catch ’em all”?</dd>
+          <div class="px-5 pt-2 my-2 text-center">
+            <img src="https://assets.pokemon.com/assets//cms2/img/misc/_tiles/happy-meal/2022/match-battle-169-us.jpg" style=" width: 100%; height: auto; max-width: 200px;">
+          </div>
+          <dt>Problem 3</dt>
+          <dd> A group of $60$ people are comparing their birthdays (as usual, assume that their birthdays are independent, all $365$ days are equally likely, etc.). Find the expected number of days in the year on which at least two of these people were born.
+          </dd>
+          <div class="px-5 pt-2 my-2 text-center">
+            <img src="http://www.edscave.com/images/P_SharedBirthday.png" style=" width: 100%; height: auto; max-width: 400px;">
+          </div>
+          <dt>Problem 4</dt>
+          <dd> There are $100$ shoelaces in a box. At each stage, you pick two random ends
+            and tie them together. Either this results in a longer shoelace (if the two ends
+            came from different pieces), or it results in a loop (if the two ends came from
+            the same piece). What are the expected number of steps until everything is in
+            loops, and the expected number of loops after everything is in loops? 
+          </dd>
+          <div class="px-5 pt-2 my-2 text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Shoelaces_20050719_001.jpg" style=" width: 100%; height: auto; max-width: 200px;">
+          </div>
+        </dl>
+        
+
+        <h4 class="text-primary">References and links for further reading</h4>
         <ul>
+          <li><a target="_blank" href="https://dlsun.github.io/probability/linearity.html">Introduction to Probability, Prof. Dennis Sun</a></li>
           <li><a target="_blank" href="https://web.evanchen.cc/handouts/ProbabilisticMethod/ProbabilisticMethod.pdf">Evan Chen's Probabilistic method</a></li>
+          <li><a target="_blank" href="https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_4.pdf">Harvard, Prof. Joe Blitzstein, Stat 110</a></li>
           <li><a target="_blank" href="https://www.cantorsparadise.com/how-many-cycles-will-you-find-in-a-random-permutation-c88288bcdb5">"How Many Cycles Will You Find in a Random Permutation?" by Haris Angelidakis</a></li>
+          <li><a target="_blank" href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/mit6_042js15_session32.pdf">MIT OCW - Expectation: Chapter 18.4-18.5</a></li>
         </ul>
         
       </article>
