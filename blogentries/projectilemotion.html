@@ -208,11 +208,19 @@
             </div>
             <br> <br>
             <p>
-              Notice the great spikes at around $x=2$ and $x=13$ (one goes beyond the screen). That's typically not what we want.
+              Notice the great spikes at around $x=2$ and $x=13$ (one goes beyond the screen). That's typically not what we want. A famous example is 
+              interpolating the function $f(x) = \frac 1{1+25x^2}$ at points $x_i = \frac{2i}{n}-1$: 
+              <script src="https://gist.github.com/FrequentErvin/948614c4fad3a85c045b8ce194060253.js"></script>
+              <div class="px-5 pt-2 my-2 text-center">
+                <img src="/images/blog/zoomedInLagrange.png" style=" width: 100%; height: auto; max-width: 600px;">
+              </div>
+              <div class="px-5 pt-2 my-2 text-center">
+                <img src="/images/blog/zoomedOutLagrange.png" style=" width: 100%; height: auto; max-width: 600px;">
+              </div> <br> <br>
               To avoid this in data science we use cubic splines which mimic a smooth polynomial passing through our points. You sort your datapoints by 
               their $x$ values and go left to right and fit each two consecutive points with a (typically) cubic curve. We use cubics because we need to be 
               able to have the same slopes (derivatives) at the ends of the intervals in order for the transition to be smooth. You can check that parabolas
-              wouldn't suffice there. So at the end we have smooth connections between points:
+              wouldn't suffice there. So at the end we have smooth connections between points: <br> <br>
               <script src="https://gist.github.com/FrequentErvin/f8bd9f30b9f7b48d49974d21f4397486.js"></script>
               <div class="px-5 pt-2 my-2 text-center">
                 <img src="/images/blog/cubicSpline.png" style=" width: 100%; height: auto; max-width: 600px;">
