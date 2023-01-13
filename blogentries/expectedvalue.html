@@ -201,7 +201,9 @@
           Hence its limit is $2$ as $k$ goes to infinity since $k+2$ is eaten up by the $2^k$. <br>
           The idea is to first separate the first term and the last and then compare the two expressions. The goal is to
           manipulate the both sides to reach previous terms, analogous to recursion. It works on a lot of different sums and 
-          is very useful to keep in mind.
+          is very useful to keep in mind.<br>
+          Such sums are also called <b>arithmetico-geometric</b> sums. They can be calculated with the trick of multiplying by $1/2$ and then subtracting from 
+          the original sum - something very similar to the Pertrubation method. Read more on <a target="_blank" href="https://en.wikipedia.org/wiki/Arithmetico-geometric_sequence">arithmetico-geometric series.</a>
         </p> <hr>
         <p>
           The Pikachu problem is actually a subcase of the <b>Mean Time to Failure problem</b> which states the following:
@@ -229,7 +231,15 @@
           Calculating directly instead of the case examination would lead us to the following solution:
           <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[X] = \sum \limits_{1}^{\infty} k \cdot (1-p)^{k-1}\cdot p = \frac 1p \]</div>
         </p>
-
+        <p>
+          "As a further example, suppose a couple insists on having children until they get a boy, then how many baby girls should they expect 
+          before their first boy? Assume for simplicity that there is a $50%$ chance that a child will be a boy and that the genders of siblings 
+          are mutually independent. This is really a variant of the previous problem. The question, “How many hours until the program crashes?” 
+          is mathematically the same as the question, “How many children must the couple have until they get a boy?” In this case, a crash corresponds 
+          to having a boy, so $p=1/2$. By the preceding analysis, the couple should expect a baby boy after having $1/p = 2$ children. 
+          Since the last of these will be a boy, they should expect just one girl. <b>So even in societies where couples pursue this commitment to boys, 
+            the expected population will divide evenly between boys and girls.</b>" (taken from <a target="_blank" href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/mit6_042js15_session32.pdf">MIT OCW - Expectation: Chapter 18.4-18.5</a>)
+        </p>
         <h3>Problems</h3>
         <dl>
           <dt>Problem 1</dt>
