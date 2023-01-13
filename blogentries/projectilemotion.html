@@ -89,7 +89,7 @@
         </div> -->
     <div class="">
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        Mathematics - Physics - Polynomials 
+        Mathematics - Physics - Polynomials - Data Science
       </h3>
       <article class="blog-post">
         <h2 class="blog-post-title"> Projectile polynomials</h2>
@@ -166,7 +166,8 @@
           </p>
           <p>
             Note that fitting polynomials ends up just being $n$ equations with $n$ variables. If we have $n$ points to fit to a polynomial of degree $n$ there are
-            infinitely many such polynomials. If we have $n+1$ points, then there exists exactly one polynomial (or none depending if we take the restriction that $x_i$ are sorted).
+            infinitely many such polynomials. If we have $n+1$ points, then there exists exactly one polynomial of degree $n$ (or none depending if we take the restriction that $x_i$ are sorted).
+            Obviously, the Lagrange polynomial can have degree less than $n$ if the given points lie on a curve of smaller degree.
             <br>
             <div class="px-5 pt-2 my-2 text-center">
               <img src="/images/blog/lagrange.jpg" style=" width: 100%; height: auto; max-width: 600px;">
@@ -179,7 +180,7 @@
             For simplicity I'll solve it for $n=3$. We want to find the parabola that goes through the points $(x_0,y_0),(x_1,y_1),(x_2,y_2)$.<br>
             The simplest way to achieve such a quadratic is if it looked something like this:
             <div style="overflow-x: auto; overflow-y: hidden">\[ p(x) = y_0 \cdot A + y_1 \cdot B + y_2 \cdot C \]</div>
-            where we can make the letters turn into zero when needed. Obviously $A,B,C$ shouldn't be constants. Let them be polynomials and at leasst one should have 
+            where we can make the letters turn into zero when needed. Obviously $A,B,C$ shouldn't be constants. Let them be polynomials and at least one should have 
             degree $2$. We need $A(x_0) = 1$ and 
             $A(x_1)=A(x_2)=0$. How can we achieve this? Simply take $A(x) = \alpha (x-x_1)(x-x_2)$ but we also need $A(x_0)=1$ so $\alpha = \frac{1}{(x_0-x_1)(x_0-x_2)}$.
             Hence the first term is $y_0 \cdot \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}$. Repeating for the remaining $B,C$ we find the general cubic to be:
@@ -195,11 +196,31 @@
 
             <br>
             <br>
-            In conclusion, for any given $n+1$ points we can find a polynomial of degree $n$ that passes through all of those points. This kind of polynomial can be very useful in general and even serve as a relatively naive 
-            technique in Data Science where predicting outputs given inputs is crucial. <br> <br> 
+            In conclusion, for any given $n+1$ points we can find a polynomial of degree $n$ that passes through all of those points. Another kind of interpolation is the <a target="_blank" href="https://en.wikipedia.org/wiki/Newton_polynomial">Newton Interpolation.</a> This kind of polynomial can be very useful in general and even serve as a relatively naive 
+            technique in data science where predicting outputs given inputs is crucial. <br> <br> 
             For example, it is often better than <b>Linear Interpolation</b> and <b>Nearest Neighbors Interpolation</b>
-             since it avoids any jaggedness by its polynomial nature. 
+             since it avoids any jaggedness by its polynomial nature. It does have its problems though. It is usually not useful for large sets of data points since it usually sky-rockets into 
+             space at the edges of the interval. This is called the <b>Runge's phenomenon</b>: 
+             <br> <br>
+             <script src="https://gist.github.com/FrequentErvin/e03ca8dc62af9923f4bc02b5b78f2f8b.js"></script>
+             <div class="px-5 pt-2 my-2 text-center">
+              <img src="/images/blog/phenomenom.png" style=" width: 100%; height: auto; max-width: 600px;">
+            </div>
             <br> <br>
+            <p>
+              Notice the great spikes at around $x=2$ and $x=13$ (one goes beyond the screen). That's typically not what we want.
+              To avoid this in data science we use cubic splines which mimic a smooth polynomial passing through our points. You sort your datapoints by 
+              their $x$ values and go left to right and fit each two consecutive points with a (typically) cubic curve. We use cubics because we need to be 
+              able to have the same slopes (derivatives) at the ends of the intervals in order for the transition to be smooth. You can check that parabolas
+              wouldn't suffice there. So at the end we have smooth connections between points:
+              <script src="https://gist.github.com/FrequentErvin/f8bd9f30b9f7b48d49974d21f4397486.js"></script>
+              <div class="px-5 pt-2 my-2 text-center">
+                <img src="/images/blog/cubicSpline.png" style=" width: 100%; height: auto; max-width: 600px;">
+              </div>
+              <br> <br>
+              Now notice the smoothness of the transitions. This is thanks to the equal derivatives. We have basically made a graph out of $n$ different smaller
+              cubics. Read more about what the algorithm for constructing these cubics looks like <a href="https://en.wikipedia.org/wiki/Spline_interpolation">here.</a> Cute! 
+            </p>
             Coming back to our Mario game, it's now trivial to solve every level by simply reading off the coordinates
             of three distinct coins and putting them into $(\bigstar)$. If the level is possible, not more than three coins are needed
             because they uniquely determine our parabola/jump. The game does get less precise as you go through the levels and just
