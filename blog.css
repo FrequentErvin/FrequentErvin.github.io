@@ -203,4 +203,19 @@
     padding-right: 10px;
     padding-left: 10px;
     background-color: rgb(255, 234, 241);
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
+  .wikitable {
+    background-color: #f8f9fa;
+    color: #202122;
+    margin: 1em 0;
+    border: 1px solid #a2a9b1;
+    border-collapse: collapse;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}

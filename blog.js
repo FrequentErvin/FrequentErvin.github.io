@@ -13,6 +13,9 @@ document.getElementById("hiooo").onclick=function(){
 document.getElementById("mario").onclick=function(){
   location.href="/blogentries/projectilemotion.html";
 }
+document.getElementById("hashing").onclick=function(){
+  location.href="/blogentries/hashing.html";
+}
 //Get the button
 let mybutton = document.getElementById("scroll");
 
