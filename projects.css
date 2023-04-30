@@ -135,3 +135,13 @@ h1 {
     width: 100%;
     background: url('./blobs.svg') no-repeat bottom / cover;
   }
+  @media screen and (max-width: 480px){
+      .fmhl{
+        height: 350px;
+      }
+  }
+  @media screen and (min-width: 480px){
+    .fmhl{
+      height: 450px;
+    }
+}
