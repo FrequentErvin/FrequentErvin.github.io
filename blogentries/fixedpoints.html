@@ -86,32 +86,58 @@
       <article class="blog-post">
         <h2 class="blog-post-title"> Variable then fixed. </h2>
         <p class="blog-post-meta">Feb 26, 2023</p>
-        <p> Whether you like or dislike geometry, you will find this post more enjoyable than the average geometry. It is very abstract without computer aid to visualize them but it is very satisfying when you can clearly figure out what's happening. I bet every math olympiad goer has at least once seen problems of this type:
+        <p> In this post I will go over some less standard problems in olympiad geometry. In my opinion, these problems are unique compared to standard "config" geometry since they usually ask something 
+          more fun than the standard "Prove $\angle A = \angle B$" or "Prove that $A,B,C$ are collinear"; they ask the question of what happens when we vary some part of a picture. How does the rest of the 
+          picture react to those pertrubations, and usually how does one specific object behave under these changes.
+          <p>The keyword for these problems is the <b>locus</b>. In this context, locus represents the path the object traces as the diagram changes due to some movement.
+           In most problems, the setting is like this: </p>
+           <ol>
+            <li>You are given a shape and points that relate to each other in some described way. </li>
+            <li>One of the points can vary on some line, circle or in general shape.</li>
+            <li>You are asked to determine the <b>locus</b> of some object as that point moves (usually this object is just a point since most other statements like: "prove that a circle passes through a fixed point as something varies" can be 
+            boiled down to a point moving. </li>
+           </ol>
+          <p> Usually, the changes are simple varying of points on lines and the statement we should prove consists of four steps:</p>
+          <ol>
+            <li>Observe which point moves and how that movement roughly corresponds to the movement of the object whose motion we want to describe.</li>
+            <li>Try moving the variable point into awkward scenarios from which we can glean insight into what's happening</li>
+            <li>Guess what the locus of the desired object is. </li>
+            <li>Prove your guess.</li>
+          </ol>
         </p>
+        <p> Whether you like or dislike geometry, you will find this post more enjoyable than solving average olympiad geometry problems. It is very abstract without computer aid (GeoGebra) to visualize them but it is very satisfying when you can clearly figure out what's happening. 
+
         <div>
-          <div class="row">
+          <div class="problem">
             <div class="col-md-12 mt-3">
-              <div class="h-100 p-4 text-white bg-dark rounded-3">
-                <h4>Easy example</h4>
-                <hr class="thick">
-                <p>On the sides of the scalene acute $\Delta ABC$, choose the points $X \in AB$ and $Y \in AC$ so that $BX = CY $. Prove that, regardless of the choice of points $X$ and $Y$, the circle circumscribed around $\Delta AXY$ passes through some fixed point other than $A$.</p>
-              </div>
-            </div>
+              <h5><b>Introductory example</b></h5>
+              <p>On the sides of the scalene acute $\Delta ABC$, choose the points $X \in AB$ and $Y \in AC$ so that $BX = CY $. Prove that, regardless of the choice of points $X$ and $Y$, the circle circumscribed around $\Delta AXY$ passes through some fixed point other than $A$.</p>
           </div>
         </div>
         <div class="px-5 pt-2 my-2 text-center border-bottom">
           <img src="/images/blog/axy.jpg" class="img-fluid" width="500">
         <h1 class="display-4 fw-bold"></h1>
         <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">Not hard to notice that $\triangle BXN \cong \triangle CYN$ where $N$ is the midarc $BAC$. Thus $AXYN$ is cyclic.</p>
+          <p class="lead mb-4"></p>
         </div>
         </div>
-        <!-- <p>After the contest had ended: </p>
-        <blockquote class="blockquote">
-          <p>"How was this problem 1? I don't know a single person who solved it in less than 2 hours." </p>
-        </blockquote> -->
-        <p> Before I go any further, I'll state some terms that are related/used further into the post. For the people that want to search them up: uniformity, animation, moving points, trigonometric ptolomey, spiral similarity, gliding principle, projective maps.</p>
-        <p>Now let me show you some strikingly similar problems: </p>
+        <p>
+          <b>Solution:</b> First, we notice that as $X,Y$ move towards $A$ the circumcircle $AXY$ also moves towards $A$. If we let $BX=CY=0$ we get that the 
+          circumcircle of $AXY$ is the same as $ABC$ so the fixed point must lie on the circumcircle of $ABC$. Pushing $X$ into $A$ we get a circle tangent to $AB$ at $A=X$. Let the intersection 
+          of this circle and the circumcircle of $ABC$ be $N$. Inspecting angles we easily find $\triangle BAN \equiv \triangle CYN$ so we have $BN=CN$. If the problem is correct, 
+          then this point must be the fixed point i.e. the point on circumcircle $ABC$ for which $BN=CN$ holds (note that $AXY$ cuts $ABC$ above $BC$ so it can't be the smaller midarc).
+          It's not hard to notice that in general $\triangle BXN \cong \triangle CYN$ where $N$ is the midarc $BAC$ by the same angle chasing. Thus $AXYN$ is always cyclic, and thus this is our desired fixed point (the midarc $BAC$).
+        </p>
+        <p> Notice also that this means the circumcenter of $AXY$ liess on a fixed line (the bisector of chord $AN$). Prove that this line is parallel to the angle bisector of $BAC$ and "find" its intersection with $BC$. <br>
+        Often, problems about circles passing through fixed points can be interpreted as their center lying on a fixed line if the circles are mutually coaxial (have the same chord in our case, i.e. 2 fixed points). </p>
+        <div class="remark">
+          <h5><b>Remark</b></h5>
+          <p>The above problem remains true if point $X$ is between $A,B$ and $C$ is between $A,Y$ (outside triangle $ABC$). In this case, the fixed point is the midarc $BC$ without $A$. Math likes to have two versions of the same 
+            thing for two similar points (for example, if something holds for the incetner, something similar might hold for the excenter).
+          </p>
+        </div>
+        <p> Before I go any further, I'll state some terms that are used further into the post. You can still understand everything, but for the people that want to search them up: uniformity, trigonometric ptolomey, spiral similarity, gliding principle.</p>
+        <p>Now I showcase some strikingly similar problems: </p>
         <ol>
           <li><a href="https://artofproblemsolving.com/community/c6h1525157p9136959" target="_blank" rel="noopener noreferrer">(JBMO SHL 2016)</a> Let ${ABC}$ be an acute angled triangle whose shortest side is ${BC}$. Consider a variable point ${P}$ on the side ${BC}$, and let ${D}$ and ${E}$ be points on ${AB}$ and ${AC}$, respectively, such that ${BD=BP}$ and ${CP=CE}$. Prove that, as ${P}$ traces ${BC}$, the circumcircle of the triangle ${ADE}$ passes through a fixed point.</li>
           <li><a href="https://artofproblemsolving.com/community/c6h550606p3195787" target="_blank" rel="noopener noreferrer">(USATST 2012)</a> In acute triangle $ABC$, $\angle{A}<\angle{B}$ and $\angle{A}<\angle{C}$. Let $P$ be a variable point on side $BC$. Points $D$ and $E$ lie on sides $AB$ and $AC$, respectively, such that $BP=PD$ and $CP=PE$. Prove that as $P$ moves along side $BC$, the circumcircle of triangle $ADE$ passes through a fixed point other than $A$.</li>
@@ -119,7 +145,7 @@
           <li> <a href="https://artofproblemsolving.com/community/c6h545085p3151962" target="_blank" rel="noopener noreferrer">(ELMO 2013)</a> In $\triangle ABC$, a point $D$ lies on line $BC$. The circumcircle of $ABD$ meets $AC$ at $F$ (other than $A$), and the circumcircle of $ADC$ meets $AB$ at $E$ (other than $A$). Prove that as $D$ varies, the circumcircle of $AEF$ always passes through a fixed point other than $A$, and that this point lies on the median from $A$ to $BC$.</li>
           <li> <a href="https://artofproblemsolving.com/community/c6h224628p1247506" target="_blank" rel="noopener noreferrer">(USATST 2008)</a> In acute triangle $ABC$, $\angle{A}$ is the smallest . $P$ be a point on side $BC$. Points $D$ and $E$ lie on sides $AB$ and $AC$, such that $PD$ and $PE$ are parallel to two given straight lines. Prove that as $P$ moves along $BC$, the circumcircle of triangle $ADE$ passes through a fixed point other than $A$.</li>
         </ol>
-        <p>Take a second and realise the immense similarity and the overall nice results listed above. And their respective "outline" solutions:</p>
+        <p>Take a second and realize the immense similarity of the problems above. Their respective "outline" solutions:</p>
         <dl>
           <dt>Problem 1</dt>
           <dd>It's the incenter $I$. This problem is also known as <b>Sparrow's lemma</b>. The solution is a few cyclic quads and some angle chasing.</dd>
@@ -152,20 +178,93 @@
           <p><b>Second approach - Trigonometric Ptolomey's theorem</b> Trig Ptolomey states that points $A,B,C,D$ are cyclic iff <div style="overflow-x: auto; overflow-y: hidden;">$AB \cdot \sin{\angle CAD} + AD \cdot \sin{\angle BAC} = AC \cdot \sin{\angle BAD}$</div> (this is not the full general case). So if we want our circle $AEF$ to pass through some fixed point $S$, this relation must hold: <div style="overflow-x: auto; overflow-y: hidden;">$AE \cdot \sin{\angle SAF} + AF \cdot \sin{\angle EAS} = AS \cdot \sin{\angle EAF}$.</div>  </p>
           <p><b> Third approach - Lemma about fixed point</b> Let $\angle pAq$ be given in the plane. Let $X,Y$ vary on $p,q$ respectively. If $c_1 \cdot AX + c_2 \cdot AY = c_3$ (a fixed linear combination of the line segments $AX,AY$ is constant) for all positions of $X,Y$ then the set of circles $AXY$ which satisfy this property pass through a fixed point. For a proof of this claim one can take two samples of points $X_1,Y_1$, $X_2,Y_2$ and intersect the circles $AX_1Y_1$ and $AX_2Y_2$ and prove that this is the common point for all such circles by spiral similarities.</p>
           <p>
-          Turns out one can fully characterise this fixed point. Look at Advanced P1.
+          Turns out one can fully characterise this fixed point (with respect to the triangle $ABC$ and fixed points). To see this, solve Advanced P1 below.
           </p>
          <hr>
+         <h2>Similar problems</h2>
+         <div>
+          <div class="problem">
+              <h5><b>A Sharygin problem restated</b></h5>
+              <p>Let $ABC$ be an acute triangle. Let $D$ be a point on the arc $BC$ without $A$. Let $P,Q$ be points on $BC$ such that $\angle BDP = \angle CDQ$. Find the locus of the circumcenter of triangle 
+                $APQ$ as $P,Q$ vary on $BC$.
+              </p>
+          </div>
+          <div class="container center-block mt-4 mb-4">
+            <img src="/images/blog/apq.jpg" class="img-fluid mx-auto d-block" width="700">
+          </div>
+          <div class="solution">
+            <h5><b>Solution:</b></h5>
+            <p>Notice the similarity with the introductory problem. Letting $P,Q$ be $B,C$ respectively, we get that $\odot APQ \equiv \odot ABC$ thus the fixed point must lie on $\odot ABC$. Keeping 
+              this in mind, we know that the radical axis of this circle $APQ$ cuts $BC$ at a fixed point (common trick to extend radical axis to $BC$) since $A$ and that mysterious point are fixed. 
+              So we need to prove that there exists a point on $BC$ which has equal power with respect to $ABC$ and $APQ$ since that point would always be fixed and lie on $BC$ thus making the mysterious point exist.
+              Which point to take? Let that point be $T$. We need $TP\cdot TQ = c$ for power of point to work. Actually, this $c$ has to be $TB \cdot TC$. Now switch focus to triangle $DPQ$. We have 
+              $DP,DQ$ isogonal in angle $BDC$ which means the circumcenter of this triangle lies on a fixed line (note that $AH,AO$ are isogonal where $H$ is the orthocenter of a general triangle). Thus if we let 
+              $T$ be the point on $BC$ such that $TD$ is tangent to $DPQ$ we have $T$ is fixed since $TD$ is perpendicular to the line connecting $D$ and the circumcenter of triangle $DPQ$ (notice also that $DPQ$ touches $ABC$ at $D$). Looking at power of point from this $T$ 
+              we have $TD^2 = TP \cdot TQ = TB \cdot TC$ which is what we desired to prove.
+            </p>
+          </div>
+          <div class="remark">
+            <h5><b>Variant of the gliding principle</b></h5>
+            <p>Let $A$ be a fixed point and $B$ be on a fixed line. If we vary $B$ on that line, any other given point $C$ such that $ABC$ has fixed shape will lie on a fixed line.</p>
+          </div>
+          <div class="container center-block mt-4 mb-4">
+            <img src="/images/blog/gliding.jpg" class="img-fluid mx-auto d-block" width="700">
+          </div>
+          Prove this with the theory from above and also prove that the point $C$ moves uniformly on that line i.e. the ratios stay the same.
+          <div class="problem">
+            <h5><b> External tangents locus (own, inspired)</b></h5>
+            <p>Let $ABC$ be an acute triangle. Let $P$ be a point on side $BC$. Let the external tangents to the circmucircles of triangles $ABP$ and $ACP$ intersect at $S$. Find the locus of $S$ as the point $P$ varies on $BC$.
+            </p>
+        </div>
+        <div class="container center-block mt-4 mb-4">
+          <img src="/images/blog/tangents.jpg" class="img-fluid mx-auto d-block" width="700">
+        </div>
+        <div class="solution">
+          <h5><b>Solution:</b></h5>
+          <p>Moving around point $P$ doesn't seem too useful at first glance. The only thing we can infer is that the locus will probably be a line since by "extending" the definition of $P$ we can place $P$ at infinity along line $BC$ and get a point $S$ infinitely far from 
+            triangle $ABC$ (a common trick). Now we try to guess what that line is. Exploring the picture, we notice that $S$ is the center of homothety of these two circles. This means the following ratio:
+            \[ \frac{SO_1}{SO_2} = \frac{R_1}{R_2}, \]
+            here $R_1,R_2$ are the radii of the circumcircles of triangle $ABP, APC$ respectively. Notice also that $R_1 = AO_1$ and $R_2 = AO_2$ which means:
+            \[ \frac{SO_1}{SO_2} = \frac{AO_1}{AO_2}, \]
+            which implies that $AS$ is the external angle bisector of angle $O_1AO_2$ i.e. $S$ lies on the <b>Apollonius circle</b> of triangle $AO_1O_2$.
+            Notice also that $AO_1O_2$ is similar to $ABC$ since $\angle BAO_1 = \angle CAO_2$ which implies $\angle O_1AO_2 = \angle BAC$ and because $\angle AO_1O_2 = \frac{\angle AO_1P}{2} = \angle ABP = \angle ABC$. 
+            This implies that $AO_1O_2$ has constant shape and also that $ASO_2$ has constant shape (same angles no matter the position of $P$). Now simply notice that $O_2$ lies on a fixed line (the bisector of $AC$) and thus 
+            $S$ also lies on a fixed line by the <b>Variant of the gliding principle</b> above. <br> <br>
+            Note that we didn't determine which line this is, just that it exists. One can prove that this line is the bisector of the segment $AT$ where $T$ is the foot of the external angle bisector of $BAC$.
+          </p>
+        </div>
+              
          
         <h3>Problems</h3>
         <h4 class="text-primary">Introductory</h4>
         <dl>
           <dt>Problem 1</dt>
-          <dd> Let ${ABC}$ be an acute angled triangle whose shortest side is ${BC}$. Consider a variable point ${P}$ on the side ${BC}$, and let ${D}$ and ${E}$ be points on ${AB}$ and ${AC}$, respectively, such that ${BD=BP}$ and ${CP=CE}$. Prove that, as ${P}$ traces ${BC}$, the circumcircle of the triangle ${ADE}$ passes through a fixed point.</dd>
+          <dd> (JBMO Shortlist 2016) Let ${ABC}$ be an acute angled triangle whose shortest side is ${BC}$. Consider a variable point ${P}$ on the side ${BC}$, and let ${D}$ and ${E}$ be points on ${AB}$ and ${AC}$, respectively, such that ${BD=BP}$ and ${CP=CE}$. Prove that, as ${P}$ traces ${BC}$, the circumcircle of the triangle ${ADE}$ passes through a fixed point.</dd>
+        </dl>
+        <dl>
+          <dt>Problem 2</dt>
+          <dd> (Folklore) Let two circles $\omega_1, \omega_2$ intersect at $A,B$. A line passing through $A$ intersects $\omega_1, \omega_2$ in points $P,Q$. Prove that the bisector of $PQ$ passes through a fixed point.</dd>
+        </dl>
+        <h4 class="text-success">Medium</h4>
+        <dl>
+          <dt>Problem 1</dt>
+          <dd>(Saint Petersburg Olympiad) Let $ABC$ be an acute triangle. Variable point $X$ lies on segment $AC$, and variable point $Y$ lies on the ray $BC$ but not segment $BC$, such that $\angle ABX+\angle CXY =90$. Point $T$ is the projection of $B$ on $XY$. Prove that all points $T$ lie on a fixed line.</dd>
+        </dl>
+        <dl>
+          <dt>Problem 2</dt>
+          <dd>(Own) Let $ABC$ be an acute triangle. Points $P,Q,R$ are on the circumcircle of triangle $ABC$ such that $\angle BAP = \angle CBQ = \angle ACR$. Prove that the circumcenter of the triangle formed by the lines 
+            $AP,BQ,CR$ lies on a fixed circle.
+          </dd>
         </dl>
         <h4 class="text-danger">Advanced</h4>
         <dl>
           <dt>Problem 1</dt>
-          <dd>Let $ABC$ be a triangle and let $P$ be a point not lying on any of the three lines $AB$, $BC$, or $CA$. Distinct points $D$, $E$, and $F$ lie on lines $BC$, $AC$, and $AB$, respectively, such that $\overline{DE}\parallel \overline{CP}$ and $\overline{DF}\parallel \overline{BP}$. Show that there exists a point $Q$ on the circumcircle of $\triangle AEF$ such that $\triangle BAQ$ is similar to $\triangle PAC$.</dd>
+          <dd>(USA EGMO TST) Let $ABC$ be a triangle and let $P$ be a point not lying on any of the three lines $AB$, $BC$, or $CA$. Distinct points $D$, $E$, and $F$ lie on lines $BC$, $AC$, and $AB$, respectively, such that $\overline{DE}\parallel \overline{CP}$ and $\overline{DF}\parallel \overline{BP}$. Show that there exists a point $Q$ on the circumcircle of $\triangle AEF$ such that $\triangle BAQ$ is similar to $\triangle PAC$.</dd>
+        </dl>
+        <dl>
+          <dt>Problem 2</dt>
+          <dd> (Polish National Olympiad) Let $\omega$ be the circumcircle of a triangle $ABC$. Let $P$ be any point on $\omega$ different than the verticies of the triangle.
+            Line $AP$ intersects $BC$ at $D$, $BP$ intersects $AC$ at $E$ and $CP$ intersects $AB$ at $F$. Let $X$ be the projection of $D$ onto line passing through midpoints of $AP$ and $BC$, $Y$ be the projection of $E$ onto line passing through $BP$ and $AC$ and let $Z$ be the projection of $F$ onto line passing through midpoints of $CP$ and $AB$. Let $Q$ be the circumcenter of triangle $XYZ$. Prove that all possible points $Q$, corresponding to different positions of $P$ lie on one circle.</dd>
         </dl>
       </article>
     </div>

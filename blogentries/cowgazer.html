@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cow Gazer</title>
+    <link rel="icon" href="/images/mojaglavusina.jpg"> <!-- icon on tab -->
+    <link href="/index.css" rel="stylesheet" type="text/css"> <!-- for footer -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/css/hover.css" rel="stylesheet" media="all"> <!-- effects on hover navbar-->
+    <!-- <link href="/style.css" rel="stylesheet" type="text/css"> -->
+    <link href="/blog.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/blogentries/bloby.css" rel="stylesheet"> <!-- for blob -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sora"> <!-- for font -->
+    <script>
+      MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <!-- <a class="navbar-brand text-white p-2" href="/index.html"><h2>Ervin Macić</h2></a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0 justify-content-center">
+            <li class="nav-item px-3 justify-content-center">
+              <a class="nav-link active text-white hvr-underline-reveal" aria-current="page" href="#" id="GoHome"><h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">About</h4></a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" href="#" id="blog"><h4 style="text-shadow: 1.5px 1.5px #50524f ">Blog</h4></a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" href="/contact.html">
+                <h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">Contact</h4>
+              </a>
+            </li>
+            <!-- <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" href="/ErvinMacic_CV.pdf" id="cv" target="_blank"><h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">CV</h4></a>
+            </li> -->
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" id="project" href="#"><h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">Projects</h4></a>
+            </li>
+          </ul>
+          <!-- <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form> -->
+        </div>
+      </div>
+    </nav>
+    <div class="spacer layer1"></div> 
+  <a href="#" id="scroll" style="display: none;"><span></span></a>
+<div class="container col-md-8 px-4 py-5 shadow-lg mt-1 mb-4 bg-blob-blog">
+  <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
+       <div class="col-lg-6">
+        <img id="cow" class="vc-image-1 shadow"> 
+      </div> 
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Cow Gazer</em></h1>
+      <p class="lead mb-2 m-3">In this blog post I will go over a machine learning project I've been working on. </p>
+      <p class="lead mb-2 m-3"> During my internship at <a style="color: rgb(161, 203, 33)" href="http://isaaccode.ba/" target="_blank">Isaac code</a>, I made a cow recognition system for farmers. </p>
+    </div>
+  </div>
+</div>
+<main class="container col-md-8">
+  <div class="row">
+    <!-- <div class="col-md-1"></div> -->
+    <div class="">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        Computer vision - Machine Learning - Artificial Intelligence
+      </h3>
+      <article class="blog-post">
+        <h2 class="blog-post-title"> Cow Gazer</h2>
+        <p class="blog-post-meta">May 7, 2023</p>
+        <p>Here I'll make a quick and sweet introduction to machine learning. I'll cover the essentials and main ideas behind 
+          making predictive models. Next, I will dive into the specifics of the project and general workflow.
+          Thanks to my extended essay at the end of high school I've collected my thoughts 
+          and hope to give a high-level overview of the project. In the follow-up post I'll go low-level and get more technical
+        with the implementations of the models used. </p>
+        <h3>What's  the purpose of machine learning?</h3>
+        <p>
+          Practitioners often describe the field as a statistical science, trying to make models to predict correct labels for data points not seen before. 
+          The word "model" here refers to any technique (either an algorithm, a set of operations or something else) made for a particular 
+          prediction problem. For instance, a model might be something that predicts is there a cat in an image the model has never seen before. Such models
+          are used everywhere, from self-driving cars to cancer screenings.
+        </p>
+        <p>The more precise task of machine learning practitioners is often to make accurate predictions that will be used by some end user to make
+          decisions. For example, a model that predicts if some person will recommit crime after given probation has been used to sway the opinion of judges
+          in America. Such usecases often get less technical and more ethical. 
+        </p>
+        <p>
+          Unfortunately, there is only so little that humans can accomplish by ingenuity in comparison with a consistent evaluation over millions of choices 
+          carried out automatically by a model. This "brute force" approach appears infeasible, but it's actually one of the most important intuitions for 
+          machine learning, and more specifically deep learning. Neural networks can often be thought of as nonparametric models, which given enough epochs
+          and data can fit correctly labeled data within an $\epsilon$ error to the ground-truth. The remaining question is: Can it do so for never-before-seen 
+          data too?
+        </p>
+        <p>
+          This is the troubling "Generalization problem". Often, ML engineers rely on intuitions and past references to engineer better models. Then, there is a 
+          mismatch between theoretical confirmation and the actual results DL networks are achieveing. In some sense, freely speaking, DNNs are performing better
+          than what the best possible performance math can justify or prove plausible. 
+        </p>
+        
+        <hr>
+        <h4 class="text-primary">References and links for further reading</h4>
+        <ul>
+          <li><a target="_blank" href="https://drive.google.com/file/d/1HOuWyGL4FVjX_r-kLOqEOXAho1i4l9vS/view?usp=sharing">MBL Lecture</a></li>
+          <li><a target="_blank" href="https://dlsun.github.io/probability/linearity.html">Introduction to Probability, Prof. Dennis Sun</a></li>
+          <li><a target="_blank" href="https://web.evanchen.cc/handouts/ProbabilisticMethod/ProbabilisticMethod.pdf">Evan Chen's Probabilistic method</a></li>
+          <li><a target="_blank" href="https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_4.pdf">Harvard, Prof. Joe Blitzstein, Stat 110</a></li>
+          <li><a target="_blank" href="https://www.cantorsparadise.com/how-many-cycles-will-you-find-in-a-random-permutation-c88288bcdb5">"How Many Cycles Will You Find in a Random Permutation?" by Haris Angelidakis</a></li>
+          <li><a target="_blank" href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/mit6_042js15_session32.pdf">MIT OCW - Expectation: Chapter 18.4-18.5</a></li>
+        </ul>
+        
+      </article>
+    </div>
+    <!-- <div class="col-md-1"></div> -->
+  </div>
+
+</main>
+    <script src="/blog.js"></script>
+    <script src="/index.js"></script>
+    <div class="spacer whiteblack"></div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">For any questions, comments or you just want to chat, visit the <a>Contact</a> page. I love sharing
+              ideas and talking with smart people, so by all means, please do! Besides that, check in often to see the blog post and/or projects.  </p>
+          </div>
+  
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
+         <a href="https://github.com/FrequentErvin">Ervin Macić</a>.
+            </p>
+          </div>
+  
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="https://www.facebook.com/ervin.macic/"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="https://twitter.com/Ervin83228183"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="https://www.instagram.com/ervin.macic/" ><i class="fa fa-instagram"></i></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/in/ervin-macic-2a300a1ab/"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
+</html>  

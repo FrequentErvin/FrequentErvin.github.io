@@ -19,8 +19,6 @@ document.getElementById("GoHome").onclick=function(){
   document.getElementById("cv").onclick=function(){
     location.href="/ErvinMacicCV.pdf";
   };
-
-
   document.getElementById("disc").onclick=function(){
     location.href="https://discordapp.com/users/210412821643526144/";
   };

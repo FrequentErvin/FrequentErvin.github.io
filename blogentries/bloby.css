@@ -75,3 +75,17 @@
   background-color: white;
   
 }
+#cow{
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+  background-image: url('/images/thumbnail/cow.jpg');
+  background-position: center;
+  background-size: 350px auto;
+  background-repeat: no-repeat;
+  background-color: white;
+  
+}
