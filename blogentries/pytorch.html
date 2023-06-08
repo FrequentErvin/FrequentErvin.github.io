@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashing</title>
+    <link rel="icon" href="/images/mojaglavusina.jpg"> <!-- icon on tab -->
+    <link href="/index.css" rel="stylesheet" type="text/css"> <!-- for footer -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/css/hover.css" rel="stylesheet" media="all"> <!-- effects on hover navbar-->
+    <!-- <link href="/style.css" rel="stylesheet" type="text/css"> -->
+    <link href="/blog.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/blogentries/bloby.css" rel="stylesheet"> <!-- for blob -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sora"> <!-- for font -->
+    <script>
+      MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <!-- <a class="navbar-brand text-white p-2" href="/index.html"><h2>Ervin Macić</h2></a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0 justify-content-center">
+            <li class="nav-item px-3 justify-content-center">
+              <a class="nav-link active text-white hvr-underline-reveal" aria-current="page" href="#" id="GoHome"><h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">About</h4></a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" href="#" id="blog"><h4 style="text-shadow: 1.5px 1.5px #50524f ">Blog</h4></a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" href="/contact.html">
+                <h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">Contact</h4>
+              </a>
+            </li>
+            <!-- <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" href="/ErvinMacic_CV.pdf" id="cv" target="_blank"><h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">CV</h4></a>
+            </li> -->
+            <li class="nav-item px-3">
+              <a class="nav-link text-white hvr-underline-reveal" id="project" href="#"><h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">Projects</h4></a>
+            </li>
+          </ul>
+          <!-- <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form> -->
+        </div>
+      </div>
+    </nav>
+    <div class="spacer layer1"></div> 
+  <a href="#" id="scroll" style="display: none;"><span></span></a>
+<div class="container col-md-8 px-4 py-5 shadow-lg mt-1 mb-4 bg-blob-blog">
+  <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
+       <div class="col-lg-6">
+        <img id="hashing" class="vc-image-1 shadow"> 
+      </div> 
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Birthday hashing</em></h1>
+      <p class="lead mb-2 m-3">Here I will discuss more applications of statistics and expected values with a technique in the center of computer science; <b>Hashing.</b></p>
+      <p class="lead mb-2 m-3"> The key principles relate closely to the birthday paradox which I'll cover here. </p>
+    </div>
+  </div>
+</div>
+<main class="container col-md-8">
+  <div class="row">
+    <!-- <div class="col-md-1"></div> -->
+    <div class="">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        Mathematics - Expected value - Hashing - Computer science
+      </h3>
+      <article class="blog-post">
+        <h2 class="blog-post-title"> Birthday hashing</h2>
+        <p class="blog-post-meta">January 14, 2023</p>
+        <p>
+          A hash table is a commonly used data structure in computer science. It is one of the most useful data structures because of its speed in information retrieval. For 
+          example, suppose we want to store peoples' addresses. For each person we store his ID as the key and address as the value. An ID
+           could be a person's name or something similar. With proper notation, if $x$ is the ID 
+          of a person then $h(x)$ is the address. Nothing too special, just a function. However, problems arise if by chance two people have the same ID or the same address. 
+          Trouble starts when we attempt to store more than one item in the same slot. The efficiency of all hashing algorithms depends on how often this happens. <br> <br>
+          The hash function $h$ is deterministic. Every time you look up the address of an ID you get the same thing back each time. 
+          <div class="px-5 pt-2 my-3 text-center">
+            <img src="/images/thumbnail/hash.jpg" style=" width: 100%; height: auto; max-width: 400px;">
+          </div>
+        </p> 
+        <p>
+          To showcase the problem with hashing, I'll start with a very similar problem. It is in the Problem section in the post <b>Unexpected expected values</b> and is named
+          the birthday paradox. The question is simple (assume no person is born on February 29th):
+          <div class="problem">
+            <h5><b>Birthday paradox</b></h5>
+            <p>In a set of $23$ people the probability that two share the same birthday is greater than $0.5$ (or $50$%).</p>
+          </div>
+          This seems extremely counter-intutive since there are $365$ possible birthdays and $23$ doesn't seem like enough people to be that sure.
+          But think about the contrapositive statement. Imagine adding people in such a way that 
+          no two have the same birthday. Assume each day is equally likely to be a person's birthday so:
+          \[ \mathbb{P}(\textnormal{person $i$ is born on day $j$}) = 1/365\]
+          Trying to calculate the probability that in a set of $n$ birthdays no two are equal is (for $n=3$):
+          \[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{365}{365} \frac{364}{365} \frac{363}{365}\]
+          In general for $k=365$ and $n=n$ we have:
+          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{k}{k} \cdot \frac{k-1}{k} \ldots \frac{k-n+1}{k} \]</div>
+          \[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{k!}{k^n \cdot (k-n)!} \]
+          Now our probability that two have the same birthday for $n$ people and $k$ days is:
+          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{P}(\textnormal{two have equal birthday}) = 1 - \mathbb{P}(\textnormal{no two equal birthday}) \]</div>
+          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{P}(\textnormal{two have equal birthday}) = 1 - \frac{k!}{k^n \cdot (k-n)!}\]</div>
+          <div class="px-5 pt-2 my-3 text-center">
+            <img src="http://www.edscave.com/images/P_SharedBirthday.png" style=" width: 100%; height: auto; max-width: 600px;">
+          </div>
+          Even though the probability of two people having the same birthday in a group of $100$ people is $99.99997$%, it's obviously still possible for nobody to share 
+          a birthday. Even at $364$ people the probability is $99.99 \ldots 9$% with $>155$ nines and it's still possible for nobody to have a shared birthday.
+          <br> <br> 
+          <h4>Back to hashing</h4>
+          The basic mechanism in hashing is the same as in the assignment of birthdays. We have $n$ items and map each to one of $k$ slots. We assume the $n$ choices of
+          slots are independent. A collision is the event that an item is mapped to a slot that already stores an item. A possible resolution of a collision adds the item at the end of a linked
+          list that belongs to the slot. Now I'll discuss some expected values of different situations in hashes.
+    
+          <div class="problem">
+            <h5><b>E.V. of number of items in same slot</b></h5>
+            <p>In a set of $n$ people and $k$ slots available, the expected number of items per slot is $n/k$.</p>
+          </div>
+          This is pretty intuitive since the Pigeonhole principle gives us that there must exist a slot with at least $\lceil \frac{n}{k} \rceil$. This could in fact serve as a proof
+          of this fact by the Probabilistic method. Since the expected value is $c$ there must exist an instance where the event has value greater than $c$.
+        </p>
+        <br> 
+        <h4>Solution</h4>
+        <p>
+          We can assume without loss of generality that we are focusing on the first slot. 
+          Let $T_i$ be $1$ if the $i$-th item is mapped to the first slot, and $0$ otherwise.
+          The expected value of the $\textnormal{r.v.}$ $T_i$ is $1/k$ obviously, therefore the expected value of the number of items mapped to the first slot is:
+          \[ \mathbb{E}[T] = \sum \limits_{i=1}^{n} \mathbb{E}[T_i] = n/k \]
+          
+        </p>
+        <div class="problem">
+          <h5><b>E.V. of number of empty slots</b></h5>
+          <p>In a set of $n$ people and $k$ slots available, the expected number of empty slots is $k (1- \frac 1k)^n$.</p>
+        </div>
+        <h4>Solution</h4>
+        <p>
+          Let $T_i$ be the indicator variable that is $1$ if slot $i$ is empty and $0$ otherwise. It is clear that $\mathbb{E}[T_i] = (1-\frac 1k)^n$ hence the expected value of 
+          the number of empty slots in total is by summing over $k$ slots:
+          \[ \mathbb{E}[\textnormal{# of empty slots}] = k (1- \frac 1k)^n \]
+          Especially interesting is that if $k=n$ then by randomly assigning items to slots the expected number of empty slots is about $36$% since $(1-\frac{1}{n})^n = 1/e$ in the limit.
+        </p>
+        <div class="problem">
+          <h5><b>E.V. of collisions</b></h5>
+          <p>In a set of $n$ people and $k$ slots available, the expected number of collisions is $n-k+k (1- \frac 1k)^n$</p>
+        </div>
+        <h4>Solution</h4>
+        <p>
+          This can be inferred from the number of empty slots. If $A$ is the number of empty slots, we have $k-A$ items hashed without collision and hence $n-k+A$ collisions. You can think 
+          of the first time that an item lands on a slot that doesn't end up being free. It contributes $1$, $k-A$ times. Taking the expected 
+          value of this we get:
+          \[ \mathbb{E}[\textnormal{# of collisions}] = n-k+k (1- \frac 1k)^n \]
+        </p>
+        <div class="problem">
+          <h5><b>E.V. of the number of needed items to fill all slots</b></h5>
+          <p>Given $k$ slots, the expected number of items needed to map to these slots is $k H_k$ where $H_k$ is the $k$-th harmonic number</p>
+        </div>
+        <h4>Solution</h4>
+        The $k$-th harmonic number is just: $H_k = 1+\frac 12 + \frac 13 + \ldots + \frac 1k$. <br>
+        This is trickier than the last examples because it involves a different kind of indicator variable. <br>
+        Let $T$ be the number of draws needed in average to fill the slots. Let $T_i$ be the expected number of items to go from having $i$ slots filled to $i+1$ slots filled. Notice that this is not the same 
+        for different $i$. It is much easier to get from $1$ item filled to $2$ than from $k-1$ to $k$. This is exactly the intuition behind the solution.
+        The probability of filling a new slot is:
+        \[ \mathbb{P} = \frac{k-i+1}{k}\]
+        hence our random variable has expected value: $\frac{k}{k-i+1}$ since it has geometric distribution. This is also the same logic behind 
+        the <b>Mean Time to Failure</b> from the post <b>Unexpected expected values</b>. You have an event 
+        with probability $p = \frac{k-i+1}{k}$ of occuring each time you "try". The expected value of the number of 
+        tries is $1/p = \frac{k}{k-i+1}$. With a computer crashing with probability $p$ each time you turn it on, you would expect to turn it on $1/p$ times
+        and have it crash once. Another example is calculating the expected number of die rolls before landing a $6$. 
+        <div class="px-5 pt-2 my-3 text-center">
+          <img src="https://statisticsbyjim.com/wp-content/uploads/2022/05/geometric_distribution_graph.png" style=" width: 100%; height: auto; max-width: 600px;">
+        </div>
+        This is called a random variable with a <b>Geometric distribution</b>. <br>
+        Now by the Linearity of Expectations we conclude:
+       <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[T] = \mathbb{E}[T_1+T_2+ \ldots + T_k] = k \left ( \frac 11 + \frac 12 + \frac 13 + \ldots \frac 1k \right ) \]</div> 
+        These examples show the mathematics behind hashing and why we should care about collisions. <br> <br> <br>
+       <h4 class="text-primary">References and links for further reading</h4>
+        <ul>
+          <li><a target="_blank" href="https://courses.cs.duke.edu/cps102/spring09/Lectures/L-18.pdf">Duke University Lecture 18 Probability in Hashing</a>
+          <li><a target="_blank" href="https://dlsun.github.io/probability/linearity.html">Introduction to Probability, Prof. Dennis Sun</a></li>
+          <li><a target="_blank" href="https://web.evanchen.cc/handouts/ProbabilisticMethod/ProbabilisticMethod.pdf">Evan Chen's Probabilistic method</a></li>
+          <li><a target="_blank" href="https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_4.pdf">Harvard, Prof. Joe Blitzstein, Stat 110</a></li>
+          <li><a target="_blank" href="https://www.cantorsparadise.com/how-many-cycles-will-you-find-in-a-random-permutation-c88288bcdb5">"How Many Cycles Will You Find in a Random Permutation?" by Haris Angelidakis</a></li>
+          <li><a target="_blank" href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/mit6_042js15_session32.pdf">MIT OCW - Expectation: Chapter 18.4-18.5</a></li>
+        </ul>
+        
+      </article>
+    </div>
+    <!-- <div class="col-md-1"></div> -->
+  </div>
+
+</main>
+    <script src="/blog.js"></script>
+    <script src="/index.js"></script>
+    <div class="spacer whiteblack"></div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">For any questions, comments or you just want to chat, visit the <a>Contact</a> page. I love sharing
+              ideas and talking with smart people, so by all means, please do! Besides that, check in often to see the blog post and/or projects.  </p>
+          </div>
+  
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
+         <a href="https://github.com/FrequentErvin">Ervin Macić</a>.
+            </p>
+          </div>
+  
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="https://www.facebook.com/ervin.macic/"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="https://twitter.com/Ervin83228183"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="https://www.instagram.com/ervin.macic/" ><i class="fa fa-instagram"></i></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/in/ervin-macic-2a300a1ab/"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
+</html>  
