@@ -16,6 +16,9 @@ document.getElementById("mario").onclick=function(){
 document.getElementById("hashing").onclick=function(){
   location.href="/blogentries/hashing.html";
 }
+document.getElementById("oncaring").onclick=function(){
+  location.href="/blogentries/oncaring.html";
+}
 // document.getElementById("cowgazer").onclick=function(){
 //   location.href="/blogentries/cowgazer.html";
 // }
