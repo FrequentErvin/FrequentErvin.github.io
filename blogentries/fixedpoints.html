@@ -71,8 +71,8 @@
       </div> 
     <div class="col-lg-6">
       <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Point on BC</em></h1>
-      <p class="lead mb-2 m-3">Here I will discuss the standard techniques used to solve problems which ask to prove something is fixed. For example, prove that a circle passes through a fixed point.</p>
-      <p class="lead mb-2 m-3"> This is a great prelude into the <b>Moving points method</b> that can often destroy hard olympiad geometry problems. </p>
+      <p class="lead mb-2 m-3">Here I will discuss the standard techniques used to solve problems which ask us to investigate the motion of an object. For example, to prove that a circle passes through a fixed point.</p>
+      <p class="lead mb-2 m-3"> This is a great prelude into the Moving points method that can often trivialize hard geometry problems. </p>
     </div>
   </div>
 </div>
@@ -128,7 +128,7 @@
           then this point must be the fixed point i.e. the point on circumcircle $ABC$ for which $BN=CN$ holds (note that $AXY$ cuts $ABC$ above $BC$ so it can't be the smaller midarc).
           It's not hard to notice that in general $\triangle BXN \cong \triangle CYN$ where $N$ is the midarc $BAC$ by the same angle chasing. Thus $AXYN$ is always cyclic, and thus this is our desired fixed point (the midarc $BAC$).
         </p>
-        <p> Notice also that this means the circumcenter of $AXY$ liess on a fixed line (the bisector of chord $AN$). Prove that this line is parallel to the angle bisector of $BAC$ and "find" its intersection with $BC$. <br>
+        <p> Notice also that this means the circumcenter of $AXY$ lies on a fixed line (the bisector of chord $AN$). Prove that this line is parallel to the angle bisector of $BAC$ and "find" its intersection with $BC$. <br>
         Often, problems about circles passing through fixed points can be interpreted as their center lying on a fixed line if the circles are mutually coaxial (have the same chord in our case, i.e. 2 fixed points). </p>
         <div class="remark">
           <h5><b>Remark</b></h5>
@@ -178,10 +178,13 @@
           <p><b>Second approach - Trigonometric Ptolomey's theorem</b> Trig Ptolomey states that points $A,B,C,D$ are cyclic iff <div style="overflow-x: auto; overflow-y: hidden;">$AB \cdot \sin{\angle CAD} + AD \cdot \sin{\angle BAC} = AC \cdot \sin{\angle BAD}$</div> (this is not the full general case). So if we want our circle $AEF$ to pass through some fixed point $S$, this relation must hold: <div style="overflow-x: auto; overflow-y: hidden;">$AE \cdot \sin{\angle SAF} + AF \cdot \sin{\angle EAS} = AS \cdot \sin{\angle EAF}$.</div>  </p>
           <p><b> Third approach - Lemma about fixed point</b> Let $\angle pAq$ be given in the plane. Let $X,Y$ vary on $p,q$ respectively. If $c_1 \cdot AX + c_2 \cdot AY = c_3$ (a fixed linear combination of the line segments $AX,AY$ is constant) for all positions of $X,Y$ then the set of circles $AXY$ which satisfy this property pass through a fixed point. For a proof of this claim one can take two samples of points $X_1,Y_1$, $X_2,Y_2$ and intersect the circles $AX_1Y_1$ and $AX_2Y_2$ and prove that this is the common point for all such circles by spiral similarities.</p>
           <p>
-          Turns out one can fully characterise this fixed point (with respect to the triangle $ABC$ and fixed points). To see this, solve Advanced P1 below.
+          Turns out one can fully characterise this fixed point (with respect to the triangle $ABC$ and fixed points). To see this, solve <a class="text-danger" style="all:unset;">Advanced Problem 1</a> below. 
           </p>
          <hr>
-         <h2>Similar problems</h2>
+         <h2>Exercise problems</h2>
+         <p>If you're like me, you like finding connections between seemingly very different things. In this case, we investigate the connections between the above problems and various 
+          other problems that have appeared in math olympiads before.
+         </p>
          <div>
           <div class="problem">
               <h5><b>A Sharygin problem restated</b></h5>
@@ -204,13 +207,20 @@
             </p>
           </div>
           <div class="remark">
-            <h5><b>Variant of the gliding principle</b></h5>
+            <h5><b>Linear variant of the gliding principle</b></h5>
             <p>Let $A$ be a fixed point and $B$ be on a fixed line. If we vary $B$ on that line, any other given point $C$ such that $ABC$ has fixed shape will lie on a fixed line.</p>
           </div>
           <div class="container center-block mt-4 mb-4">
             <img src="/images/blog/gliding.jpg" class="img-fluid mx-auto d-block" width="700">
           </div>
-          Prove this with the theory from above and also prove that the point $C$ moves uniformly on that line i.e. the ratios stay the same.
+          <div class="remark">
+            <h5><b>Circular variant of the gliding principle (Spiral similarity)</b></h5>
+            <p>Let $A$ be a fixed point and $B$ be on a fixed circle. If we vary $B$ on that circle, any other given point $C$ such that $ABC$ has fixed shape will lie on a fixed circle.</p>
+          </div>
+          <div class="container center-block mt-4 mb-4">
+            <img src="/images/blog/spiralsimcircle.jpg" class="img-fluid mx-auto d-block" width="800">
+          </div>
+          Prove these two statements with the theory from above and also prove that the point $C$ moves uniformly on that line/circle i.e. the ratios stay the same.
           <div class="problem">
             <h5><b> External tangents locus (own, inspired)</b></h5>
             <p>Let $ABC$ be an acute triangle. Let $P$ be a point on side $BC$. Let the external tangents to the circmucircles of triangles $ABP$ and $ACP$ intersect at $S$. Find the locus of $S$ as the point $P$ varies on $BC$.
@@ -239,19 +249,29 @@
         <h4 class="text-primary">Introductory</h4>
         <dl>
           <dt>Problem 1</dt>
-          <dd> (JBMO Shortlist 2016) Let ${ABC}$ be an acute angled triangle whose shortest side is ${BC}$. Consider a variable point ${P}$ on the side ${BC}$, and let ${D}$ and ${E}$ be points on ${AB}$ and ${AC}$, respectively, such that ${BD=BP}$ and ${CP=CE}$. Prove that, as ${P}$ traces ${BC}$, the circumcircle of the triangle ${ADE}$ passes through a fixed point.</dd>
+          <dd> <a href="https://artofproblemsolving.com/community/c6h1525157p9136959" target="_blank" rel="noopener noreferrer">(JBMO SHL 2016)</a> Let ${ABC}$ be an acute angled triangle whose shortest side is ${BC}$. Consider a variable point ${P}$ on the side ${BC}$, and let ${D}$ and ${E}$ be points on ${AB}$ and ${AC}$, respectively, such that ${BD=BP}$ and ${CP=CE}$. Prove that, as ${P}$ traces ${BC}$, the circumcircle of the triangle ${ADE}$ passes through a fixed point.</dd>
         </dl>
         <dl>
           <dt>Problem 2</dt>
           <dd> (Folklore) Let two circles $\omega_1, \omega_2$ intersect at $A,B$. A line passing through $A$ intersects $\omega_1, \omega_2$ in points $P,Q$. Prove that the bisector of $PQ$ passes through a fixed point.</dd>
         </dl>
-        <h4 class="text-success">Medium</h4>
         <dl>
-          <dt>Problem 1</dt>
-          <dd>(Saint Petersburg Olympiad) Let $ABC$ be an acute triangle. Variable point $X$ lies on segment $AC$, and variable point $Y$ lies on the ray $BC$ but not segment $BC$, such that $\angle ABX+\angle CXY =90$. Point $T$ is the projection of $B$ on $XY$. Prove that all points $T$ lie on a fixed line.</dd>
+          <dt>Problem 3</dt>
+          <dd><a href="https://www.cut-the-knot.org/triangle/SawayamaTheBault.pdf" target="_blank" rel="noopener noreferrer">(Sawayama Thebault's theorem)</a>Let $ABC$ be a triangle. Let $P$ be a variable point on side $BC$. The circle tangent to $AP,BC$ and the circumcircle of triangle $ABC$ is $\omega$. Let $\omega$ touch $AP,BC$ at points $U,V$. Prove that 
+            $UV$ passes through a fixed point as $P$ varies on side $BC$.
+          </dd>
+        </dl>
+        <h4 class="text-success">Intermediate</h4>
+        <dl>
+          <dt>Problem 1 <a href="https://artofproblemsolving.com/community/c6h1662297p10556323" target="_blank" rel="noopener noreferrer">(Saint Petersburg Olympiad)</a></dt>
+          <dd> Let $ABC$ be an acute triangle. Variable point $X$ lies on segment $AC$, and variable point $Y$ lies on the ray $BC$ but not segment $BC$, such that $\angle ABX+\angle CXY =90$. Point $T$ is the projection of $B$ on $XY$. Prove that all points $T$ lie on a fixed line.</dd>
         </dl>
         <dl>
           <dt>Problem 2</dt>
+          <dd> <a href="https://artofproblemsolving.com/community/c6h1480717p8639313" target="_blank" rel="noopener noreferrer">(IMO Shortlist)</a> Let $D$ be the foot of perpendicular from $A$ to the Euler line (the line passing through the circumcentre and the orthocentre) of an acute scalene triangle $ABC$. A circle $\omega$ with centre $S$ passes through $A$ and $D$, and it intersects sides $AB$ and $AC$ at $X$ and $Y$ respectively. Let $P$ be the foot of altitude from $A$ to $BC$, and let $M$ be the midpoint of $BC$. Prove that the circumcentre of triangle $XSY$ is equidistant from $P$ and $M$.</dd>
+        </dl>
+        <dl>
+          <dt>Problem 3</dt>
           <dd>(Own) Let $ABC$ be an acute triangle. Points $P,Q,R$ are on the circumcircle of triangle $ABC$ such that $\angle BAP = \angle CBQ = \angle ACR$. Prove that the circumcenter of the triangle formed by the lines 
             $AP,BQ,CR$ lies on a fixed circle.
           </dd>
@@ -259,13 +279,18 @@
         <h4 class="text-danger">Advanced</h4>
         <dl>
           <dt>Problem 1</dt>
-          <dd>(USA EGMO TST) Let $ABC$ be a triangle and let $P$ be a point not lying on any of the three lines $AB$, $BC$, or $CA$. Distinct points $D$, $E$, and $F$ lie on lines $BC$, $AC$, and $AB$, respectively, such that $\overline{DE}\parallel \overline{CP}$ and $\overline{DF}\parallel \overline{BP}$. Show that there exists a point $Q$ on the circumcircle of $\triangle AEF$ such that $\triangle BAQ$ is similar to $\triangle PAC$.</dd>
+          <dd><a href="https://artofproblemsolving.com/community/c6h1970147p13654519" target="_blank" rel="noopener noreferrer">(USA EGMO TST)</a> Let $ABC$ be a triangle and let $P$ be a point not lying on any of the three lines $AB$, $BC$, or $CA$. Distinct points $D$, $E$, and $F$ lie on lines $BC$, $AC$, and $AB$, respectively, such that $\overline{DE}\parallel \overline{CP}$ and $\overline{DF}\parallel \overline{BP}$. Show that there exists a point $Q$ on the circumcircle of $\triangle AEF$ such that $\triangle BAQ$ is similar to $\triangle PAC$.</dd>
         </dl>
         <dl>
           <dt>Problem 2</dt>
-          <dd> (Polish National Olympiad) Let $\omega$ be the circumcircle of a triangle $ABC$. Let $P$ be any point on $\omega$ different than the verticies of the triangle.
+          <dd><a href="https://artofproblemsolving.com/community/c6h2518759p21358108" target="_blank" rel="noopener noreferrer">(Polish MO)</a> Let $\omega$ be the circumcircle of a triangle $ABC$. Let $P$ be any point on $\omega$ different than the verticies of the triangle.
             Line $AP$ intersects $BC$ at $D$, $BP$ intersects $AC$ at $E$ and $CP$ intersects $AB$ at $F$. Let $X$ be the projection of $D$ onto line passing through midpoints of $AP$ and $BC$, $Y$ be the projection of $E$ onto line passing through $BP$ and $AC$ and let $Z$ be the projection of $F$ onto line passing through midpoints of $CP$ and $AB$. Let $Q$ be the circumcenter of triangle $XYZ$. Prove that all possible points $Q$, corresponding to different positions of $P$ lie on one circle.</dd>
         </dl>
+        <dl>
+          <dt>Problem 3</dt>
+          <dd><a href="https://artofproblemsolving.com/community/c6h2917387p26058205" target="_blank" rel="noopener noreferrer">(Czech-Polish-Slovak match)</a> Circles $\Omega_1$ and $\Omega_2$ with different radii intersect at two points, denote one of them by $P$. A variable line $l$ passing through $P$ intersects the arc of $\Omega_1$ which is outside of $\Omega_2$ at $X_1$, and the arc of $\Omega_2$ which is outside of $\Omega_1$ at $X_2$. Let $R$ be the point on segment $X_1X_2$ such that $X_1P = RX_2$. The tangent to $\Omega_1$ through $X_1$ meets the tangent to $\Omega_2$ through $X_2$ at $T$. Prove that line $RT$ is tangent to a fixed circle, independent of the choice of $l$.</dd>
+        </dl>
+        
       </article>
     </div>
     <!-- <div class="col-md-1"></div> -->
