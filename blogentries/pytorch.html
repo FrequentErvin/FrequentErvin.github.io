@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hashing</title>
+    <title>PyTorch</title>
     <link rel="icon" href="/images/mojaglavusina.jpg"> <!-- icon on tab -->
     <link href="/index.css" rel="stylesheet" type="text/css"> <!-- for footer -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -67,12 +67,12 @@
 <div class="container col-md-8 px-4 py-5 shadow-lg mt-1 mb-4 bg-blob-blog">
   <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
        <div class="col-lg-6">
-        <img id="hashing" class="vc-image-1 shadow"> 
+        <img id="pytorch" class="vc-image-1 shadow"> 
       </div> 
     <div class="col-lg-6">
-      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Birthday hashing</em></h1>
-      <p class="lead mb-2 m-3">Here I will discuss more applications of statistics and expected values with a technique in the center of computer science; <b>Hashing.</b></p>
-      <p class="lead mb-2 m-3"> The key principles relate closely to the birthday paradox which I'll cover here. </p>
+      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>How fast is PyTorch?</em></h1>
+      <p class="lead mb-2 m-3">A short post about figuring out how much faster are we with Deep Learning frameworks &#128293</p>
+      <p class="lead mb-2 m-3"> I implement a standard Neural Network on the MNIST Dataset both by hand and with PyTorch help. I provide a Colab for following along.</p>
     </div>
   </div>
 </div>
@@ -81,113 +81,50 @@
     <!-- <div class="col-md-1"></div> -->
     <div class="">
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        Mathematics - Expected value - Hashing - Computer science
+        Deep Learning - Python - PyTorch
       </h3>
       <article class="blog-post">
-        <h2 class="blog-post-title"> Birthday hashing</h2>
-        <p class="blog-post-meta">January 14, 2023</p>
+        <h2 class="blog-post-title"> How fast is PyTorch?</h2>
+        <p class="blog-post-meta">June 9, 2023</p>
+        <h4>Introduction - PyTorch </h4>
         <p>
-          A hash table is a commonly used data structure in computer science. It is one of the most useful data structures because of its speed in information retrieval. For 
-          example, suppose we want to store peoples' addresses. For each person we store his ID as the key and address as the value. An ID
-           could be a person's name or something similar. With proper notation, if $x$ is the ID 
-          of a person then $h(x)$ is the address. Nothing too special, just a function. However, problems arise if by chance two people have the same ID or the same address. 
-          Trouble starts when we attempt to store more than one item in the same slot. The efficiency of all hashing algorithms depends on how often this happens. <br> <br>
-          The hash function $h$ is deterministic. Every time you look up the address of an ID you get the same thing back each time. 
+          <b>PyTorch</b> is a popular Deep Learning framework based on the Torch library. Software in Tesla Autopilot, Uber's Pyro, Hugging Face's Transformers and more are implemented using this framework. 
+          It is growing in popularity as most papers that are published in the field of machine learning especially in computer vision and natural language processing have been tested and implemented using it.
+          As to why it's so popular, two main arguments hold:
+          <ol>
+            <li>Tensor computing with strong acceleration via GPUs</li>
+            <li>Deep neural networks built on an automatic differentation system using computational graphs</li>
+          </ol>
+          These make PyTorch incredibly fast, versatile, and efficient. Hopefuly throughout this post we'll get a chance to experience those perks ourselves.
+        </p>
+        <h4>PyTorch tensors</h4>
+        <p>A tensor can be thought of as an n-dimensional array. It isn't 100% mathematically correct, since we would be talking about ranks but for 
+          understanding purposes I stick with this. Vectors are 1D tensors while matrices are 2D tensors. This term dominates all implementations of 
+          machine learning applications. Usually, tensors store parameters which interact with other tensors using special operations defined in the field of linear algebra, which you can 
+          understand easily without prerequisite knowledge. Here's a cool illustration of the above tensor discussion: 
           <div class="px-5 pt-2 my-3 text-center">
-            <img src="/images/thumbnail/hash.jpg" style=" width: 100%; height: auto; max-width: 400px;">
+            <img src="https://av-eks-blogoptimized.s3.amazonaws.com/image_Fjh3JHN-thumbnail_webp-600x300.png" style=" width: 100%; height: auto; max-width: 600px;">
           </div>
-        </p> 
-        <p>
-          To showcase the problem with hashing, I'll start with a very similar problem. It is in the Problem section in the post <b>Unexpected expected values</b> and is named
-          the birthday paradox. The question is simple (assume no person is born on February 29th):
-          <div class="problem">
-            <h5><b>Birthday paradox</b></h5>
-            <p>In a set of $23$ people the probability that two share the same birthday is greater than $0.5$ (or $50$%).</p>
-          </div>
-          This seems extremely counter-intutive since there are $365$ possible birthdays and $23$ doesn't seem like enough people to be that sure.
-          But think about the contrapositive statement. Imagine adding people in such a way that 
-          no two have the same birthday. Assume each day is equally likely to be a person's birthday so:
-          \[ \mathbb{P}(\textnormal{person $i$ is born on day $j$}) = 1/365\]
-          Trying to calculate the probability that in a set of $n$ birthdays no two are equal is (for $n=3$):
-          \[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{365}{365} \frac{364}{365} \frac{363}{365}\]
-          In general for $k=365$ and $n=n$ we have:
-          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{k}{k} \cdot \frac{k-1}{k} \ldots \frac{k-n+1}{k} \]</div>
-          \[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{k!}{k^n \cdot (k-n)!} \]
-          Now our probability that two have the same birthday for $n$ people and $k$ days is:
-          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{P}(\textnormal{two have equal birthday}) = 1 - \mathbb{P}(\textnormal{no two equal birthday}) \]</div>
-          <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{P}(\textnormal{two have equal birthday}) = 1 - \frac{k!}{k^n \cdot (k-n)!}\]</div>
-          <div class="px-5 pt-2 my-3 text-center">
-            <img src="http://www.edscave.com/images/P_SharedBirthday.png" style=" width: 100%; height: auto; max-width: 600px;">
-          </div>
-          Even though the probability of two people having the same birthday in a group of $100$ people is $99.99997$%, it's obviously still possible for nobody to share 
-          a birthday. Even at $364$ people the probability is $99.99 \ldots 9$% with $>155$ nines and it's still possible for nobody to have a shared birthday.
-          <br> <br> 
-          <h4>Back to hashing</h4>
-          The basic mechanism in hashing is the same as in the assignment of birthdays. We have $n$ items and map each to one of $k$ slots. We assume the $n$ choices of
-          slots are independent. A collision is the event that an item is mapped to a slot that already stores an item. A possible resolution of a collision adds the item at the end of a linked
-          list that belongs to the slot. Now I'll discuss some expected values of different situations in hashes.
-    
-          <div class="problem">
-            <h5><b>E.V. of number of items in same slot</b></h5>
-            <p>In a set of $n$ people and $k$ slots available, the expected number of items per slot is $n/k$.</p>
-          </div>
-          This is pretty intuitive since the Pigeonhole principle gives us that there must exist a slot with at least $\lceil \frac{n}{k} \rceil$. This could in fact serve as a proof
-          of this fact by the Probabilistic method. Since the expected value is $c$ there must exist an instance where the event has value greater than $c$.
+          <br> The main advantage of PyTorch tensors is that they can be operated on a CUDA-capable NVIDIA GPU which speeds up training and predictions 
+          immensely. 
         </p>
-        <br> 
-        <h4>Solution</h4>
+        <h4>PyTorch modules</h4>
         <p>
-          We can assume without loss of generality that we are focusing on the first slot. 
-          Let $T_i$ be $1$ if the $i$-th item is mapped to the first slot, and $0$ otherwise.
-          The expected value of the $\textnormal{r.v.}$ $T_i$ is $1/k$ obviously, therefore the expected value of the number of items mapped to the first slot is:
-          \[ \mathbb{E}[T] = \sum \limits_{i=1}^{n} \mathbb{E}[T_i] = n/k \]
-          
+          The PyTorch ecosystem contains 3 high-level modules and many more submodules. Here they are:
+          <ol>
+            <li><code style="font-size: 18px;">Autograd</code> module</li>
+            <p>The method that belongs to this module called automatic differentiation is key for the tuning of parameters in neural networks. This method 
+              computes the gradients of the output with respect to each parameter in the neural network. It does so with the use of computational graphs where 
+              it, roughly speaking, "remembers" the operations you've done throughout your network and then replays it back to compute the gradients.
+            </p>
+            <li><code style="font-size: 18px;">Optim</code> module</li>
+            <p><code>torch.optim</code> is a module that implements optimization algorithms used for building NNs. This speeds up building NNs significantly.</p>
+            <li><code style="font-size: 18px;">nn</code> module</li>
+            <p>The <code>nn</code> module provides layers and tools to easily create the neural network architecture by just defining the layers of the network. </p>
+          </ol>
+          PyTorch also has many useful submodules such as data loading utilities which we will use below.
         </p>
-        <div class="problem">
-          <h5><b>E.V. of number of empty slots</b></h5>
-          <p>In a set of $n$ people and $k$ slots available, the expected number of empty slots is $k (1- \frac 1k)^n$.</p>
-        </div>
-        <h4>Solution</h4>
-        <p>
-          Let $T_i$ be the indicator variable that is $1$ if slot $i$ is empty and $0$ otherwise. It is clear that $\mathbb{E}[T_i] = (1-\frac 1k)^n$ hence the expected value of 
-          the number of empty slots in total is by summing over $k$ slots:
-          \[ \mathbb{E}[\textnormal{# of empty slots}] = k (1- \frac 1k)^n \]
-          Especially interesting is that if $k=n$ then by randomly assigning items to slots the expected number of empty slots is about $36$% since $(1-\frac{1}{n})^n = 1/e$ in the limit.
-        </p>
-        <div class="problem">
-          <h5><b>E.V. of collisions</b></h5>
-          <p>In a set of $n$ people and $k$ slots available, the expected number of collisions is $n-k+k (1- \frac 1k)^n$</p>
-        </div>
-        <h4>Solution</h4>
-        <p>
-          This can be inferred from the number of empty slots. If $A$ is the number of empty slots, we have $k-A$ items hashed without collision and hence $n-k+A$ collisions. You can think 
-          of the first time that an item lands on a slot that doesn't end up being free. It contributes $1$, $k-A$ times. Taking the expected 
-          value of this we get:
-          \[ \mathbb{E}[\textnormal{# of collisions}] = n-k+k (1- \frac 1k)^n \]
-        </p>
-        <div class="problem">
-          <h5><b>E.V. of the number of needed items to fill all slots</b></h5>
-          <p>Given $k$ slots, the expected number of items needed to map to these slots is $k H_k$ where $H_k$ is the $k$-th harmonic number</p>
-        </div>
-        <h4>Solution</h4>
-        The $k$-th harmonic number is just: $H_k = 1+\frac 12 + \frac 13 + \ldots + \frac 1k$. <br>
-        This is trickier than the last examples because it involves a different kind of indicator variable. <br>
-        Let $T$ be the number of draws needed in average to fill the slots. Let $T_i$ be the expected number of items to go from having $i$ slots filled to $i+1$ slots filled. Notice that this is not the same 
-        for different $i$. It is much easier to get from $1$ item filled to $2$ than from $k-1$ to $k$. This is exactly the intuition behind the solution.
-        The probability of filling a new slot is:
-        \[ \mathbb{P} = \frac{k-i+1}{k}\]
-        hence our random variable has expected value: $\frac{k}{k-i+1}$ since it has geometric distribution. This is also the same logic behind 
-        the <b>Mean Time to Failure</b> from the post <b>Unexpected expected values</b>. You have an event 
-        with probability $p = \frac{k-i+1}{k}$ of occuring each time you "try". The expected value of the number of 
-        tries is $1/p = \frac{k}{k-i+1}$. With a computer crashing with probability $p$ each time you turn it on, you would expect to turn it on $1/p$ times
-        and have it crash once. Another example is calculating the expected number of die rolls before landing a $6$. 
-        <div class="px-5 pt-2 my-3 text-center">
-          <img src="https://statisticsbyjim.com/wp-content/uploads/2022/05/geometric_distribution_graph.png" style=" width: 100%; height: auto; max-width: 600px;">
-        </div>
-        This is called a random variable with a <b>Geometric distribution</b>. <br>
-        Now by the Linearity of Expectations we conclude:
-       <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{E}[T] = \mathbb{E}[T_1+T_2+ \ldots + T_k] = k \left ( \frac 11 + \frac 12 + \frac 13 + \ldots \frac 1k \right ) \]</div> 
-        These examples show the mathematics behind hashing and why we should care about collisions. <br> <br> <br>
+        <script src="https://gist.github.com/FrequentErvin/9a5f55502ad0243867edfb4f934fe99c.js"></script>
        <h4 class="text-primary">References and links for further reading</h4>
         <ul>
           <li><a target="_blank" href="https://courses.cs.duke.edu/cps102/spring09/Lectures/L-18.pdf">Duke University Lecture 18 Probability in Hashing</a>

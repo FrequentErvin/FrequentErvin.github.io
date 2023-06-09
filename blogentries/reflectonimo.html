@@ -81,15 +81,13 @@
   <div class="row">
     <div class="">
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        Olympiad mathematics - Story
+        Olympiad mathematics - IMO
       </h3>
       <article class="blog-post">
         <h2 class="blog-post-title" id="imo_2021">Reflection on the IMO</h2>
         <p class="blog-post-meta">November 12, 2021</p>
         <p> This year's IMO was weird.. Sadly it was online again.</p>
-        <blockquote>
-          <p>I've learned one lesson through it. To solve any IMO P1/P4 ask yourself two questions: <br> <br> What is <strong>enough</strong> to finish? <br> <br> What would be good if it were true?</p>
-        </blockquote>
+          <p>I've learned one lesson through it. To solve most* IMO P1/P4 I ask myself two questions: What is <strong>enough</strong> to finish?  What would be helpful if it were true?</p>
         <p> I will be discussing only P1,P4 and P5 since those are the ones I tried the most on the competition. </p>
         <table class="table">
           <thead>
@@ -117,6 +115,55 @@
             </tr>
           </tbody>
         </table>
+        <p>By the above data, it seems that this year's P1,P4,P5 weren't as easy as say 2019: </p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Problem No.</th>
+              <th>Mean P#</th>
+              <th>Num (P# = 7)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Problem 1</td>
+              <td>5.179</td>
+              <td>382</td>
+            </tr>
+            <tr>
+              <td>Problem 4</td>
+              <td>3.736</td>
+              <td>257</td>
+            </tr>
+            <tr>
+              <td>Problem 5</td>
+              <td>3.567</td>
+              <td>250</td>
+            </tr>
+          </tbody>
+        </table>
+        Even more striking are the mean and perfect scores on P1 and P4 in 2014 for example:
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Problem No.</th>
+              <th>Mean P#</th>
+              <th>Num (P# = 7)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Problem 1</td>
+              <td>5.348</td>
+              <td>370</td>
+            </tr>
+            <tr>
+              <td>Problem 4</td>
+              <td>5.189</td>
+              <td>378</td>
+            </tr>
+          </tbody>
+        </table>
         <h3 class="mt-4">Problem 1</h3>
         <div>
           <div class="row">
@@ -131,13 +178,13 @@
         </div>
       </article>
       <article class="blog-post">
-        <h2 class="blog-post-title mt-4">Mini discussion</h2>
+        <h4 class="blog-post-title mt-4">Small discussion</h4>
         <p>My train of thought about this problem on the IMO was: induction? = quick no, since you can't guarantee anything will hold after moving from $n$ to $n+1$. The next thing I did was phrase it as a game: </p>
         <div>
           <div class="row">
             <div class="col-md-12 mt-3">
               <div class="h-100 p-4 text-white bg-dark rounded-3">
-                <h4>Cooler IMO 2021 P1</h4>
+                <h4>Rephrased problem</h4>
                 <hr class="thick">
                 <p>Boris and Ivan play a game. Boris chooses a positive integer $n$. Ivan writes the numbers $n, n+1, \ldots, 2 n$ each on different cards. Ivan wins if he can split these $n+1$ cards into two piles such that in each pile there aren't two cards that sum to a perfect square. For which $n$ does Boris have a winning strategy? </p>
               </div>
@@ -150,7 +197,9 @@
         <p class="mt-1"> What if I couldn't fix this situation? Since a fix would be to place $c$ with $b$ into the first pile, but this wouldn't work if $b+c$ is also a perfect square. If Ivan had this situation in his $n+1$ numbers, he couldn't win. </p>
         <h3 class="mb-4"> <i>ok now what?</i> </h3>
         <p class=" mb-3"> Well I need to see how oftenly such a triple occurs. Basically I solved the system $a+b=x^2$, $b+c=y^2$, $c+a=z^2$. What I mean by "solved" is: $b=x^2-a$ and $c=z^2-a$ so $b+c=(x^2-a)+(z^2-a)=y^2$ so $a=\frac{z^2+x^2-y^2}{2}$ and similarily: $(a,b,c)=(\frac{z^2+x^2-y^2}{2},\frac{x^2+y^2-z^2}{2},\frac{y^2+z^2-x^2}{2})$. Now I realised that basically if I pick $(x,y,z)$ I would get a corresponding triple of $(a,b,c)$ so I picked consecutive $x,y,z$ since those would lead to the "closest" $a,b,c$.</p>
-        <p> Now I got $(a,b,c)=(\frac{x^2-4x}{2},\frac{x^2+2}{2},\frac{x^2+4x}{2})$ which means $x=2k$ (even) and then I got the triple $(a,b,c)=(2k^2-4k,2k^2+1,2k^2+4k)$. So if for some $k$ all three of these numbers belong in my $n+1$ numbers I'm done. Proving such numbers exist for $n\geqslant 100$ is straightforward.</p>
+        <p> Now I got $(a,b,c)=(\frac{x^2-4x}{2},\frac{x^2+2}{2},\frac{x^2+4x}{2})$ which means $x=2k$ (even) and then I got the triple $(a,b,c)=(2k^2-4k,2k^2+1,2k^2+4k)$. So if for some $k$ all three of these numbers belong in my $n+1$ numbers I'm done. <s>Proving such numbers exist for $n\geqslant 100$ is straightforward.</s> I struggled getting the bound as tight as the problem desired. I got $n \geq 106$ in the first 1.5h of the competition 
+        but couldn't manage to figure out if my calculations were faulty or I was missing something. "Surely", I thought, "this is the way to solve the problem so I must have missed something while solving the quadratics..". Turns out I could have 
+      just found examples for $n=100,\ldots,106$ which would have been much easier than trying to fix the quadratics. Lost one point because of this. Luckily, it wasn't a deciding point for the bronze medal. </p>
         <hr>
         <h3 class="mb-4 mt-4">Problem 4</h3>
         <div>
