@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixed points</title>
+    <title>Variable then fixed. </title>
     <link rel="icon" href="/images/mojaglavusina.jpg"> <!-- icon on tab -->
     <link href="/index.css" rel="stylesheet" type="text/css"> <!-- for footer -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -70,7 +70,7 @@
         <img id="hio" class="vc-image-1 shadow img-fluid center-block" style="background-color: white;" width="400"> 
       </div> 
     <div class="col-lg-6">
-      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Point on BC</em></h1>
+      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Variable then fixed. </em></h1>
       <p class="lead mb-2 m-3">Here I will discuss the standard techniques used to solve problems which ask us to investigate the motion of an object. For example, to prove that a circle passes through a fixed point.</p>
       <p class="lead mb-2 m-3"> This is a great prelude into the Moving points method that can often trivialize hard geometry problems. </p>
     </div>
@@ -86,22 +86,21 @@
       <article class="blog-post">
         <h2 class="blog-post-title"> Variable then fixed. </h2>
         <p class="blog-post-meta">Feb 26, 2023</p>
-        <p> In this post I will go over some less standard problems in olympiad geometry. In my opinion, these problems are unique compared to standard "config" geometry since they usually ask something 
-          more fun than the standard "Prove $\angle A = \angle B$" or "Prove that $A,B,C$ are collinear"; they ask the question of what happens when we vary some part of a picture. How does the rest of the 
-          picture react to those pertrubations, and usually how does one specific object behave under these changes.
+        <p> In this post I will go over some "unusual" problems in olympiad geometry. In my opinion, these problems are unique compared to standard configurational geometry problems since they ask us to prove something 
+          more fun than the standard "Prove $\angle A = \angle B$" or "Prove that $A,B,C$ are collinear"; they ask the question of what happens when we vary some part of the picture. How does the rest of the 
+          picture react to those movements, and usually how does one specific object behave under these changes.
           <p>The keyword for these problems is the <b>locus</b>. In this context, locus represents the path the object traces as the diagram changes due to some movement.
            In most problems, the setting is like this: </p>
            <ol>
             <li>You are given a shape and points that relate to each other in some described way. </li>
-            <li>One of the points can vary on some line, circle or in general shape.</li>
-            <li>You are asked to determine the <b>locus</b> of some object as that point moves (usually this object is just a point since most other statements like: "prove that a circle passes through a fixed point as something varies" can be 
-            boiled down to a point moving. </li>
+            <li>One of the points can vary on some line or circle.</li>
+            <li>You are asked to determine the <b>locus</b> of some object as that point moves. Sometimes you just need to prove that the object lies on a fixed line or passes through a fixed point instead of determining the object exactly. </li>
            </ol>
-          <p> Usually, the changes are simple varying of points on lines and the statement we should prove consists of four steps:</p>
+          <p> Usually, the changes are simple varying of points on lines or varying a line through a point. The way to approach these problems lies in 4 steps:</p>
           <ol>
             <li>Observe which point moves and how that movement roughly corresponds to the movement of the object whose motion we want to describe.</li>
-            <li>Try moving the variable point into awkward scenarios from which we can glean insight into what's happening</li>
-            <li>Guess what the locus of the desired object is. </li>
+            <li>Try moving the variable point into awkward scenarios from which we can glean insight into what's happening. Often it makes sense sending a point to infinity along a line since edge cases give insight. </li>
+            <li>Guess what the locus of the desired object is. This is usually a circle, line or in general a conic. Usually you first need to find which conic you're looking for (i.e. which circle or line). </li>
             <li>Prove your guess.</li>
           </ol>
         </p>
@@ -132,11 +131,11 @@
         Often, problems about circles passing through fixed points can be interpreted as their center lying on a fixed line if the circles are mutually coaxial (have the same chord in our case, i.e. 2 fixed points). </p>
         <div class="remark">
           <h5><b>Remark</b></h5>
-          <p>The above problem remains true if point $X$ is between $A,B$ and $C$ is between $A,Y$ (outside triangle $ABC$). In this case, the fixed point is the midarc $BC$ without $A$. Math likes to have two versions of the same 
-            thing for two similar points (for example, if something holds for the incetner, something similar might hold for the excenter).
+          <p>The above problem remains true if point $X$ is between $A,B$ and $C$ is between $A,Y$ (outside triangle $ABC$). In this case, the fixed point is the midarc $BC$ without $A$. Geometry likes to have two versions of the same 
+            thing for two similar points (for example, if something holds for the incetner, something similar probably holds for the excenter).
           </p>
         </div>
-        <p> Before I go any further, I'll state some terms that are used further into the post. You can still understand everything, but for the people that want to search them up: uniformity, trigonometric ptolomey, spiral similarity, gliding principle.</p>
+        <p> Before I go any further, I'll state some terms that are used further into the post. You can still understand everything, but for the people that want to search them up: trigonometric ptolomey, spiral similarity, gliding principle.</p>
         <p>Now I showcase some strikingly similar problems: </p>
         <ol>
           <li><a href="https://artofproblemsolving.com/community/c6h1525157p9136959" target="_blank" rel="noopener noreferrer">(JBMO SHL 2016)</a> Let ${ABC}$ be an acute angled triangle whose shortest side is ${BC}$. Consider a variable point ${P}$ on the side ${BC}$, and let ${D}$ and ${E}$ be points on ${AB}$ and ${AC}$, respectively, such that ${BD=BP}$ and ${CP=CE}$. Prove that, as ${P}$ traces ${BC}$, the circumcircle of the triangle ${ADE}$ passes through a fixed point.</li>
@@ -169,13 +168,18 @@
         </div>
         <p> Another interesting way to look at this is that the circumcenter of triangle $AEF$ always lies on a fixed line. This is evident since all these circles should be coaxial with axis $AS$. </p>
         <p> The points $E,F$ are said to be moving "Uniformly" on lines $AB,AC$ respectively, which means that they move at the same velocity.</p>
-        <p> Let $P$ be a point varying on segment $AB$. The point $P$ is moving <b>uniformly</b> on $AB$ if at time $t$; $\overrightarrow{AP} = t \cdot \overrightarrow{AB}$.</p>
+        <div class="container-fluid shadow-sm">
+          <br>
+          <h5><b>Uniformity</b></h5>
+          <p class="pb-3"> Let $P$ be a point varying on segment $AB$. The point $P$ is moving <b>uniformly</b> on $AB$ if at time $t$; $\overrightarrow{AP} = t \cdot \overrightarrow{AB}$. </p>
+        </div>
           <h4>The big picture</h4>
           <div class="container center-block mt-4 mb-4">
             <img src="/images/blog/e1e2.jpg" class="img-fluid mx-auto d-block" width="700">
           </div>
           <p><b>First approach - Spiral similarity</b> Take two sample values $P_1,P_2$ and the corresponding $E_1,F_1,E_2,F_2$. Let $K$ be the point in the plane such that $\triangle KE_1E_2 \sim \triangle KF_1F_2$ in that order (the spiral center). Obviously $\triangle KEE_2 \sim \triangle KFF_2$ (by Gliding principle or by simpley ratios) and now we're done by the black angles. Our $AEF$ circle passes through $K$ without regard of $P$. In this case, it might be more natural to look at the spiral similarity centered at $K$ sending $E_1 \rightarrow E_2$ and $F_1 \rightarrow F_2$ which is obvious by Gliding principle. </p>
-          <p><b>Second approach - Trigonometric Ptolomey's theorem</b> Trig Ptolomey states that points $A,B,C,D$ are cyclic iff <div style="overflow-x: auto; overflow-y: hidden;">$AB \cdot \sin{\angle CAD} + AD \cdot \sin{\angle BAC} = AC \cdot \sin{\angle BAD}$</div> (this is not the full general case). So if we want our circle $AEF$ to pass through some fixed point $S$, this relation must hold: <div style="overflow-x: auto; overflow-y: hidden;">$AE \cdot \sin{\angle SAF} + AF \cdot \sin{\angle EAS} = AS \cdot \sin{\angle EAF}$.</div>  </p>
+          <p><b>Second approach - Trigonometric Ptolomey's theorem</b> Trig Ptolomey states that points $A,B,C,D$ are cyclic if and only if <div style="overflow-x: auto; overflow-y: hidden;"> \[ AB \cdot \sin{\angle CAD} + AD \cdot \sin{\angle BAC} = AC \cdot \sin{\angle BAD} \]</div> (this is not the full general case). So if we want our circle $AEF$ to pass through some fixed point $S$, this relation must hold: <div style="overflow-x: auto; overflow-y: hidden;">\[ AE \cdot \sin{\angle SAF} + AF \cdot \sin{\angle EAS} = AS \cdot \sin{\angle EAF}. \]</div> Using Law of Sines and some algebraic manipulation this is easily 
+          shown to hold for the above problem. </p>
           <p><b> Third approach - Lemma about fixed point</b> Let $\angle pAq$ be given in the plane. Let $X,Y$ vary on $p,q$ respectively. If $c_1 \cdot AX + c_2 \cdot AY = c_3$ (a fixed linear combination of the line segments $AX,AY$ is constant) for all positions of $X,Y$ then the set of circles $AXY$ which satisfy this property pass through a fixed point. For a proof of this claim one can take two samples of points $X_1,Y_1$, $X_2,Y_2$ and intersect the circles $AX_1Y_1$ and $AX_2Y_2$ and prove that this is the common point for all such circles by spiral similarities.</p>
           <p>
           Turns out one can fully characterise this fixed point (with respect to the triangle $ABC$ and fixed points). To see this, solve <a class="text-danger" style="all:unset;">Advanced Problem 1</a> below. 
@@ -256,7 +260,13 @@
           <dd> Let two circles $\omega_1, \omega_2$ intersect at $A,B$. A line passing through $A$ intersects $\omega_1, \omega_2$ in points $P,Q$. Prove that the bisector of $PQ$ passes through a fixed point.</dd>
         </dl>
         <dl>
-          <dt>Problem 3 <a href="https://www.cut-the-knot.org/triangle/SawayamaTheBault.pdf" target="_blank" rel="noopener noreferrer">(Sawayama Thebault's theorem)</a></dt>
+          <dt>Problem 3 <a href="https://artofproblemsolving.com/community/c5h1230495p6213607" target="_blank" rel="noopener noreferrer">(USAJMO)</a></dt>
+          <dd>The isosceles triangle $\triangle ABC$, with $AB=AC$, is inscribed in the circle $\omega$. Let $P$ be a variable point on the arc $\stackrel{\frown}{BC}$ that does not contain $A$, and let $I_B$ and $I_C$ denote the incenters of triangles $\triangle ABP$ and $\triangle ACP$, respectively.
+            <br>
+            Prove that as $P$ varies, the circumcircle of triangle $\triangle PI_BI_C$ passes through a fixed point.
+          </dd>
+        <dl>
+          <dt>Problem 4 <a href="https://www.cut-the-knot.org/triangle/SawayamaTheBault.pdf" target="_blank" rel="noopener noreferrer">(Sawayama Thebault's theorem)</a></dt>
           <dd>Let $ABC$ be a triangle. Let $P$ be a variable point on side $BC$. The circle tangent to $AP,BC$ and the circumcircle of triangle $ABC$ is $\omega$. Let $\omega$ touch $AP,BC$ at points $U,V$. Prove that 
             $UV$ passes through a fixed point as $P$ varies on side $BC$.
           </dd>
@@ -276,18 +286,27 @@
             $AP,BQ,CR$ lies on a fixed circle.
           </dd>
         </dl>
+        <dl>
+          <dt>Problem 4 <a href="https://artofproblemsolving.com/community/c6h1248647p6419942" target="_blank" rel="noopener noreferrer">(Turkey EGMO TST)</a></dt>
+          <dd> Let $X$ be a variable point on the side $BC$ of a triangle $ABC$. Let $B'$ and $C'$ be points on the rays $XB$ and $XC$, respectively, satisfying $B'X=BC=C'X$. The line passing through $X$ and parallel to $AB'$ cuts the line $AC$ at $Y$ and the line passing through $X$ and parallel to $AC'$ cuts the line $AB$ at $Z$. Prove that all lines $YZ$ pass through a fixed point as $X$ varies on the line segment $BC$.
+          </dd>
+        </dl>
         <h4 class="text-danger">Advanced</h4>
         <dl>
           <dt>Problem 1 <a href="https://artofproblemsolving.com/community/c6h1970147p13654519" target="_blank" rel="noopener noreferrer">(USA EGMO TST)</a></dt>
           <dd> Let $ABC$ be a triangle and let $P$ be a point not lying on any of the three lines $AB$, $BC$, or $CA$. Distinct points $D$, $E$, and $F$ lie on lines $BC$, $AC$, and $AB$, respectively, such that $\overline{DE}\parallel \overline{CP}$ and $\overline{DF}\parallel \overline{BP}$. Show that there exists a point $Q$ on the circumcircle of $\triangle AEF$ such that $\triangle BAQ$ is similar to $\triangle PAC$.</dd>
         </dl>
         <dl>
-          <dt>Problem 2 <a href="https://artofproblemsolving.com/community/c6h2518759p21358108" target="_blank" rel="noopener noreferrer">(Polish MO)</a> </dt>
+          <dt>Problem 2 <a href="https://artofproblemsolving.com/community/c6h19777p131844" target="_blank" rel="noopener noreferrer">(IMO Shortlist)</a></dt>
+          <dd>Given a triangle $ABC$. The points $A$, $B$, $C$ divide the circumcircle $\Omega$ of the triangle $ABC$ into three arcs $BC$, $CA$, $AB$. Let $X$ be a variable point on the arc $AB$, and let $O_{1}$ and $O_{2}$ be the incenters of the triangles $CAX$ and $CBX$. Prove that the circumcircle of the triangle $XO_{1}O_{2}$ intersects the circle $\Omega$ in a fixed point.</dd>
+        </dl>
+        <dl>
+          <dt>Problem 3 <a href="https://artofproblemsolving.com/community/c6h2518759p21358108" target="_blank" rel="noopener noreferrer">(Polish MO)</a> </dt>
           <dd>Let $\omega$ be the circumcircle of a triangle $ABC$. Let $P$ be any point on $\omega$ different than the verticies of the triangle.
             Line $AP$ intersects $BC$ at $D$, $BP$ intersects $AC$ at $E$ and $CP$ intersects $AB$ at $F$. Let $X$ be the projection of $D$ onto line passing through midpoints of $AP$ and $BC$, $Y$ be the projection of $E$ onto line passing through $BP$ and $AC$ and let $Z$ be the projection of $F$ onto line passing through midpoints of $CP$ and $AB$. Let $Q$ be the circumcenter of triangle $XYZ$. Prove that all possible points $Q$, corresponding to different positions of $P$ lie on one circle.</dd>
         </dl>
         <dl>
-          <dt>Problem 3 <a href="https://artofproblemsolving.com/community/c6h2917387p26058205" target="_blank" rel="noopener noreferrer">(Czech-Polish-Slovak match)</a></dt>
+          <dt>Problem 4 <a href="https://artofproblemsolving.com/community/c6h2917387p26058205" target="_blank" rel="noopener noreferrer">(Czech-Polish-Slovak match)</a></dt>
           <dd> Circles $\Omega_1$ and $\Omega_2$ with different radii intersect at two points, denote one of them by $P$. A variable line $l$ passing through $P$ intersects the arc of $\Omega_1$ which is outside of $\Omega_2$ at $X_1$, and the arc of $\Omega_2$ which is outside of $\Omega_1$ at $X_2$. Let $R$ be the point on segment $X_1X_2$ such that $X_1P = RX_2$. The tangent to $\Omega_1$ through $X_1$ meets the tangent to $\Omega_2$ through $X_2$ at $T$. Prove that line $RT$ is tangent to a fixed circle, independent of the choice of $l$.</dd>
         </dl>
         

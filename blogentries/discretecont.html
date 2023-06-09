@@ -70,8 +70,8 @@
       </div> 
     <div class="col-lg-6">
       <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>Unusual continuity</em></h1>
-      <p class="lead mb-2 m-3">In this blog post I will discuss a curious technique for thinking about problems. It's unusually common but little accent is given to it. The solutions are elegant and showcase the beauty of math.</p>
-      <p class="lead mb-2 m-3">The techniques overviewed will be plain and discrete continuity. These are also widely regarded as the Intermediate value theorem <strong>(IVT)</strong>. </p>
+      <p class="lead mb-2 m-3">In this blog post I will discuss continuity and its many forms. It's unusually common but little accent is given to it. The solutions are elegant and some the most beautiful arguments in math. </p>
+      <p class="lead mb-2 m-3">The techniques overviewed will be plain and discrete continuity. These are most often used through the Intermediate value theorem <strong>(IVT)</strong> in olympiads. </p>
     </div>
   </div>
 </div>
@@ -86,16 +86,16 @@
         <h2 class="blog-post-title"> A life lesson & cool problems</h2>
         <p class="blog-post-meta">October 25, 2021</p>
         <p> While going through the olympiad system in my country we used to learn almost no theory and that was especially a thing in combinatorics. I don't think that we had a specific lesson in combinatorial theory at all. 
-          I think it's a good thing to know "names" of some techniques of solving problems, even though they can't be labbeled as nicely as in geometry. For example, I wanted to dedicate this section to a specific problem. Not so long ago
+          I think it's a good thing to know "names" of some techniques of solving problems, even though they can't be labbeled as nicely as in geometry. I want to dedicate this section to a specific problem. Not so long ago
           this problem appeared on our <strong>TST</strong> (here in Bosnia):
         </p>
         <div>
           <div class="row">
             <div class="col-md-12 mt-3">
               <div class="h-100 p-4 text-white bg-dark rounded-3">
-                <h4>BIHMO 2020 Day 1 Problem 1</h4>
+                <h4> BIHMO 2020 Day 1 Problem 1</h4>
                 <hr class="thick">
-                <p>Integers are written on the vertices of a regular $n$-gon, so that the differences between any two numbers in adjacent vertices is $0$ or $1$. These vertices split the circumcircle of the $n$-gon into $n$ equal arcs. In the midpoints of each arc, the arithmetic mean of the numbers that form that arc is written. Determine all $n$ such that with certainty one can conclude that there are two diametrically opposite points on this circle which have equal value.  </p>
+                <p>Integers are written on the vertices of a regular $n$-gon, so that the differences between any two numbers in adjacent vertices is $0$ or $1$. These vertices split the circumcircle of the $n$-gon into $n$ equal arcs. In the midpoints of each arc, the arithmetic mean of the numbers that form that arc is written. Determine all $n$ such that with certainty one can conclude that there are two diametrically opposite (antipodal) points on this circle which have equal value.  </p>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@
         <p>Before I start explaining the solution of the above problem, let me showcase some other problems.</p>
         <ol>
           <li>Prove that <b>all</b> <b>roots</b> of the polynomial <div style="overflow-x: auto; overflow-y: hidden; overflow-y: hidden;">$P(x)=x(x-2)(x-4)(x-6)+(x-1)(x-3)(x-5)(x-7)$</div> are real.</li>
-          <li><a href="https://artofproblemsolving.com/community/c6h1092597p4870423" target="_blank" rel="noopener noreferrer">(Serbia MO 2014)</a> Call a positive integer $n$ <em> crazy </em> iff there exist positive integers $a,b>1$ such that $n=a^b+b$. Prove that there exist $2014$ consecutive positive integers such that there are <b>exactly</b> $2012$ <em>crazy</em> numbers among them. </li>
+          <li><a href="https://artofproblemsolving.com/community/c6h1092597p4870423" target="_blank" rel="noopener noreferrer">(Serbia MO 2014)</a> Call a positive integer $n$ <em> crazy </em> if and only if there exist positive integers $a,b>1$ such that $n=a^b+b$. Prove that there exist $2014$ consecutive positive integers such that there are <b>exactly</b> $2012$ <em>crazy</em> numbers among them. </li>
           <li> <a href="https://artofproblemsolving.com/community/c6h34319p213018" target="_blank" rel="noopener noreferrer">(USAMO 2005)</a>  Suppose $2n$ points are given in the plane, no three of which are collinear. Suppose $n$ of them are colored blue and the other $n$ are colored red. A line in the plane is called a balancing line if it passes through one blue and one red point and, for each side of the line, the number of blue points on that side is <b>exactly</b> equal to the number of red points on the same side. Prove that there exist at least two balancing lines.</li>
         </ol>
         <p>And their respective "outline" solutions:</p>
@@ -119,9 +119,9 @@
           <dt>Problem 1</dt>
           <dd>Look at the polynomials at the inputs $x=0,1,2,3,4,5,6,7$. Pay particular attention to the sign of the value you get. What can you conclude with the information that $P(0) > 0$ and $P(1) < 0 $? </dd>
           <dt>Problem 2</dt>
-          <dd>Notice that the first $2012$ numbers aren't all crazy and then note that by shifting an interval of $2014$ consecutive numbers we change the number of crazy numbers in the interval by no more than 1 thus we can hit all values.</dd>
+          <dd>Notice that the first $2012$ numbers aren't all crazy and then note that by shifting an interval of $2014$ consecutive numbers we change the number of crazy numbers in the interval by no more than 1 thus we can hit all values if there exist $2014$ consecutive integers from which more than $2011$ of them are crazy.</dd>
           <dt>Problem 3</dt>
-          <dd> Pay attention to the convex hull. Try moving the line </dd>
+          <dd> Look at the convex hull. Try moving the line and see what changes and by how much.</dd>
         </dl>
         <h2 class="mt-4 mb-4"> <b>The point</b> </h2>
         <p> All three of these problems share the same vibe. They all rely on some sort of continuity. But what does it mean to be continuous? A function is said to be continuous at the point $a$ if the following conditions hold: </p>
@@ -133,35 +133,48 @@
           <dt>Third condition</dt>
           <dd>Finally, the "most important" condition: $\lim_{x\to a} f(x) = f(a)$. </dd>
         </dl>
-        <p> So a functions is said to be continuous on an interval if it is continuous at every point in that interval. Examples of continuous functions are all the "normal" functions we deal with in olympiad problems (All polynomials are continuous). So when is a function not continuous, i.e. discontinuous? Here is an image of the types of discontinuity: </p>
+        <p> So a functions is said to be continuous on an interval if it is continuous at every point in that interval. Examples of continuous functions are all the 
+          "normal" functions we deal with in most of math (for example, all polynomials are continuous). So when is a function not continuous, i.e. discontinuous? Here is an illustration of the types of discontinuity: </p>
         <div class="container">
           <img src="/images/blog/discontinuity.jpg" class="img-fluid">
         </div>
-        <p> Of course, as in all things in math, this is generalizable. We can generalize the notion of continuous functions to metric spaces (and topological spaces, but more on that later):</p>
-        <p class="m-3"> Let $f$ be a function from a metric space $(X,d_x)$ to $(Y,d_y)$, and $x$ is any point in $X$. We say $f$ is continuous at $x$, if for every sequence $(x_n)$ converging to $x$ the sequence $(f(x_n))$ converges to $f(x)$. </p>
-        <p>An intuitive way of thinking about it is that the function does not <b>"skip"</b> any points. A formal theorem exists: </p>
+        <p> Of course, as in all things in math, this can be generalized. We can generalize the notion of continuous functions to metric spaces (and topological spaces):</p>
+
+        <div class="container-fluid shadow-sm">
+          <br>
+          <h5><b>Metric space </b></h5>
+          <p class="pb-3"> Let $f$ be a function from a metric space $(X,d_x)$ to $(Y,d_y)$, and $x$ is any point in $X$. We say $f$ is continuous at $x$, if for every sequence $(x_n)$ converging to $x$ the sequence $(f(x_n))$ converges to $f(x)$. </p>
+        </div>
+        
+        <p>An intuitive way of thinking about it is that the function does not "skip" any points. A formal theorem exists: </p>
           <h4>The Intermediate Value Theorem (IVT)</h4>
           <div class="container center-block mt-4 mb-4">
             <img src="/images/blog/IVT.svg" class="img-fluid mx-auto d-block">
           </div>
-          <p><b>The Intermediate Value Theorem: </b> For two real numbers $a,b$ with $a < b$, let $f$ be a continuous function on the closed interval $[a,b]$. Then for every $s$ between $f(a)$ and $f(b)$ there exists a number $x$ such that $f(x)=s$.</p>
+          <div class="container-fluid shadow-sm">
+            <br>
+            <h5><b>The Intermediate Value Theorem</b></h5>
+            <p class="pb-3">For two real numbers $a,b$ with $a < b$, let $f$ be a continuous function on the closed interval $[a,b]$. Then for every $s$ between $f(a)$ and $f(b)$ there exists a number $x$ such that $f(x)=s$. </p>
+          </div>
          <h5> Proof </h5>
          <hr>
-         <p> The proof is a taste of analysis proofs and you can find it for example <a href="https://en.wikipedia.org/wiki/Intermediate_value_theorem" target="_blank">here</a>. Essentially you abuse the continuity fact with the <b>completeness</b> axiom: every bounded set, <strong>finite or infinite</strong>, has a supremum/infimum (the smallest/greatest element greater/smaller than all of the elements in that set). </p>
-         <p> Most commonly you will use continuity for discrete sets, i.e. for integers. Now I present the solution of the introductory problem in two steps: </p>
+         <p> The proof is a classic real analysis proof and you can find one proof of it <a href="https://en.wikipedia.org/wiki/Intermediate_value_theorem" target="_blank">here</a> for example. Essentially you abuse the continuity fact with the <b>completeness</b> axiom: every bounded set, <strong>finite or infinite</strong>, has a supremum/infimum (the smallest/greatest element greater/smaller than all of the elements in that set). </p>
+         <p> Usually in olympiads continuity for discrete sets is most useful, i.e. for integers. Now I present the solution of the introductory problem in two steps: </p>
         <h3> Solution: </h3>
         <hr>
         <ul>
           <li> The antipode of a vertex in a regular $n$-gon is either a midarc (when $n$ is odd) or a vertex (when $n$ is even). Similar holds for the midarcs (vertex - midarc respectively)</li>
-          <li>Notice that for $n=2k+1$ (odd) we can just place the numbers $0,1,2 \ldots k-1,k,k,k-1, \ldots ,1,0$ as the vertices. Now there can't be any antipodal points with the same value since one of them is a midarc (which is not an integer) and one of them is a vertex (which is an integer). Therefore, $n$ isn't odd.</li>
+          <li>Notice that for $n=2k+1$ (odd) we can just place the numbers $0,1,2 \ldots k-1,k,k,k-1, \ldots ,1,0$ as the vertices. Now there can't be any antipodal points with the same value since one of them is a midarc (which is not an integer) and one of them is a vertex (which is an integer). 
+            Therefore, $n$ isn't odd. In the illustration below, black points are vertices of the polygon while the red points are the midpoints of the arcs between the vertices. </li>
           <div class="px-5 pt-2 my-2 text-center border-bottom">
             <img src="/images/nonagon.jpg" class="img-fluid">
           <h1 class="display-4 fw-bold"></h1>
           <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">The only integer value is the one $4$, but it's antipode is $0$ so it's good.</p>
+            <p class="lead mb-4">The only integer value at a midarc is the red $4$, but it's antipode is $0$ and the rest are not integers.</p>
           </div>
           </div>
-          <li>For $n=2k$ we prove there always must exist two antipodal points of equal value. Place a pencil in the middle such that it points to the bigger number always. Start rotating it clockwise. At one point the pencil <b>must</b> flip since if it doesn't that would mean it came back to the beginning position but reversed.</li>
+          <li>For $n=2k$ we prove there always must exist two antipodal points of equal value. Assume there aren't two antipodal points that have equal value. Place a pencil in the middle and keep its tip pointing to the bigger number always. Start rotating it clockwise. At one point the pencil <b>must</b> flip since if it doesn't that would mean it came back to the starting position but in the reverse direction. This can't be since we keep the pencil 
+          pointed to the bigger number. This would mean that at that point the numbers are equal but this can't be by our assumption. But when the pencil flips, the midarc between the place it flipped must be the pair of points we're looking for. Thus our assumption is wrong and there must exist two antipodal points of equal value. </li>
           <div class="px-5 pt-4 my-4 text-center border-bottom">
             <img src="/images/pencils.gif" class="img-fluid">
           <h1 class="display-4 fw-bold"></h1>
@@ -169,7 +182,7 @@
             <p class="lead mb-4"> When the pencil flips, the midarc between those two points have equal value, hence we're done. $\blacksquare$</p>
           </div>
         </ul>
-        <p>Ok the problem is done now. But this isn't the end of the story. Actually, a more general version of the problem holds. <b>The Borsuk-Ulam theorem</b> states that every continuous function from an $n$-sphere into <i>Euclidean</i> $n$-space maps some pair of antipodal points to the same point. Here, two points on a sphere are called antipodal if they are in exactly opposite directions from the sphere's center.</p>
+        <p>The problem is done now. But this isn't the end of the story. Actually, a more general version of a similar problem holds. <b>The Borsuk-Ulam theorem</b> states that every continuous function from an $n$-sphere into <i>Euclidean</i> $n$-space maps some pair of antipodal points to the same point. Here, two points on a sphere are called antipodal if they are in exactly opposite directions from the sphere's center.</p>
         <h5>Formal definition</h5>
         <p> If $f:S^{n}\to \mathbb {R} ^{n}$ is continuous then there exists an $x\in S^{n}$ such that: $f(-x)=f(x)$.
           <dt>
@@ -180,7 +193,7 @@
         <hr>
         <h3><b>Bonus:</b> Wobbly table</h3>
         <p>If you're perchance sitting on a four-legged wobbly chair or sitting at a four-legged wobbly table, you're in luck. 
-          Here's mathematically how to steady your table or chair without any propping up with papers or similar.<br> <br> </p>
+          Here's how to steady your table or chair without any propping up with papers or similar.<br> <br> </p>
           <div class="center-block mt-4 mb-4 section d-flex justify-content-center embed-responsive embed-responsive-16by9" loading="lazy">
             <video controls loop autoplay muted style="width: 100%; height: auto; max-width: 500px;">
               <source src="/images/blog/table.mp4" type="video/mp4">
@@ -188,11 +201,11 @@
             Your browser does not support the video tag.
             </video>
           </div>
-          <p>Turn the table around a center in such a way that three legs $A,B,C$ stay on the surface. <br>
-          The distance of the fourth leg to the surface is a function $f(x)$ which depends on the angle $x$. <br>
-          If $f(0)$ is positive, then $f(\pi/2)$ is negative and if $f(0)$ is negative then $f(\pi/2)$ is positive. <br> <br>
-          Now, the <b>Intermediate Value Theorem</b> assures that there is an angle, where the fourth leg is also on the surface. <br>
-          You can see the full argument <a href="https://people.math.harvard.edu/~knill/teaching/math1a_2011/exhibits/wobblytable/index.html" target="_blank">here</a>, 
+          <p>Turn the table around its center in such a way that three legs always $A,B,C$ stay on the surface (the floor). <br>
+          The distance of the fourth leg to the surface is a function $f(x)$ which depends on the angle $x$ of rotation around the center. <br>
+          If $f(0)$ (the starting position) is positive, then $f(\pi/2)$ is negative and if $f(0)$ is negative then $f(\pi/2)$ is positive. <br> <br>
+          Now, the <b>Intermediate Value Theorem</b> assures that there is an angle, where the fourth leg is also on the surface i.e. the table is steady. <br>
+          You can see the full argument in more detail <a href="https://people.math.harvard.edu/~knill/teaching/math1a_2011/exhibits/wobblytable/index.html" target="_blank">here</a>, 
           <a href="https://www.youtube.com/watch?v=aCj3qfQ68m0" target="_blank">here</a> and <a href="https://www.youtube.com/watch?v=OuF-WB7mD6k" target="_blank">here</a>
         </p>
         <h3>Problems</h3>
@@ -204,6 +217,8 @@
           <dd> The polynomial $x^2+13x+5$ is written on a blackboard. Every second Bob changes one of the coefficients of this polynomial by $\pm 1$, such that after some number of seconds the polynomial $x^2+5x+13$ remains. Is it possible that the polynomial on the blackboard was never reducible? (We say that the polynomial $P(x)$ is reducible if it can be expressed as a product of degree $1$ polynomials with integer coefficients)</dd>
           <dt>Problem 3</dt>
           <dd>Define the function $f(n)$ as the sum of the exponents of the canonical represantation of a positive integer $n$. Prove that there exist $2021$ consecutive positive integers, such that <b>exactly</b> $1000$ of them have $f > 11$</dd>
+          <dt>Problem 4</dt>
+          <dd>Suppose that $1000$ students are standing in a circle. Prove that there exists an integer $k$ with $100 \leq k \leq 300$ such that in this circle there exists a contiguous group of $2k$ students, for which the first half contains the same number of girls as the second half.</dd>
         </dl>
         <h4 class="text-success">Intermediate</h4>
         <dl>
@@ -213,6 +228,8 @@
           <dd>Call a positive integer $n$ <em> crazy </em> iff there exist positive integers $a,b>1$ such that $n=a^b+b$. Prove that there exist $2014$ consecutive positive integers such that there are <b>exactly</b> $2012$ <em>crazy</em> numbers among them.</dd>
           <dt>Problem 3</dt>
           <dd> Given is a cyclic $50$-gon whose vertices divide the circle in arcs of lengths $1,2,3, \ldots ,50$ in some order. Every two opposite arcs differ by at least $25$. Prove that the $50$-gon contains two parallel sides. </dd>
+          <dt>Problem 4</dt>
+          <dd>Find all continuous functions $f:\mathbb R \to \mathbb R$ such that$$f(x)+f(y)=f(x+y)+f(x)f(y)$$for all $x,y\in \mathbb R.$ </dd>
         </dl>
         <h4 class="text-danger">Advanced</h4>
         <dl>
@@ -222,7 +239,13 @@
           <dd> Given any positive integer $c$, denote $p(c)$ as the largest prime factor of $c$. A sequence ${a_n}$ of positive integers satisfies $a_1>1$ and $a_{n+1} = a_n+p(a_n)$ for all $n\geq 1$. Prove that there must exist at least one perfect square in the sequence ${a_n}$.</dd>
           <dt>Problem 3</dt>
           <dd> Each edge of a complete graph with $101$ vertices is marked with $1$ or $-1$. It is known that the absolute value of the sum of numbers on all edges is less than $150$. Prove that the graph contains a path visiting each vertex exactly once such that the sum of numbers on all edges of this path is zero. </dd>
+          <dt>Problem 4</dt>
+          <dd>Find all functions $f: (0, \infty) \to (0, \infty)$ such that
+            \begin{align*}
+            f(y(f(x))^3 + x) = x^3f(y) + f(x) 
+            \end{align*}for all $x, y>0$.</dd>
         </dl>
+        
       </article>
     </div>
     <!-- <div class="col-md-1"></div> -->
