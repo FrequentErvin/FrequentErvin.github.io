@@ -1,183 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PyTorch</title>
-    <link rel="icon" href="/images/mojaglavusina.jpg"> <!-- icon on tab -->
-    <link href="/index.css" rel="stylesheet" type="text/css"> <!-- for footer -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="/css/hover.css" rel="stylesheet" media="all"> <!-- effects on hover navbar-->
-    <!-- <link href="/style.css" rel="stylesheet" type="text/css"> -->
-    <link href="/blog.css" rel="stylesheet">
-    <link href="/style.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="/blogentries/bloby.css" rel="stylesheet"> <!-- for blob -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sora"> <!-- for font -->
-    <script>
-      MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
-  },
-  svg: {
-    fontCache: 'global'
-  }
-};
-</script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-</script>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <!-- <a class="navbar-brand text-white p-2" href="/index.html"><h2>Ervin Macić</h2></a> -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-          <ul class="navbar-nav mb-2 mb-lg-0 justify-content-center">
-            <li class="nav-item px-3 justify-content-center">
-              <a class="nav-link active text-white hvr-underline-reveal" aria-current="page" href="#" id="GoHome"><h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">About</h4></a>
-            </li>
-            <li class="nav-item px-3">
-              <a class="nav-link text-white hvr-underline-reveal" href="#" id="blog"><h4 style="text-shadow: 1.5px 1.5px #50524f ">Blog</h4></a>
-            </li>
-            <li class="nav-item px-3">
-              <a class="nav-link text-white hvr-underline-reveal" href="/contact.html">
-                <h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">Contact</h4>
-              </a>
-            </li>
-            <!-- <li class="nav-item px-3">
-              <a class="nav-link text-white hvr-underline-reveal" href="/ErvinMacic_CV.pdf" id="cv" target="_blank"><h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">CV</h4></a>
-            </li> -->
-            <li class="nav-item px-3">
-              <a class="nav-link text-white hvr-underline-reveal" id="project" href="#"><h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">Projects</h4></a>
-            </li>
-          </ul>
-          <!-- <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">Search</button>
-          </form> -->
-        </div>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>PyTorch</title>
+      <link rel="icon" href="/images/mojaglavusina.jpg">
+      <!-- icon on tab -->
+      <link href="/index.css" rel="stylesheet" type="text/css">
+      <!-- for footer -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link href="/css/hover.css" rel="stylesheet" media="all">
+      <!-- effects on hover navbar-->
+      <!-- <link href="/style.css" rel="stylesheet" type="text/css"> -->
+      <link href="/blog.css" rel="stylesheet">
+      <link href="/style.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="/blogentries/bloby.css" rel="stylesheet">
+      <!-- for blob -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sora">
+      <!-- for font -->
+      <script>
+         MathJax = {
+         tex: {
+         inlineMath: [['$', '$'], ['\\(', '\\)']]
+         },
+         svg: {
+         fontCache: 'global'
+         }
+         };
+      </script>
+      <script type="text/javascript" id="MathJax-script" async
+         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <div class="container-fluid">
+            <!-- <a class="navbar-brand text-white p-2" href="/index.html"><h2>Ervin Macić</h2></a> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+               <ul class="navbar-nav mb-2 mb-lg-0 justify-content-center">
+                  <li class="nav-item px-3 justify-content-center">
+                     <a class="nav-link active text-white hvr-underline-reveal" aria-current="page" href="#" id="GoHome">
+                        <h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">About</h4>
+                     </a>
+                  </li>
+                  <li class="nav-item px-3">
+                     <a class="nav-link text-white hvr-underline-reveal" href="#" id="blog">
+                        <h4 style="text-shadow: 1.5px 1.5px #50524f ">Blog</h4>
+                     </a>
+                  </li>
+                  <li class="nav-item px-3">
+                     <a class="nav-link text-white hvr-underline-reveal" href="/contact.html">
+                        <h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">Contact</h4>
+                     </a>
+                  </li>
+                  <!-- <li class="nav-item px-3">
+                     <a class="nav-link text-white hvr-underline-reveal" href="/ErvinMacic_CV.pdf" id="cv" target="_blank"><h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">CV</h4></a>
+                     </li> -->
+                  <li class="nav-item px-3">
+                     <a class="nav-link text-white hvr-underline-reveal" id="project" href="#">
+                        <h4 style="text-shadow: 1.5px 1.5px #7c7e7b ">Projects</h4>
+                     </a>
+                  </li>
+               </ul>
+               <!-- <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-light" type="submit">Search</button>
+                  </form> -->
+            </div>
+         </div>
+      </nav>
+      <div class="spacer layer1"></div>
+      <a href="#" id="scroll" style="display: none;"><span></span></a>
+      <div class="container col-md-8 px-4 py-5 shadow-lg mt-1 mb-4 bg-blob-blog">
+         <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
+            <div class="col-lg-6">
+               <img id="pytorch" class="vc-image-1 shadow"> 
+            </div>
+            <div class="col-lg-6">
+               <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>How fast is PyTorch?</em></h1>
+               <p class="lead mb-2 m-3">A short post about figuring out how much Deep Learning frameworks speed us up &#128293</p>
+               <p class="lead mb-2 m-3"> I implement a standard Neural Network on the MNIST Dataset both from scratch and with PyTorch help. I provide a Colab for following along.</p>
+            </div>
+         </div>
       </div>
-    </nav>
-    <div class="spacer layer1"></div> 
-  <a href="#" id="scroll" style="display: none;"><span></span></a>
-<div class="container col-md-8 px-4 py-5 shadow-lg mt-1 mb-4 bg-blob-blog">
-  <div class="row flex-lg-row-reverse  g-3 py-5 justify-content-center ">
-       <div class="col-lg-6">
-        <img id="pytorch" class="vc-image-1 shadow"> 
-      </div> 
-    <div class="col-lg-6">
-      <h1 class="display-5 fw-bold lh-1 mb-2 m-3"  style="text-shadow: 1.5px 1.5px #7e7b7b "><em>How fast is PyTorch?</em></h1>
-      <p class="lead mb-2 m-3">A short post about figuring out how much faster are we with Deep Learning frameworks &#128293</p>
-      <p class="lead mb-2 m-3"> I implement a standard Neural Network on the MNIST Dataset both by hand and with PyTorch help. I provide a Colab for following along.</p>
-    </div>
-  </div>
-</div>
-<main class="container col-md-8">
-  <div class="row">
-    <!-- <div class="col-md-1"></div> -->
-    <div class="">
-      <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        Deep Learning - Python - PyTorch
-      </h3>
-      <article class="blog-post">
-        <h2 class="blog-post-title"> How fast is PyTorch?</h2>
-        <p class="blog-post-meta">June 9, 2023</p>
-        <h4>Introduction - PyTorch </h4>
-        <p>
-          <b>PyTorch</b> is a popular Deep Learning framework based on the Torch library. Software in Tesla Autopilot, Uber's Pyro, Hugging Face's Transformers and more are implemented using this framework. 
-          It is growing in popularity as most papers that are published in the field of machine learning especially in computer vision and natural language processing have been tested and implemented using it.
-          As to why it's so popular, two main arguments hold:
-          <ol>
-            <li>Tensor computing with strong acceleration via GPUs</li>
-            <li>Deep neural networks built on an automatic differentation system using computational graphs</li>
-          </ol>
-          These make PyTorch incredibly fast, versatile, and efficient. Hopefuly throughout this post we'll get a chance to experience those perks ourselves.
-        </p>
-        <h4>PyTorch tensors</h4>
-        <p>A tensor can be thought of as an n-dimensional array. It isn't 100% mathematically correct, since we would be talking about ranks but for 
-          understanding purposes I stick with this. Vectors are 1D tensors while matrices are 2D tensors. This term dominates all implementations of 
-          machine learning applications. Usually, tensors store parameters which interact with other tensors using special operations defined in the field of linear algebra, which you can 
-          understand easily without prerequisite knowledge. Here's a cool illustration of the above tensor discussion: 
-          <div class="px-5 pt-2 my-3 text-center">
-            <img src="https://av-eks-blogoptimized.s3.amazonaws.com/image_Fjh3JHN-thumbnail_webp-600x300.png" style=" width: 100%; height: auto; max-width: 600px;">
-          </div>
-          <br> The main advantage of PyTorch tensors is that they can be operated on a CUDA-capable NVIDIA GPU which speeds up training and predictions 
-          immensely. 
-        </p>
-        <h4>PyTorch modules</h4>
-        <p>
-          The PyTorch ecosystem contains 3 high-level modules and many more submodules. Here they are:
-          <ol>
-            <li><code style="font-size: 18px;">Autograd</code> module</li>
-            <p>The method that belongs to this module called automatic differentiation is key for the tuning of parameters in neural networks. This method 
-              computes the gradients of the output with respect to each parameter in the neural network. It does so with the use of computational graphs where 
-              it, roughly speaking, "remembers" the operations you've done throughout your network and then replays it back to compute the gradients.
-            </p>
-            <li><code style="font-size: 18px;">Optim</code> module</li>
-            <p><code>torch.optim</code> is a module that implements optimization algorithms used for building NNs. This speeds up building NNs significantly.</p>
-            <li><code style="font-size: 18px;">nn</code> module</li>
-            <p>The <code>nn</code> module provides layers and tools to easily create the neural network architecture by just defining the layers of the network. </p>
-          </ol>
-          PyTorch also has many useful submodules such as data loading utilities which we will use below.
-        </p>
-        <script src="https://gist.github.com/FrequentErvin/9a5f55502ad0243867edfb4f934fe99c.js"></script>
-       <h4 class="text-primary">References and links for further reading</h4>
-        <ul>
-          <li><a target="_blank" href="https://courses.cs.duke.edu/cps102/spring09/Lectures/L-18.pdf">Duke University Lecture 18 Probability in Hashing</a>
-          <li><a target="_blank" href="https://dlsun.github.io/probability/linearity.html">Introduction to Probability, Prof. Dennis Sun</a></li>
-          <li><a target="_blank" href="https://web.evanchen.cc/handouts/ProbabilisticMethod/ProbabilisticMethod.pdf">Evan Chen's Probabilistic method</a></li>
-          <li><a target="_blank" href="https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_4.pdf">Harvard, Prof. Joe Blitzstein, Stat 110</a></li>
-          <li><a target="_blank" href="https://www.cantorsparadise.com/how-many-cycles-will-you-find-in-a-random-permutation-c88288bcdb5">"How Many Cycles Will You Find in a Random Permutation?" by Haris Angelidakis</a></li>
-          <li><a target="_blank" href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/mit6_042js15_session32.pdf">MIT OCW - Expectation: Chapter 18.4-18.5</a></li>
-        </ul>
-        
-      </article>
-    </div>
-    <!-- <div class="col-md-1"></div> -->
-  </div>
+      <main class="container col-md-8">
+         <div class="row">
+            <!-- <div class="col-md-1"></div> -->
+            <div class="">
+               <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                  Deep Learning - Python - PyTorch
+               </h3>
+               <article class="blog-post">
+                  <h2 class="blog-post-title"> How fast is PyTorch?</h2>
+                  <p class="blog-post-meta">June 9, 2023</p>
+                  <p class="text-warning">Warning: This post is opinionated.</p>
+                  <p>Here's the <a target="_blank" href="https://colab.research.google.com/drive/1PPJ19U-ddQtOHxUDLFxqNX0xH90XJZ1C?usp=sharing">Google Colab</a></p>
+                  <h4>Introduction - PyTorch </h4>
+                  
+                  <p>
+                     <b>PyTorch</b> is a popular Deep Learning framework based on the Torch library. Software in Tesla Autopilot, Uber's Pyro, Hugging Face's Transformers and more are implemented using this framework. 
+                     It is growing in popularity as most papers that are published in the field of machine learning especially in computer vision and natural language processing have been tested and implemented using it.
+                     As to why it's so popular, two main arguments hold:
+                  <ol>
+                     <li>Tensor computing with strong acceleration via GPUs</li>
+                     <li>Deep neural networks built on an automatic differentation system using computational graphs</li>
+                  </ol>
+                  These make PyTorch incredibly fast, versatile, and efficient. Hopefuly throughout this post we'll get a chance to experience those perks ourselves.
+                  </p>
+                  <h4>PyTorch tensors</h4>
+                  <p>A tensor can be thought of as an n-dimensional array. It isn't 100% mathematically correct, since we would be talking about ranks but for 
+                     understanding purposes I stick with this. Vectors are 1D tensors while matrices are 2D tensors. This term dominates all implementations of 
+                     machine learning applications. Usually, tensors store parameters which interact with other tensors using special operations defined in the field of linear algebra, which you can 
+                     understand easily without prerequisite knowledge. Here's a cool illustration of the above tensor discussion: 
+                  <div class="px-5 pt-2 my-3 text-center">
+                     <img src="https://av-eks-blogoptimized.s3.amazonaws.com/image_Fjh3JHN-thumbnail_webp-600x300.png" style=" width: 100%; height: auto; max-width: 600px;">
+                  </div>
+                  <br> The main advantage of PyTorch tensors is that they can be operated on a CUDA-capable NVIDIA GPU which speeds up training and predictions 
+                  immensely. 
+                  </p>
+                  <h4>PyTorch modules</h4>
+                  <p>
+                     The PyTorch ecosystem contains 3 high-level modules and many more submodules. Here they are:
+                  <ol>
+                     <li><code style="font-size: 18px;">Autograd</code> module</li>
+                     <p>The method that belongs to this module called automatic differentiation is key for the tuning of parameters in neural networks. This method 
+                        computes the gradients of the output with respect to each parameter in the neural network. It does so with the use of computational graphs where 
+                        it, roughly speaking, "remembers" the operations you've done throughout your network and then replays it back to compute the gradients.
+                     </p>
+                     <li><code style="font-size: 18px;">Optim</code> module</li>
+                     <p><code>torch.optim</code> is a module that implements optimization algorithms used for building NNs. This speeds up building NNs significantly.</p>
+                     <li><code style="font-size: 18px;">nn</code> module</li>
+                     <p>The <code>nn</code> module provides layers and tools to easily create the neural network architecture by just defining the layers of the network. </p>
+                  </ol>
+                  PyTorch also has many useful submodules such as data loading utilities which we will use below. Here's the Wikipedia example of constructing a simple Neural Network
+                  architecture using PyTorch:
+                  </p>
+                  <script src="https://gist.github.com/FrequentErvin/9a5f55502ad0243867edfb4f934fe99c.js"></script>
+                  <p> You also saw the function <code>forward</code> which implements a simple forward pass. The backwards pass is the more computationally intense part. Going forward you only 
+                     do matrix multiplications between weights and node values and you apply activation functions. The backward pass consists of updating gradients of the loss function with respect 
+                     to each parameter of the Neural Network.
+                  <h3>An implementation from scratch</h3>
+                  <p>Now I implement a miniature Neural Net using no libraries for heavy lifting. I will use the <code>graphviz</code> library for the sole reason of 
+                     visualizing the computational graph. I will use <cod</codded>
+                     which aids understanding of backprop. The following implementation is highly inspired by the 
+                     Micrograd library. We start by defining a <code>Value</code> class, a <code>Neuron</code> class, a <code>Layer</code> class 
+                     and finally an <code>MLP</code> class (Multi Layer Perceptron, i.e. general name for the most common NN) from which 
+                     we are going to infer new examples.
+                  </p>
+                  <p>This will also serve as a refresher of Python functionality. </p>
+                  <p class="text-warning">You can skim through the next section if you're working in Google Colab because Colab has its own environment. </p>
+                  <h4>Configuring an environment - Anaconda</h4>
+                  <p>One of the biggest bottlenecks for beginners in ML is configuring environments and installing all requirements. Often 
+                     you work on the "global" environment and install multiple versions of the same things which innevitably leads you to 
+                     using the wrong version when developing. This not only curses your global scope, it also leads you down StackOverflow 
+                     rabbit holes from which few escape. </p>
 
-</main>
-    <script src="/blog.js"></script>
-    <script src="/index.js"></script>
-    <div class="spacer whiteblack"></div>
+                  <p>The hands-down best way to get around this issue is to install a package manager. If you've installed any Python distribution successfully, you should also have the Package Installer 
+                     for Python (abrv. <code>pip</code>). <code>pip</code> allows you to install Python packages/libraries on the go through a terminal. Before you start spamming "pip install x" in the terminal, 
+                     a common warning is to make a virtual environment in which you will use these commands. A virutal environment allows you to solve the above-mentioned problem. It allows you to 
+                     install packages in specific environments which don't "touch" your global scope, to which everything by default has access. For example, if you install Python into a virtual environment 
+                     and don't install it in a global scope, running Python through cmd won't work if you aren't in that specific environment.
+                  </p>
+                  <div class="px-5 pt-2 my-3 text-center">
+                    <img src="https://i.stack.imgur.com/1UKJt.png" style=" width: 100%; height: auto; max-width: 800px;">
+                 </div>
+                  <p>To see how to use virtual envs with <code>pip</code>, go somewhere else. I prefer <code>conda</code>, one of the most popular options for package management when working with multiple languages or need different versions 
+                    of Python. </p>
+                    <p> After you install conda, you simply run the <strong>Anaconda Prompt</strong> and run the following commands: </p>
+                    
+                    <script src="https://gist.github.com/FrequentErvin/d711a816096feadbb5f23270f46ec917.js"></script>
+                    <p>If graphviz doesn't want to import later, you can cheat <code>conda</code> with <code>pip</code> and use: </p>
+                    <script src="https://gist.github.com/FrequentErvin/47c677a71a9eea3f526f2a7bc9b64b7b.js"></script>
+                    <p>For help with conda commands, reference the <a target="_blank" href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf">conda-cheatsheet.pdf</a></p>
+                  <h4>Setting up an IDE</h4>
+                  <p>Configuring an IDE with a working package environment such as the one we just built can be tricky. There are a lot of options for IDEs but some common ones are: Google Colab, PyCharm, Jupyter Notebook, VSCode.</p>
+                  <p>I listed them in increasing configurational pain. Colab is the easiest one for environments but it is also in the cloud. You don't get that satisfying feeling 
+                    of running something locally and seeing your machine sweat. Jupyter Notebook is run in the browser, which again isn't that satisfying but it does run from your own components. Colab might be the best for beginners for 
+                    some time (until you have to get into environment mingling). Colab offers free GPUs & sometimes TPUs for use. There are a bunch of pros and cons for Colab which I encourage you search by yourself.
+                    I won't explain how to connect our new environment to each of these IDEs but that's also easily searchable online. 
+                  </p>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <h6>About</h6>
-            <p class="text-justify">For any questions, comments or you just want to chat, visit the <a>Contact</a> page. I love sharing
-              ideas and talking with smart people, so by all means, please do! Besides that, check in often to see the blog post and/or projects.  </p>
-          </div>
-  
-        </div>
-        <hr>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
-         <a href="https://github.com/FrequentErvin">Ervin Macić</a>.
-            </p>
-          </div>
-  
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <ul class="social-icons">
-              <li><a class="facebook" href="https://www.facebook.com/ervin.macic/"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="https://twitter.com/Ervin83228183"><i class="fa fa-twitter"></i></a></li>
-              <li><a class="dribbble" href="https://www.instagram.com/ervin.macic/" ><i class="fa fa-instagram"></i></a></li>
-              <li><a class="linkedin" href="https://www.linkedin.com/in/ervin-macic-2a300a1ab/"><i class="fa fa-linkedin"></i></a></li>   
-            </ul>
-          </div>
-        </div>
-      </div>
-  </footer>
+                  <h4>Importing libraries</h4>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-  </body>
-</html>  
+                  <p>First we import a few libraries: </p>
+                  <script src="https://gist.github.com/FrequentErvin/14c3611d4ce1c320b121a84c1399374a.js"></script>
+                  <h4 class="text-primary">References and links for further reading</h4>
+                  <ul>
+                     <li><a target="_blank" href="https://courses.cs.duke.edu/cps102/spring09/Lectures/L-18.pdf">Duke University Lecture 18 Probability in Hashing</a>
+                     <li><a target="_blank" href="https://dlsun.github.io/probability/linearity.html">Introduction to Probability, Prof. Dennis Sun</a></li>
+                     <li><a target="_blank" href="https://web.evanchen.cc/handouts/ProbabilisticMethod/ProbabilisticMethod.pdf">Evan Chen's Probabilistic method</a></li>
+                     <li><a target="_blank" href="https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_4.pdf">Harvard, Prof. Joe Blitzstein, Stat 110</a></li>
+                     <li><a target="_blank" href="https://www.cantorsparadise.com/how-many-cycles-will-you-find-in-a-random-permutation-c88288bcdb5">"How Many Cycles Will You Find in a Random Permutation?" by Haris Angelidakis</a></li>
+                     <li><a target="_blank" href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/mit6_042js15_session32.pdf">MIT OCW - Expectation: Chapter 18.4-18.5</a></li>
+                  </ul>
+               </article>
+            </div>
+            <!-- <div class="col-md-1"></div> -->
+         </div>
+      </main>
+      <script src="/blog.js"></script>
+      <script src="/index.js"></script>
+      <div class="spacer whiteblack"></div>
+      <footer class="site-footer">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12 col-md-6">
+                  <h6>About</h6>
+                  <p class="text-justify">For any questions, comments or you just want to chat, visit the <a>Contact</a> page. I love sharing
+                     ideas and talking with smart people, so by all means, please do! Besides that, check in often to see the blog post and/or projects.  
+                  </p>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8 col-sm-6 col-xs-12">
+                  <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
+                     <a href="https://github.com/FrequentErvin">Ervin Macić</a>.
+                  </p>
+               </div>
+               <div class="col-md-4 col-sm-6 col-xs-12">
+                  <ul class="social-icons">
+                     <li><a class="facebook" href="https://www.facebook.com/ervin.macic/"><i class="fa fa-facebook"></i></a></li>
+                     <li><a class="twitter" href="https://twitter.com/Ervin83228183"><i class="fa fa-twitter"></i></a></li>
+                     <li><a class="dribbble" href="https://www.instagram.com/ervin.macic/" ><i class="fa fa-instagram"></i></a></li>
+                     <li><a class="linkedin" href="https://www.linkedin.com/in/ervin-macic-2a300a1ab/"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+   </body>
+</html>
