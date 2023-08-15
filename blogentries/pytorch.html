@@ -187,6 +187,15 @@
 
                   <p>First we import a few libraries: </p>
                   <script src="https://gist.github.com/FrequentErvin/14c3611d4ce1c320b121a84c1399374a.js"></script>
+
+                  <h4>Notes on Python magic/dunder methods</h4>
+                  Python does <code>x+4</code> as <code>x.__add__(4)</code> and similar for multiplication and even calling a function: <code>f(x)</code> as <code>f.__call__(x)</code>
+                  That's why we can define custom behavior for operations on instances of our <code>Value</code> class. That was the whole point of defining this class. These are Python 
+                  built-in methods also called magic methods. You can invoke a class like a function. You can refer to it as a callable object. Here's a comprehensive list of 
+                  <a target="_blank" href="https://blog.finxter.com/python-dunder-methods-cheat-sheet/">Dunder methods.</a>
+
+
+                  <!-- END OF CONTENT -->
                   <h4 class="text-primary">References and links for further reading</h4>
                   <ul>
                      <li><a target="_blank" href="https://courses.cs.duke.edu/cps102/spring09/Lectures/L-18.pdf">Duke University Lecture 18 Probability in Hashing</a>
