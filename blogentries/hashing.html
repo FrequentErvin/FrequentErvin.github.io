@@ -27,6 +27,7 @@
 <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
+
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -88,7 +89,7 @@
         <p class="blog-post-meta">January 14, 2023</p>
         <p>
           A hash table is a commonly used data structure in computer science. It is one of the most useful data structures because of its speed in information retrieval. For 
-          example, suppose we want to store peoples' addresses. For each person we store his ID as the key and address as the value. An ID
+          example, suppose we want to store peoples' addresses. For each person we store their ID as the key and address as the value. An ID
            could be a person's name or something similar. With proper notation, if $x$ is the ID 
           of a person then $h(x)$ is the address. Nothing too special, just a function. However, problems arise if by chance two people have the same ID or the same address. 
           Trouble starts when we attempt to store more than one item in the same slot. The efficiency of all hashing algorithms depends on how often this happens. <br> <br>
@@ -98,18 +99,17 @@
           </div>
         </p> 
         <p>
-          To showcase the problem with hashing, I'll start with a very similar problem. It is in the Problem section in the post <b>Unexpected expected values</b> and is named
-          the birthday paradox. The question is simple (assume no person is born on February 29th):
+          To showcase the problem with hashing, I'll start with a very similar problem. I mentioned it in a previous post here: <a target="_blank" href="https://frequentervin.github.io/blogentries/expectedvalue.html">Unexpected expected values</a>. The question is simple (assume no person is born on February 29th):
           <div class="problem">
             <h5><b>Birthday paradox</b></h5>
             <p>In a set of $23$ people the probability that two share the same birthday is greater than $0.5$ (or $50$%).</p>
           </div>
-          This seems extremely counter-intutive since there are $365$ possible birthdays and $23$ doesn't seem like enough people to be that sure.
+          This seems extremely counterintutive since there are $365$ possible birthdays and $23$ doesn't seem like enough people to be that sure.
           But think about the contrapositive statement. Imagine adding people in such a way that 
           no two have the same birthday. Assume each day is equally likely to be a person's birthday so:
           \[ \mathbb{P}(\textnormal{person $i$ is born on day $j$}) = 1/365\]
           Trying to calculate the probability that in a set of $n$ birthdays no two are equal is (for $n=3$):
-          \[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{365}{365} \frac{364}{365} \frac{363}{365}\]
+          \[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{365}{365} \cdot \frac{364}{365} \cdot \frac{363}{365}\]
           In general for $k=365$ and $n=n$ we have:
           <div style="overflow-x: auto; overflow-y: hidden;">\[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{k}{k} \cdot \frac{k-1}{k} \ldots \frac{k-n+1}{k} \]</div>
           \[ \mathbb{P}(\textnormal{no two equal birthday}) = \frac{k!}{k^n \cdot (k-n)!} \]
@@ -125,7 +125,8 @@
           <h4>Back to hashing</h4>
           The basic mechanism in hashing is the same as in the assignment of birthdays. We have $n$ items and map each to one of $k$ slots. We assume the $n$ choices of
           slots are independent. A collision is the event that an item is mapped to a slot that already stores an item. A possible resolution of a collision adds the item at the end of a linked
-          list that belongs to the slot. Now I'll discuss some expected values of different situations in hashes.
+          list that belongs to the slot. Now I'll discuss some expected values of different situations in hashes. </p><p>Here's a very cool paper showcasing the methods used in digital forensics for creating attacks 
+          in digital evidence: <a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S1877050917321221">A review of collisions in cryptographic hash function used in digital forensic tools</a>
     
           <div class="problem">
             <h5><b>E.V. of number of items in same slot</b></h5>
@@ -191,6 +192,7 @@
        <h4 class="text-primary">References and links for further reading</h4>
         <ul>
           <li><a target="_blank" href="https://courses.cs.duke.edu/cps102/spring09/Lectures/L-18.pdf">Duke University Lecture 18 Probability in Hashing</a>
+          <li> <a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S1877050917321221">A review of collisions in cryptographic hash function used in digital forensic tools</a></li>
           <li><a target="_blank" href="https://dlsun.github.io/probability/linearity.html">Introduction to Probability, Prof. Dennis Sun</a></li>
           <li><a target="_blank" href="https://web.evanchen.cc/handouts/ProbabilisticMethod/ProbabilisticMethod.pdf">Evan Chen's Probabilistic method</a></li>
           <li><a target="_blank" href="https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_4.pdf">Harvard, Prof. Joe Blitzstein, Stat 110</a></li>
